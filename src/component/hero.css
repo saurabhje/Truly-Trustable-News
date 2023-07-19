@@ -9,7 +9,6 @@
 }
 
 .hero-text{
-    font-family: 'Bebas Neue', sans-serif;
     color: white;
     padding-left: 3vw;
     line-height: 1.1;
@@ -17,9 +16,11 @@
 }
 
 h1{
+    font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(20px, 2.5vw, 42px)
 }
 
 h2{
+    font-family: 'roboto';
    font-size: clamp(14px, 1.5vw, 32px) 
 }
