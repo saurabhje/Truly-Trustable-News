@@ -2,7 +2,7 @@
     background-image: url("../assets/poco.jpg");
     background-size: cover;
     background-position: center;
-    height: 30vh;
+    height: 40vh;
     display: flex;
     align-items: flex-end;
     
@@ -16,6 +16,6 @@
 }
 
 h1{
-    font-size: clamp(12px, 3vw, 32px);
+    font-size: clamp(14px, 3vw, 32px);
     font-weight: 900;
 }
