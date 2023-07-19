@@ -1,4 +1,5 @@
-.header{
-  background-color: aqua;
-  padding: 32px 64px;  
+.main{
+  display: flex;
+  flex: 1;
 }
+
