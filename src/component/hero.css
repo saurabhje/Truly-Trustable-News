@@ -19,20 +19,11 @@
 
 h1{
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(30px, 4vw, 52px);
+    font-size: clamp(24px, 4vw, 85px);
     margin: 0;
-    font-weight: 900;
 }
 
 h2{
    font-size: clamp(14px, 1.5vw, 32px);
    font-weight: lighter;
 }
-@media (max-width: 320px){
-    .hero-text{
-      width: 70%;
-    }
-    .hero-text h1{
-      font-size: 20px;
-    }
-  }
