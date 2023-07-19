@@ -1,29 +1,21 @@
-.hero-img{
-    width: 100%;
-    height: 400px;
-    position: relative;
+.hero-sec{
+    background-image: url("../assets/poco.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 30vh;
+    display: flex;
+    align-items: flex-end;
+    
 }
-.hero-img img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+
 .hero-text{
     font-family: 'Bebas Neue', sans-serif;
-    position: absolute;
-    top: 30%;
-    padding: 10px 30px;
-    font-size: 3em;
     color: white;
+    padding-left: 3vw;
     width: 60%;
-    line-height: 1;
 }
 
-
-@media (max-width: 600px) {
-    .hero-text{
-        font-size: 2em;
-        padding: 10px;
-        width: 90%;
-    }
+h1{
+    font-size: clamp(12px, 3vw, 32px);
+    font-weight: 900;
 }

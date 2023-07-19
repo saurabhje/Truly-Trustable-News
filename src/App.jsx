@@ -13,12 +13,8 @@ function App() {
         <Header/>
       </div>
       <div className="main">
-        <div className="hero-sec">  
           <Hero />
-        </div>
-        <div className="content">
           <MainContent/>
-        </div>
       </div>
       <div className="footer">
         <Footer/>
