@@ -2,7 +2,7 @@
     background-image: url("../assets/poco.jpg");
     background-size: cover;
     background-position: center;
-    height: 40vh;
+    height: 45vh;
     display: flex;
     align-items: flex-end;
     
@@ -12,15 +12,17 @@
     font-family: 'Bebas Neue', sans-serif;
     color: white;
     padding-left: 3vw;
+    font-weight: 900;
+    line-height: 1.1;
     width: 60%;
 }
 
 h1{
-    font-size: clamp(14px, 3vw, 32px);
-    font-weight: 900;
+    font-size: 2.4rem;
+    margin: 0;
+    padding: 0;
 }
 
 h2{
-    font-size: clamp(12px, 2vw, 26px);
-    font-weight: 900;
+   font-size: 1rem;  
 }
