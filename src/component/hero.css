@@ -1,5 +1,4 @@
 .hero-sec{
-    
     height: 55vh;
     display: flex;
     align-items: flex-end;
@@ -10,7 +9,8 @@
     background-image: url("../assets/poco.jpg");
     background-size: cover;
     background-position: center;
-}.hero-text{
+}
+.hero-text{
     color: white;
     padding-left: 3vw;
     line-height: 1.1;
@@ -19,9 +19,9 @@
 
 h1{
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(20px, 2.5vw, 42px)
+    font-size: clamp(24px, 3vw, 52px);
 }
 
 h2{
-   font-size: clamp(14px, 1.5vw, 32px) 
+   font-size: clamp(14px, 1.5vw, 32px);
 }
