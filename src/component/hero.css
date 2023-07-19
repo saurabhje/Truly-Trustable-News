@@ -1,0 +1,29 @@
+.hero-img{
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+.hero-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.hero-text{
+    font-family: 'Bebas Neue', sans-serif;
+    position: absolute;
+    top: 30%;
+    padding: 10px 30px;
+    font-size: 3em;
+    color: white;
+    width: 60%;
+    line-height: 1;
+}
+
+
+@media (max-width: 600px) {
+    .hero-text{
+        font-size: 2em;
+        padding: 10px;
+        width: 90%;
+    }
+}
