@@ -11,9 +11,9 @@ function App() {
     <>
       <div className="header">
         <Header/>
+        <Hero />
       </div>
       <div className="main">
-          <Hero />
           <MainContent/>
       </div>
       <div className="footer">

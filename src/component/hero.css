@@ -1,14 +1,16 @@
 .hero-sec{
-    background-image: url("../assets/poco.jpg");
-    background-size: cover;
-    background-position: center;
+    
     height: 55vh;
     display: flex;
     align-items: flex-end;
     
 }
 
-.hero-text{
+.header{
+    background-image: url("../assets/poco.jpg");
+    background-size: cover;
+    background-position: center;
+}.hero-text{
     color: white;
     padding-left: 3vw;
     line-height: 1.1;
@@ -21,6 +23,5 @@ h1{
 }
 
 h2{
-    font-family: 'roboto';
    font-size: clamp(14px, 1.5vw, 32px) 
 }
