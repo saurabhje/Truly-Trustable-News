@@ -1,6 +1,4 @@
 import React from 'react'
-import PCimg from "../assets/poco.jpg";
-import Moboimg from "../assets/mobo.jpg";
 import "./hero.css";
 
 const Hero = () => {

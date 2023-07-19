@@ -1,13 +1,5 @@
-.header{
-  padding: 20px 50px;  
-  color: white;
-}
-
 .main{
   display: flex;
   flex: 1;
 }
-.hero-sec{
-  width: 100%;
-  height: 100%;
-}
+
