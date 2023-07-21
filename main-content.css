@@ -1,0 +1,24 @@
+.main{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+.content{
+    display: grid;
+    width: 72%;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+
+}
+
+.item{
+    background-color: aquamarine;
+    width: 350px;
+    height: 350px;
+}
+
+.sidebar{
+    width: 20%;
+    background-color: brown;
+}
