@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import Header from './component/header'
+import Navbar from './component/navbar'
 import Hero from './component/hero'
 import Footer from './component/footer'
 import MainContent from './component/main-content'
@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <div className="header">
-        <Header/>
+        <Navbar/>
         <Hero />
       </div>
       <div className="main">

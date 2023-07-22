@@ -1,7 +1,7 @@
 .hero-sec{
     height: 45vh;
     display: flex;
-    align-items: flex-end;   
+    align-items: flex-end; 
 }
 .header{
     height: 55vh;
@@ -9,17 +9,17 @@
     background-image: url("../assets/poco.jpg");
     background-size: cover;
     background-position: center;
-    padding: 20px;
+    
 }
 .hero-text{
-    padding-left: 1vw;
     line-height: 1.1;
     width: 60%;
+    padding-left: 4vw;
 }
 
 h1{
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(24px, 4vw, 85px);
+    font-size: clamp(24px, 3vw, 60px);
     margin: 0;
 }
 
