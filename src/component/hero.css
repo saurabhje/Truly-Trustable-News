@@ -25,5 +25,5 @@ h1{
 
 h2{
    font-size: clamp(14px, 1.5vw, 32px);
-   font-weight: lighter;
+   font-weight: 400;
 }
