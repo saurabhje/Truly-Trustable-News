@@ -8,13 +8,13 @@
 .content{
     display: grid;
     width: 72%;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 50px;
 }
 
 .item{
     background-color: grey;
-    height: 30vh;
+    height: 40vh;
 }
 
 .sidebar{
