@@ -9,13 +9,11 @@
     width: 72%;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 50px;
-
 }
 
 .item{
     background-color: aquamarine;
-    width: 350px;
-    height: 350px;
+    height: 30vh;
 }
 
 .sidebar{
