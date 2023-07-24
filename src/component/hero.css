@@ -27,3 +27,7 @@ h2{
    font-size: clamp(14px, 1.5vw, 32px);
    font-weight: 400;
 }
+
+h3{
+    padding-left: 40px;
+}
