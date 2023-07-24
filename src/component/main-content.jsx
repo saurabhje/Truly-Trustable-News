@@ -15,16 +15,16 @@ const MainContent = () => {
   return (
     <>
       <div style = {threelayout ? {"grid-template-columns": "1fr 1fr 1fr"} : {"grid-template-columns":"1fr 1fr", "gap": "60px"}} className='content'>
-        <div className="item"></div>
-        <div className="item"></div>
-        <div className="item"></div>
-        <div className="item"></div>
-        <div className="item"></div>
-        <div className="item"></div>
-        <div className="item"></div>
-        <div className="item"></div>
-        <div className="item"></div>
-        <div className="item"></div>
+        <div style = {threelayout ? {"height": "30vh"} : {"height": "40vh"}} className="item"></div>
+        <div style = {threelayout ? {"height": "30vh"} : {"height": "40vh"}} className="item"></div>
+        <div style = {threelayout ? {"height": "30vh"} : {"height": "40vh"}} className="item"></div>
+        <div style = {threelayout ? {"height": "30vh"} : {"height": "40vh"}} className="item"></div>
+        <div style = {threelayout ? {"height": "30vh"} : {"height": "40vh"}} className="item"></div>
+        <div style = {threelayout ? {"height": "30vh"} : {"height": "40vh"}} className="item"></div>
+        <div style = {threelayout ? {"height": "30vh"} : {"height": "40vh"}} className="item"></div>
+        <div style = {threelayout ? {"height": "30vh"} : {"height": "40vh"}} className="item"></div>
+        <div style = {threelayout ? {"height": "30vh"} : {"height": "40vh"}} className="item"></div>
+        <div style = {threelayout ? {"height": "30vh"} : {"height": "40vh"}} className="item"></div>
       </div>
       <div className='sidebar'>
         <button onClick={Changelayout}>
