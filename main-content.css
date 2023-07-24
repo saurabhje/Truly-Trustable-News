@@ -3,6 +3,7 @@
     padding-bottom: 100px;
     display: flex;
     justify-content: space-around;
+    padding-left: 2vw;
 }
 .content{
     display: grid;
@@ -12,7 +13,7 @@
 }
 
 .item{
-    background-color: aquamarine;
+    background-color: grey;
     height: 30vh;
 }
 
