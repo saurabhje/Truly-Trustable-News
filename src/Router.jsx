@@ -21,9 +21,6 @@ function Router() {
         <Footer/>
       </div>
     </BrowserRouter>
-
-      
-      
   )
 }
 
