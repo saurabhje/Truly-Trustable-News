@@ -1,13 +1,20 @@
+/* eslint-disable react/prop-types */
 import React from 'react'
-import newsimg from '../assets/newsimg.jpg'
+// import newsimg from '../assets/newsimg.jpg'
 
-const Newspage = () => {
-  return (
+const Newspage = (props) => {
+    const change = ()=>{
+        props.setCurrenttitle("News Heading, This is why Modi Winning election might be the worst thing that happend to the crystalline body of this country. We are here to assure you this.")
+        props.setCurrentimg("../src/assets/newsimg.jpg")
+        props.setCurrentauth("me")
+    }
+    change();
+    return (
     <div className='newsbody'>
-        <img className='news-img' src={newsimg} alt='news-imgage'/>
-        <h1>News Heading, This is why Modi Winning election might be the worst thing that happend
+        {/* <img className='news-img' src={newsimg} alt='news-imgage'/> */}
+        {/* <h1>News Heading, This is why Modi Winning election might be the worst thing that happend
             to the crystalline body of this country. We are here to assure you this.
-        </h1>
+        </h1> */}
         <p>Modi won 2019 election by playing the cards of polarization and certain aspect of
             nationalism, which is best defined by term 'Hindutava' which was coined by the Legendary 
             indian freedom fighter Vinayak Savarkar.
@@ -33,7 +40,7 @@ const Newspage = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quia quibusdam sit numquam aspernatur recusandae saepe deserunt reiciendis beatae soluta! Optio placeat quibusdam ullam unde rem eum cupiditate nostrum eligendi.
         </article>
     </div>
-  )
+    )
 }
 
 export default Newspage;
