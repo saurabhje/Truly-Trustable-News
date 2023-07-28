@@ -21,3 +21,19 @@
     width: 20%;
     background-color: brown;
 }
+
+img{
+    width: 50%;
+    height: 50%;
+}
+
+.itemwrap1{
+    display: flex;
+    justify-content: space-around;
+}
+
+.itemwrap2{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+}
