@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import "/main-content.css"
 
 const MainContent = () => {
-  const [mobileview, setmovileview] = useState(false)
+  const [mobileview, setmovileview] = useState(false);
   const handleResize = () => {
     if (window.innerWidth < 720) {
       setmovileview(true)
@@ -15,6 +15,7 @@ const MainContent = () => {
   useEffect(() => {
     window.addEventListener("resize", handleResize)
   })
+  
   
   return (
     <>
@@ -37,6 +38,7 @@ const MainContent = () => {
         <div className='sidebar'>
         </div>}
     </>
+
   )
 }
 
