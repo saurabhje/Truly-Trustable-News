@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 import './Router.css'
 import Navbar from './component/navbar'
 import Hero from './component/hero'
@@ -15,7 +15,7 @@ function Router() {
         <Hero />
       </div>  
         <Routes>
-          <Route path="/home" element={<MainContent/>}/>
+          <Route path="/" element={<MainContent/>}/>
         </Routes>
         <div className="footer">
         <Footer/>
