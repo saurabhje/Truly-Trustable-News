@@ -17,7 +17,7 @@ const MainContent = () => {
   })
   
   return (
-    <>
+    <div className='main'>
       <div style= {mobileview ? {"grid-template-columns": "1fr"}: {"grid-template-columns": "1fr 1fr"}} className='content'>
         <div className="item">
           <div className='itemwrap1'>
@@ -121,7 +121,7 @@ const MainContent = () => {
       {mobileview || 
         <div className='sidebar'>
         </div>}
-    </>
+    </div>
   )
 }
 
