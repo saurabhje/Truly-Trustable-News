@@ -17,6 +17,11 @@
     height: 40vh;
 }
 
+.item h1{
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+
 .sidebar{
     width: 20%;
     background-color: brown;

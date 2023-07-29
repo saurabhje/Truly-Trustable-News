@@ -6,10 +6,11 @@ import './newspage.css';
 
 const Newspage = () => {
     return (
-    <>  
-        <Navbar/>
+    <>
+        <div className='header' style={{ backgroundImage: `url(${NewsImg})` }}>  
+            <Navbar/>
+        </div>
         <div className='newsbody'>
-            <img className='news-image' src={NewsImg} alt='News-Image'/>
             <div className="news-hero-text">
                 <h1>This is the story about How Modi won 2019 loksabha election,a tale of Polarization and Developement</h1>
                 <p>Modi won 2019 election by playing the cards of polarization and certain aspect of
