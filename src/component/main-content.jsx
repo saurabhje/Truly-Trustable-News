@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import "./main-content.css"
+import Newspage from './newspage'
 
 const MainContent = () => {
   const [mobileview, setmovileview] = useState(false);

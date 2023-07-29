@@ -8,11 +8,11 @@ const Footer = () => {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2vh 2vw;
+    padding: 1vh 2vw;
   `;
 
   const Heading = styled.h1`
-    font-size: 3em;
+    font-size: 2em;
     margin: 0;
   `;
 
@@ -23,11 +23,11 @@ const Footer = () => {
 
   const Icon = styled.i`
     color: black;
-    font-size: 3em;
+    font-size: 2em;
   `;
 
   const RightsReserved = styled.p`
-    font-size: 1.3em;
+    font-size: 1em;
     margin: 10px 0 0 0;
   `;
 
