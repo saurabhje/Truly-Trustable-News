@@ -1,17 +1,15 @@
 import React from 'react'
-import Hero from './hero'
 import Navbar from './navbar'
 import Footer from './footer'
 import MainContent from './main-content'
-import poco from "../assets/poco.jpg";
 const Homepage = () => {
   return (
     <div>
-        <div className="header"  style={{ backgroundImage: `url(${poco})` }}>
-            <Navbar/>
-            <Hero/>
+        <Navbar />
+        <div className="about">
+            <h1>ABOUT US</h1>
+            <h2>BLA BLA BLA</h2>
         </div>
-        <MainContent/>
         <div className="footer">
             <Footer/>
         </div>

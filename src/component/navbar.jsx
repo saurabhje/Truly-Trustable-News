@@ -9,8 +9,8 @@ const Navbar = () => {
         The Humanist
       </div>
       <div className='nav-link'>
-        <p>BOUT</p>
-        <p>CONTACK</p>
+        <a href="aboutus">BOUT</a>
+        <a href="contactus">CONTACK</a>
         <button className='support-btn'>SUPPORT US</button>
       </div>
     </div>
