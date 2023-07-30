@@ -13,15 +13,22 @@
 }
 
 .item{
-    background-color: grey;
+    /* background-color: grey; */
     height: 40vh;
 }
 
-.item h1{
+.item h2{
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
+    font-size: clamp(18px, 2vw, 32px);
+    text-align: center;
 }
 
+.item p{
+    font-size: clamp(14px, 1vw, 16px);
+
+
+}
 .sidebar{
     width: 20%;
     background-color: brown;
@@ -35,10 +42,29 @@ img{
 .itemwrap1{
     display: flex;
     justify-content: space-around;
+    width: 100%;
 }
 
 .itemwrap2{
     display: flex;
     justify-content: space-around;
     flex-direction: row-reverse;
+}
+
+@media (max-width: 720px){
+    .content{
+        grid-template-columns: 1fr;
+        width: 90%;
+    }
+}
+
+@media (max-width: 320px){
+    .item h2{
+        font-size: 14px;
+    }
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
 }
