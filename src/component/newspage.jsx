@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from './navbar'
 import Footer from './footer'
-import NewsImg from '../assets/newsimg.jpg'
+import NewsImg from '../assets/images/newsimg.jpg'
 import './newspage.css';
 
 const Newspage = () => {
