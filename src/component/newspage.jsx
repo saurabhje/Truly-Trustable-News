@@ -14,7 +14,7 @@ const Newspage = () => {
             <div className="news-hero-text">
                 <h1>This is the story about How Modi won 2019 loksabha election,a tale of Polarization and Developement</h1>
                 <p>Modi won 2019 election by playing the cards of polarization and certain aspect of
-                    nationalism, which is best defined by term 'Hindutava' which was coined by the Legendary 
+                    nationalism, which is best defined by term &lsquo;Hindutava&rsquo; which was coined by the Legendary 
                     indian freedom fighter Vinayak Savarkar.
                 </p>
                 <p1> Author name, data, time and so so</p1>
