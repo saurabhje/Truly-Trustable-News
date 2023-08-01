@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import "./main-content.css"
+import {Link} from 'react-router-dom'
 
 const MainContent = () => {
   const [mobileview, setmovileview] = useState(false);
@@ -18,7 +19,7 @@ const MainContent = () => {
   return (
     <div className='main'>
       <div className='content'>
-        <a href="news1" className="item">
+        <Link to="news1" className="item">
           <div className='itemwrap1'>
             <img id="img" src='./src/assets/images/newsimg.jpg'></img>
             <div className='heading-p'>
@@ -26,7 +27,7 @@ const MainContent = () => {
               <p>bla bla bla bla bla bla bla lb narendra modi bla lbal dlad hmklajmkclamrk</p>
             </div>
           </div>
-        </a>
+        </Link>
         <div className="item">
           <div className='itemwrap2'>
             <img id="img" src='./src/assets/images/poco.jpg'></img>
