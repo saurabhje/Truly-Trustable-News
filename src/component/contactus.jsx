@@ -1,7 +1,6 @@
 import React from 'react'
 import Navbar from './navbar'
 import Footer from './footer'
-import MainContent from './main-content'
 const Homepage = () => {
   return (
     <div>

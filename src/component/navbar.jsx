@@ -1,5 +1,6 @@
 import React from 'react';
 import './navbar.css';
+import {Link} from 'react-router-dom'
 
 const Navbar = () => {
   return (
@@ -8,8 +9,8 @@ const Navbar = () => {
         The Humanist
       </div>
       <div className='nav-link'>
-        <a href="aboutus">BOUT</a>
-        <a href="contactus">CONTACK</a>
+        <Link to="/aboutus">BOUT</Link>
+        <Link to="/contactus">CONTACK</Link>
         <button className='support-btn'>SUPPORT US</button>
       </div>
     </div>
