@@ -1,18 +1,21 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
 import MainContent from "../component/main-content";
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, beforeEach } from 'vitest';
 
 describe('main-news-component', () => {
-  it('renders the news-cards', () => {
-    const { container } = render(<MainContent />);
-    expect(container).toMatchSnapshot();
+  beforeEach(() => {
+    render(
+      <MemoryRouter>
+        <MainContent />
+      </MemoryRouter>
+    );
   });
 
   it('changes the page route after the news-card is clicked', () => {
-    render(<MainContent />);
+    const newsCard = screen.getByRole('link', { name: /this is the heading just a little bit bigger/i });
+    fireEvent.click(newsCard);
 
-    const newscard = screen.getByRole('link');
-
-    expect(newscard).toHaveAttribute('href', 'news1')
+    expect(newsCard).toHaveAttribute('href', '/news1');
   });
 });

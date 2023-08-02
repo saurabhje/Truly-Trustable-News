@@ -15,6 +15,7 @@ const MainContent = () => {
   useEffect(() => {
     window.addEventListener("resize", handleResize)
   })
+
   
   return (
     <div className='main'>
@@ -23,6 +24,7 @@ const MainContent = () => {
           <div className='itemwrap1'>
             <img id="img" src='./src/assets/images/newsimg.jpg'></img>
             <div className='heading-p'>
+              <hr/>
               <h2>this is the heading just a little bit bigger</h2>
               <p>bla bla bla bla bla bla bla lb narendra modi bla lbal dlad hmklajmkclamrk</p>
             </div>
@@ -32,6 +34,7 @@ const MainContent = () => {
           <div className='itemwrap2'>
             <img id="img" src='./src/assets/images/poco.jpg'></img>
             <div className='heading-p'>
+              <hr/>
               <h2>this is the heading just a little bit bigger</h2>
               <p>bla bla bla bla bla bla bla lb narendra modi bla lbal dlad hmklajmkclamrk</p>
             </div>
@@ -41,6 +44,7 @@ const MainContent = () => {
           <div className='itemwrap1'>
             <img id="img" src='./src/assets/images/poco.jpg'></img>
             <div className='heading-p'>
+              <hr/>
               <h2>this is the heading just a little bit bigger</h2>
               <p>bla bla bla bla bla bla bla lb narendra modi bla lbal dlad hmklajmkclamrk</p>
             </div>
@@ -50,6 +54,7 @@ const MainContent = () => {
           <div className='itemwrap2'>
             <img id="img" src='./src/assets/images/poco.jpg'></img>
             <div className='heading-p'>
+              <hr/>
               <h2>this is the heading just a little bit bigger</h2>
               <p>bla bla bla bla bla bla bla lb narendra modi bla lbal dlad hmklajmkclamrk</p>
             </div>
@@ -59,6 +64,7 @@ const MainContent = () => {
           <div className='itemwrap1'>
             <img id="img" src='./src/assets/images/poco.jpg'></img>
             <div className='heading-p'>
+              <hr/>
               <h2>this is the heading just a little bit bigger</h2>
               <p>bla bla bla bla bla bla bla lb narendra modi bla lbal dlad hmklajmkclamrk</p>
             </div>
@@ -68,6 +74,7 @@ const MainContent = () => {
           <div className='itemwrap2'>
             <img id="img" src='./src/assets/images/poco.jpg'></img>
             <div className='heading-p'>
+              <hr/>
               <h2>this is the heading just a little bit bigger</h2>
               <p>bla bla bla bla bla bla bla lb narendra modi bla lbal dlad hmklajmkclamrk</p>
             </div>
@@ -77,6 +84,7 @@ const MainContent = () => {
           <div className='itemwrap1'>
             <img id="img" src='./src/assets/images/poco.jpg'></img>
             <div className='heading-p'>
+              <hr/>
               <h2>this is the heading just a little bit bigger</h2>
               <p>bla bla bla bla bla bla bla lb narendra modi bla lbal dlad hmklajmkclamrk</p>
             </div>
@@ -86,6 +94,7 @@ const MainContent = () => {
           <div className='itemwrap2'>
             <img id="img" src='./src/assets/images/poco.jpg'></img>
             <div className='heading-p'>
+              <hr/>
               <h2>this is the heading just a little bit bigger</h2>
               <p>bla bla bla bla bla bla bla lb narendra modi bla lbal dlad hmklajmkclamrk</p>
             </div>
@@ -95,6 +104,7 @@ const MainContent = () => {
           <div className='itemwrap1'>
             <img id="img" src='./src/assets/images/poco.jpg'></img>
             <div className='heading-p'>
+              <hr/>
               <h2>this is the heading just a little bit bigger</h2>
               <p>bla bla bla bla bla bla bla lb narendra modi bla lbal dlad hmklajmkclamrk</p>
             </div>
@@ -104,6 +114,7 @@ const MainContent = () => {
           <div className='itemwrap2'>
             <img id="img" src='./src/assets/images/poco.jpg'></img>
             <div className='heading-p'>
+              <hr/>
               <h2>this is the heading just a little bit bigger</h2>
               <p>bla bla bla bla bla bla bla lb narendra modi bla lbal dlad hmklajmkclamrk</p>
             </div>
@@ -113,6 +124,7 @@ const MainContent = () => {
           <div className='itemwrap1'>
             <img id="img" src='./src/assets/images/poco.jpg'></img>
             <div className='heading-p'>
+              <hr/>
               <h2>this is the heading just a little bit bigger</h2>
               <p>bla bla bla bla bla bla bla lb narendra modi bla lbal dlad hmklajmkclamrk</p>
             </div>
@@ -122,6 +134,7 @@ const MainContent = () => {
           <div className='itemwrap2'>
             <img id="img" src='./src/assets/images/poco.jpg'></img>
             <div className='heading-p'>
+              <hr/>
               <h2>this is the heading just a little bit bigger</h2>
               <p>bla bla bla bla bla bla bla lb narendra modi bla lbal dlad hmklajmkclamrk</p>
             </div>
@@ -131,6 +144,7 @@ const MainContent = () => {
           <div className='itemwrap1'>
             <img id="img" src='./src/assets/images/poco.jpg'></img>
             <div className='heading-p'>
+              <hr/>
               <h2>this is the heading just a little bit bigger</h2>
               <p>bla bla bla bla bla bla bla lb narendra modi bla lbal dlad hmklajmkclamrk</p>
             </div>
@@ -140,6 +154,7 @@ const MainContent = () => {
           <div className='itemwrap2'>
             <img id="img" src='./src/assets/images/poco.jpg'></img>
             <div className='heading-p'>
+              <hr/>
               <h2>this is the heading just a little bit bigger</h2>
               <p>bla bla bla bla bla bla bla lb narendra modi bla lbal dlad hmklajmkclamrk</p>
             </div>
