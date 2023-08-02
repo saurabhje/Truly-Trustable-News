@@ -15,6 +15,7 @@ const MainContent = () => {
   useEffect(() => {
     window.addEventListener("resize", handleResize)
   })
+
   
   return (
     <div className='main'>
