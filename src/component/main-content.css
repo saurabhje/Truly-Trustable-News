@@ -18,10 +18,12 @@
     height: 40vh;
 }
 
+
 .item h2{
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     font-size: clamp(18px, 2vw, 32px);
+    line-height: 1;
 }
 
 .item p{
@@ -38,6 +40,25 @@ img{
     height: 50%;
 }
 
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 10px solid black;
+    margin: 1em 0;
+    margin-top: 0.2em;
+    padding: 0;
+    width: 10%;
+    transition: width 0.5s ease-out;
+}
+
+.itemwrap2 hr{
+    margin-left: auto;
+}
+.item:hover hr{
+    width: 40%;
+}
 
 
 .itemwrap1{
