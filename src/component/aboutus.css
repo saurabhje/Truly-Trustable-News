@@ -1,0 +1,37 @@
+.about-us, .tools-used{
+    padding: 2vh 20vw;
+}
+@media (max-width: 600px){
+    .about-us, .tools-used{
+        padding: 5vh 10vw;
+        font-size: 1em;
+    }
+}
+.about-us{
+    font-size: 1.1em;
+}
+
+.tools-used ul li{
+    font-size:large;
+    padding-bottom: 3px;
+    list-style: none;
+}
+.tools-used ul li::before{
+    content: "\2022";
+    color: #929292;
+    font-size: 22px;
+    line-height: 1.1;
+}
+strong{
+    padding-left: 5px;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+.tools-used a{
+    color: rgb(255, 130, 34);
+    font-size: large;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid #e2eafd;
+}
+
