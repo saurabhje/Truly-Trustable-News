@@ -10,7 +10,7 @@ const Newspage = () => {
 
     useEffect(() => {
     // Replace with your Express API endpoint
-    fetch('http://localhost:3000/news1') // Replace with your API endpoint
+    fetch('http://localhost:3000/6518b452f8690a38098548e0') // Replace with your API endpoint
         .then((response) => response.json())
         .then((data) => {
         setData(data);
