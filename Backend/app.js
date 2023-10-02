@@ -2,12 +2,12 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const cors = require('cors');
-const News = require('./model/NewsSchema')
-require('dotenv').config();
+const News = require('./model/NewsSchema');
 const mongoose = require('mongoose');
 
-mongoose.set("strictQuery", false);
+require('dotenv').config();
 
+mongoose.set("strictQuery", false);
 
 const mongoDB = process.env.MONGODB_URI;
 
