@@ -1,8 +1,8 @@
 Go to the root folder, npm install -> `npm run dev`
 
 Automatic Server Rerunning ->
-- `npm install`
-- `nodemon app.js`
+ `npm install`
+ `nodemon app.js`
 
 ------------- TO DO -------------------
 - [x] Making the ReadMd better
