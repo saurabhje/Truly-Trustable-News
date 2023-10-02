@@ -2,6 +2,10 @@ Go to the backend folder, npm install -> node app.js
 
 Go to the root folder, npm install -> npm run dev
 
+Automatic Rerunning ->
+- npm install
+- nodemon app.js 
+
 ------------- TO DO -------------------
 1. Only load a certain number of news on the homepage (pending)
 2. Add an image to every news on the database and fetch image dynamically (pending)
