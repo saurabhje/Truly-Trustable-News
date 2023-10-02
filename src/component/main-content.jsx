@@ -31,25 +31,28 @@ const MainContent = () => {
   return (
     <div className='main'>
       <div className='content'>
-          {data.map((e, index) => (
-            <Link to={"/newspage"} state={{id: e._id}} key={index}>
-              <div className='itemwrap1'>
-                <img id="img" src='./src/assets/images/newsimg.jpg'></img>
+        {data.map((e, index) => {
+          const itemwrapClass = index % 2 === 0 ? "itemwrap1" : "itemwrap2";
+  
+          return (
+            <Link to={"/newspage"} className="item" state={{id: e._id}} key={index}>
+              <div className={itemwrapClass}>
+                <img id="img" src='./src/assets/images/newsimg.jpg' alt="News Image" />
                 <div className='heading-p'>
-                  <hr/>
+                  <hr />
                   <h2>{e.heading}</h2>
-                  <p>{e.author}</p>
+                  <p>bla bla bla bla bla bla bla lb narendra modi bla lbal dlad hmklajmkclamrk</p>
                 </div>
               </div>
             </Link>
-          ))};
-        
+          );
+        })}
       </div>
       {mobileview || 
         <div className='sidebar'>
+          {/* Sidebar content */}
         </div>}
     </div>
-  )
-}
-
+  );
+};
 export default MainContent;
