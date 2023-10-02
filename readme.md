@@ -7,7 +7,8 @@ Automatic Rerunning ->
 - nodemon app.js 
 
 ------------- TO DO -------------------
-- [x] Only load a certain number of news on the homepage (pending)
+- [x] Making the ReadMd better
+- [ ] Only load a certain number of news on the homepage (pending)
 - [ ] Add an image to every news on the database and fetch image dynamically (pending)
 - [ ] Add more data to the news in the databse like date added etc (pending)
 - [ ] Redesign the individual news pages (pending)
