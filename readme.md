@@ -1,10 +1,8 @@
-Go to the backend folder, npm install -> node app.js
+Go to the root folder, npm install -> `npm run dev`
 
-Go to the root folder, npm install -> npm run dev
-
-Automatic Rerunning ->
-- npm install
-- nodemon app.js 
+Automatic Server Rerunning ->
+- `npm install`
+- `nodemon app.js`
 
 ------------- TO DO -------------------
 - [x] Making the ReadMd better
