@@ -3,17 +3,17 @@ const app = express();
 const port = 3000;
 const cors = require('cors');
 const News = require('./model/NewsSchema')
-const mongoose = require("mongoose");
+require('dotenv').config();
+const mongoose = require('mongoose');
 
-// Set up mongoose connection
 mongoose.set("strictQuery", false);
 
-const URI = "mongodb+srv://user:K31q7BiUfWpJ8lH4@cluster0.onc69sw.mongodb.net/?retryWrites=true&w=majority"; 
 
-main().catch((err) => console.log(err));
+const mongoDB = process.env.MONGODB_URI;
 
-async function main() {
-  await mongoose.connect(URI);
+main().catch((err)=> console.log(err));
+async function main(){
+  await mongoose.connect(mongoDB);
 }
 
 app.use(cors());
