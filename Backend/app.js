@@ -27,7 +27,10 @@ app.get('/:id', async(req, res) => {
       heading: a.heading,
       author: a.author,
       article: a.article,
+      date: a.date,
+      hero: a.hero
     }
+    
     res.json(news);
   } catch (error) {
     console.error(error);
