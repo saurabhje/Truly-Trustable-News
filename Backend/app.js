@@ -28,7 +28,7 @@ async function main(){
 }
 
 app.use(cors());
-app.get('/:id', async(req, res) => {
+app.get('/news/:id', async(req, res) => {
   try {
     const a = await News.findById(req.params.id);
     if (!a) {
@@ -51,16 +51,21 @@ app.get('/:id', async(req, res) => {
 
 app.get('/', async(req, res) => {
   const a = await News.find();
-  console.log(a);
   res.json(a);
 
 })
 
 app.post('/login', (req, res, next) => {
-  if(req.body.password === process.env.PASSWORD){
+  if(req.body.password == process.env.PASSWORD){
+    res.status(200).json({ message: 'Login successful' });
+  } else {
     console.log(req.body.password)
-    res.status(200).json({ message: ""})
+    res.status(401).json({ message: 'Login failed: Incorrect password' });
   }
+})
+
+app.get('/tests', (req, res) => {
+  console.log(res);
 })
 
 app.listen(port, () => {

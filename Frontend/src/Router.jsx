@@ -5,6 +5,7 @@ import Newspage from './component/newspage';
 import Aboutus from './component/aboutus'
 import Contactus from './component/contactus';
 import Login from './component/login';
+import Test from "./component/test";
 
 const Router = () =>{
   const router = createBrowserRouter([
@@ -27,6 +28,10 @@ const Router = () =>{
     {
       path: "/login",
       element: <Login/>
+    },
+    {
+      path: "/test",
+      element: <Test/>
     }
   ]);
   return <RouterProvider router={router} />;

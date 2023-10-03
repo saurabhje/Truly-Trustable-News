@@ -11,7 +11,7 @@ const Newspage = () => {
     const {state} = useLocation();
     useEffect(() => {
     // Replace with your Express API endpoint
-    fetch(`http://localhost:3000/${state.id}`) // Replace with your API endpoint
+    fetch(`http://localhost:3000/news/${state.id}`) // Replace with your API endpoint
         .then((response) => response.json())
         .then((data) => {
         setData(data);
