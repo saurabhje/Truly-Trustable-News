@@ -18,7 +18,7 @@ const Login = () =>{
                 navigate('/')
             }
             else{
-                navigate('/')
+                navigate('/login')
             }
         } catch (error) {
             console.error('Error:', error);
