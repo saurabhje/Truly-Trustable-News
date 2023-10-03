@@ -11,6 +11,17 @@ mongoose.set("strictQuery", false);
 
 const mongoDB = process.env.MONGODB_URI;
 
+const bodyParser = require('body-parser')
+
+app.use( bodyParser.json() );  
+
+app.use(bodyParser.urlencoded({    
+  extended: true
+}));
+
+app.use(express.json());       
+app.use(express.urlencoded());
+
 main().catch((err)=> console.log(err));
 async function main(){
   await mongoose.connect(mongoDB);
@@ -45,6 +56,9 @@ app.get('/', async(req, res) => {
 
 })
 
+app.post('/login', (req, res, next) => {
+  console.log(req.body.password);
+})
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
