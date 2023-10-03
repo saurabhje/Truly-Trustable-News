@@ -4,6 +4,7 @@ import Homepage from './component/homepage';
 import Newspage from './component/newspage';
 import Aboutus from './component/aboutus'
 import Contactus from './component/contactus';
+import Login from './component/login';
 
 const Router = () =>{
   const router = createBrowserRouter([
@@ -22,6 +23,10 @@ const Router = () =>{
     {
       path: "/contactus",
       element: <Contactus/>
+    },
+    {
+      path: "/login",
+      element: <Login/>
     }
   ]);
   return <RouterProvider router={router} />;
