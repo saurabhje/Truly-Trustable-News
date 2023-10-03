@@ -4,7 +4,7 @@ import axios from 'axios';
 const Test = () =>{
     const fetchInfo = () =>{
         axios
-        .get('http://localhost:3000/test')
+        .get('http://localhost:3000/tests')
         .then((response) => console.log((response.data)))
         .catch((error) => {
           console.error('Error fetching data:', error);
