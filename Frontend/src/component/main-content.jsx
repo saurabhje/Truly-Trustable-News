@@ -1,20 +1,18 @@
 import { useState, useEffect } from 'react'
+import axios from 'axios';
 import "./main-content.css"
 import { Link } from "react-router-dom";
 
 const MainContent = () => {
   const [data, setData] = useState([]);
+  const fetchInfo = () => { 
+    return axios.get('http://localhost:3000/') 
+             .then((response) => setData(response.data));
+  }
     useEffect(() => {
-    // Replace with your Express API endpoint
-    fetch('http://localhost:3000/') // Replace with your API endpoint
-        .then((response) => response.json())
-        .then((data) => {
-        setData(data);
-        })
-        .catch((error) => {
-        console.error('Error fetching data:', error);
-        });
+          fetchInfo();
     }, []);
+    
   const [mobileview, setmovileview] = useState(false);
   const handleResize = () => {
     if (window.innerWidth < 720) {

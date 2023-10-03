@@ -57,8 +57,12 @@ app.get('/', async(req, res) => {
 })
 
 app.post('/login', (req, res, next) => {
-  console.log(req.body.password);
+  if(req.body.password === process.env.PASSWORD){
+    console.log(req.body.password)
+    res.status(200).json({ message: ""})
+  }
 })
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
