@@ -7,7 +7,6 @@ const NewsSchema = new Schema({
   author: { type: String, required: true },
   article: { type: String, required: true },
   data : { type: Date, required: true },
-  heroNews: { type: Boolean, required: true}
 });
 
 
