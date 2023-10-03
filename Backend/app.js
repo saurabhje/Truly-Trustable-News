@@ -62,7 +62,9 @@ app.post('/login', (req, res, next) => {
     res.status(200).json({ message: ""})
   }
 })
-
+app.get('/tests', (req, res) => {
+  console.log('a');
+})
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
