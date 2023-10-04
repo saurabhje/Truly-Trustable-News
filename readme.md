@@ -6,7 +6,7 @@ Automatic Server Rerunning ->
  `nodemon app.js`
 
 ------------- TO DO -------------------
- ## Saurabh's
+ ## https://github.com/saurabhje/
 - [ ] Desigining the news_operations like show, create,update,delete (methods) methods in the backend
 
  ## Amit's
