@@ -44,7 +44,7 @@ const MainContent = () => {
           const itemWrapClass = index % 2 === 0 ? 'itemwrap1' : 'itemwrap2';
 
           return (
-            <Link to="/newspage" className="item" key={index} state={{ id: e._id }}>
+            <Link to={`/news/${e._id}`} className="item" key={index} state={{ id: e._id }}>
               <div className={itemWrapClass}>
                 <img id="img" src="./src/assets/images/newsimg.jpg" alt="News Image" />
                 <div className="heading-p">
