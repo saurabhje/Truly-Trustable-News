@@ -28,6 +28,7 @@ async function main(){
 }
 
 app.use(cors());
+
 app.get('/news/:id', async(req, res) => {
   try {
     const a = await News.findById(req.params.id);
