@@ -22,7 +22,7 @@ const Login = () =>{
                 setLoggedin(false)
             }
             else{
-                navigate('/')
+                navigate('/login')
             }
         } catch (error) {
             console.error('Error:', error);

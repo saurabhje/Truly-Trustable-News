@@ -5,20 +5,17 @@ import NewsImg from '../assets/images/newsimg.jpg'
 import './newspage.css';
 import {useState, useEffect} from "react";
 import { useLocation } from 'react-router-dom';
+import axios from 'axios';
 
 const Newspage = () => {
     const [data, setData] = useState([]);
     const {state} = useLocation();
     useEffect(() => {
-    // Replace with your Express API endpoint
-    fetch(`http://localhost:3000/news/${state.id}`) // Replace with your API endpoint
-        .then((response) => response.json())
-        .then((data) => {
-        setData(data);
-        })
+        axios.get(`http://localhost:3000/news/${state.id}`)
+        .then((response) => setData(response.data))
         .catch((error) => {
-        console.error('Error fetching data:', error);
-        });
+            console.error('Error fetching data:', error);
+          });
     }, []);
 
     return (
