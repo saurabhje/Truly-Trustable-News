@@ -14,7 +14,7 @@ const Router = () =>{
       element: <Homepage/>
     },
     {
-      path: "/newspage",
+      path: "/news/:id",
       element: <Newspage/>
     },
     {
