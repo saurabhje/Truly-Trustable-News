@@ -29,7 +29,6 @@ const Router = () =>{
       path: "/login",
       element: <Login/>
     },
-
   ]);
   return <RouterProvider router={router} />;
 }
