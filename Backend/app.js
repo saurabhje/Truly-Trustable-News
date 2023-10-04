@@ -64,7 +64,7 @@ app.post('/login', (req, res, next) => {
   }
 })
 
-app.post('/submitnews', (req, res) => {
+app.post('/create-news', (req, res) => {
   console.log(res)
   console.log(req)
 })
