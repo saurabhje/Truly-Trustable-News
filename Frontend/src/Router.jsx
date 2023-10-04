@@ -29,7 +29,14 @@ const Router = () =>{
       path: "/login",
       element: <Login/>
     },
+<<<<<<< HEAD
+    {
+      path: "/test",
+      element: <Test/>
+    },
+=======
 
+>>>>>>> ec0d136f55a574b8fa31941384655e027dce0dff
   ]);
   return <RouterProvider router={router} />;
 }
