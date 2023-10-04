@@ -6,10 +6,10 @@ Automatic Server Rerunning ->
  `nodemon app.js`
 
 ------------- TO DO -------------------
- ## https://github.com/saurabhje/
+ ## Je's [https://github.com/saurabhje/]
 - [ ] Desigining the news_operations like show, create,update,delete (methods) methods in the backend
 
- ## Amit's
+ ## Amit's [https://github.com/saurabhje/]
 - [ ] Desiging the login set up
 - [ ] Design the front end form for creating,editing,and updating forms in front-end
 
