@@ -7,10 +7,10 @@ Automatic Server Rerunning ->
 
 ## To Do List
 
-### Je's Tasks:
+### [Je's](https://github.com/saurabhje/) :
 - [ ] Designing the news_operations like show, create, update, delete (methods) methods in the backend
 
- ### [Je's GitHub Profile](https://github.com/saurabhje/)
+
 
 ### Amit's Tasks:
 - [ ] Designing the login set up
