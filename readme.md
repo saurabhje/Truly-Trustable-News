@@ -5,19 +5,22 @@ Automatic Server Rerunning ->
 
  `nodemon app.js`
 
-------------- TO DO -------------------
- ## Je's [https://github.com/saurabhje/]
-- [ ] Desigining the news_operations like show, create,update,delete (methods) methods in the backend
+## To Do List
 
- ## Amit's [https://github.com/saurabhje/]
-- [ ] Desiging the login set up
-- [ ] Design the front end form for creating,editing,and updating forms in front-end
+### Je's Tasks:
+- [ ] Designing the news_operations like show, create, update, delete (methods) methods in the backend
 
+ ### [Je's GitHub Profile](https://github.com/saurabhje/)
+
+### Amit's Tasks:
+- [ ] Designing the login set up
+- [ ] Design the front end form for creating, editing, and updating forms in the front-end
 - [ ] Only load a certain number of news on the homepage (pending)
 - [ ] Add an image to every news on the database and fetch image dynamically (pending)
-- [ ] Add more data to the news in the databse like date added etc (pending)
+- [ ] Add more data to the news in the database like date added, etc. (pending)
 - [ ] Redesign the individual news pages (pending)
 - [ ] Add sort methods for news (pending)
-- [ ] Add categories and sort by catogries (pending)
-- [ ] Improve the hero page to have more than one news on it with time function 
+- [ ] Add categories and sort by categories (pending)
+- [ ] Improve the hero page to have more than one news on it with a time function
 - [ ] Do the sidebar (pending)
+
