@@ -16,13 +16,12 @@ const Login = () =>{
             },
             body: JSON.stringify(formData),
             });
-            console.log(response);
             document.getElementById("password").value = "";
             if(response.ok){
                 setLoggedin(false)
             }
             else{
-                navigate('/login')
+                navigate('/')
             }
         } catch (error) {
             console.error('Error:', error);
