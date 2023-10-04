@@ -16,7 +16,7 @@ const Newspage = () => {
         .catch((error) => {
             console.error('Error fetching data:', error);
           });
-    }, []);
+    }, [state.id]);
 
     return (
     <>

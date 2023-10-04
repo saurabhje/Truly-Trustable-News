@@ -32,7 +32,6 @@ const Login = () =>{
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
     return(
-        // why are you doing this? this would be better if we did this in the backend part
         <>
             {loggedin?
             <form onSubmit={handleSubmit}>

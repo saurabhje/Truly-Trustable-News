@@ -1,0 +1,5 @@
+je's 
+1. Creating file create-news.jsx(this is will be used to take input to create news) [
+    only when logged in tho
+]
+
