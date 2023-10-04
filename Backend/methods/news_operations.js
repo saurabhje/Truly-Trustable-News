@@ -15,7 +15,7 @@ exports.getNews = asyncHandler ( async(req, res, next ) => {
 })
 
 exports.create_News = asyncHandler ( async(req, res, next ) => {
-    const name = req.body.name
+    const name = req.body
     console.log(name)
     res.json({
         message: "Route is working"
