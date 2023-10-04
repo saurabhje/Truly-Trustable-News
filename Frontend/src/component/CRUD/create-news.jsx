@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import "./create-news.css"
 
 function Create_news() {
   const [formData, setFormData] = useState({
