@@ -7,7 +7,7 @@ Automatic Server Rerunning ->
 
 ## To Do List
 
-### [Je's](https://github.com/saurabhje/) :
+### [Je's]
 - [ ] Designing the news_operations like show, create, update, delete (methods) methods in the backend
 
 
