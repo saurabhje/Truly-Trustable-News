@@ -32,7 +32,7 @@ const Router = () =>{
     {
       path: "/test",
       element: <Test/>
-    }
+    },
   ]);
   return <RouterProvider router={router} />;
 }

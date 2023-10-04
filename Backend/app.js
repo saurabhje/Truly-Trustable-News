@@ -64,8 +64,9 @@ app.post('/login', (req, res, next) => {
   }
 })
 
-app.get('/tests', (req, res) => {
-  console.log(res);
+app.post('/submitnews', (req, res) => {
+  console.log(res)
+  console.log(req)
 })
 
 app.listen(port, () => {
