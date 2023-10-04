@@ -2,4 +2,7 @@ je's
 1. Creating file create-news.jsx(this is will be used to take input to create news) [
     only when logged in tho
 ]
+2. created create_news.jsx form to create news -> which is sending rawwwwwwwwwwwwww json in the backend, now i just have to set up validatation in both front end and backend to and then finally saving in the database to finish the first cruD operation. 
+
+Amit-> set up login 
 
