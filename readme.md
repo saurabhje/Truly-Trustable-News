@@ -6,7 +6,13 @@ Automatic Server Rerunning ->
  `nodemon app.js`
 
 ------------- TO DO -------------------
-- [x] Making the ReadMd better
+ ## Saurabh's
+- [ ] Desigining the news_operations like show, create,update,delete (methods) methods in the backend
+
+ ## Amit's
+- [ ] Desiging the login set up
+- [ ] Design the front end form for creating,editing,and updating forms in front-end
+
 - [ ] Only load a certain number of news on the homepage (pending)
 - [ ] Add an image to every news on the database and fetch image dynamically (pending)
 - [ ] Add more data to the news in the databse like date added etc (pending)

@@ -5,6 +5,7 @@ import Newspage from './component/newspage';
 import Aboutus from './component/aboutus'
 import Contactus from './component/contactus';
 import Login from './component/login';
+import Create_news from "./component/create-news";
 
 
 const Router = () =>{
@@ -29,6 +30,11 @@ const Router = () =>{
       path: "/login",
       element: <Login/>
     },
+    {
+      path: "/create-news",
+      element: <Create_news/>
+    },
+
   ]);
   return <RouterProvider router={router} />;
 }
