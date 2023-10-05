@@ -13,7 +13,7 @@ Automatic Server Rerunning ->
 
 
 ### Amit's Tasks:
-- [ ] Only load a certain number of news on the homepage (pending)
+- [X] Only load a certain number of news on the homepage (pending)
 - [ ] Add an image to every news on the database and fetch image dynamically (pending)
 - [ ] Add more data to the news in the database like date added, etc. (pending)
 - [ ] Redesign the individual news pages (pending)
