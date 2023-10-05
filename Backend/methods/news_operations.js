@@ -6,6 +6,23 @@ exports.allNews = asyncHandler( async(req, res, next ) => {
     res.json(news);
 })
 
+exports.allNewsHome = asyncHandler( async(req, res, next ) => {
+    const perPage = 6;
+    const page = parseInt(req.query.page) || 1; // Get the page from the query parameters or default to 1
+
+    try {
+        const news = await News.find()
+        .sort({ date: -1 })
+        .skip((page - 1) * perPage)
+        .limit(perPage);
+
+        res.json(news);
+    } catch (error) {
+        console.error('Error fetching news:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+})
+
 exports.getNews = asyncHandler ( async(req, res, next ) => {
     const news = await News.findById(req.params.id);
     if(!news){

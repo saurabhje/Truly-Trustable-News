@@ -25,13 +25,23 @@ async function main(){
   await mongoose.connect(mongoDB);
 }
 
+const news = new News({
+  heading: "yo",
+  subheading: "news of the day",
+  author: "napolean",
+  article: "nothing here",
+  date: new Date(),
+  img: "nothing here",
+})
+
+// news.save();
+
 app.use(cors());
 
-app.get('/', news_operations.allNews);
+app.get('/admin', news_operations.allNews);
+app.get('/', news_operations.allNewsHome);
 app.get('/news/:id', news_operations.getNews);
 app.post('/create-news',news_operations.create_News);
-
-
 
 app.post('/login', (req, res, next) => {
   if(req.body.password == process.env.PASSWORD){
