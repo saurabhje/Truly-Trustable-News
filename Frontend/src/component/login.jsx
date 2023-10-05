@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import {useNavigate} from 'react-router-dom';
+import AdminPage from './CRUD/AdminPage';
 
 const Login = () =>{
     const [loggedin, setLoggedin] = useState(true);
@@ -42,21 +43,7 @@ const Login = () =>{
                 </label>
                 <input type="submit" value="Submit" />
             </form>:
-            <form method="post" action="https://localhost:3000/">
-                <label>
-                    Heading
-                    <input type="text" name="heading"/>
-                </label>
-                <label>
-                    Sub Heading
-                    <input type="text" name="heading"/>
-                </label>
-                <label>
-                    Article
-                    <input type="text" name="heading"/>
-                </label>
-                <input type="submit" value="Submit" />
-            </form>
+            <AdminPage/>
             }       
         </>
         
