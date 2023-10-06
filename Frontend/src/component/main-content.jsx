@@ -7,11 +7,16 @@ const MainContent = () => {
   const [data, setData] = useState([]);
   const [mobileView, setMobileView] = useState(false);
   const [page, setPage] = useState(1); // Initial page is 1
+  const [loading, setLoading] = useState(true)
 
   const fetchInfo = () => {
+    setLoading(true);
     axios
       .get(`http://localhost:3000/?page=${page}`)
-      .then((response) => setData((prevNews) => [...prevNews, ...response.data]))
+      .then((response) => {
+        setData((prevNews) => [...prevNews, ...response.data]);
+        setLoading(false);
+      })
       .catch((error) => {
         console.error('Error fetching data:', error);
       });
@@ -60,7 +65,20 @@ const MainContent = () => {
             </Link>
           );
         })}
-      <button onClick={handleLoadMore}>Load More</button>
+        <div className='loading-wrap'>
+          {loading? 
+            <div className="lds-ring">
+              <div>
+              </div>
+              <div>
+              </div>
+              <div>
+              </div>
+              <div>
+              </div>
+            </div>:
+            <button id="loadmore" onClick={handleLoadMore}>Load More</button>}
+        </div>
       </div>
       {!mobileView && (
         <div className="sidebar">

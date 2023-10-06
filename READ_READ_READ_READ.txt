@@ -6,5 +6,5 @@ je's
 now i just have to set up validatation in both front end and backend to and then finally saving in the 
 database to finish the first cruD operation. 
 
-Amit-> set up login 
-
+Amit
+1. Setting up a loader, the css copied from the internet which renders between API calls
