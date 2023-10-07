@@ -42,7 +42,5 @@ exports.create_News_post = asyncHandler ( async(req, res, next ) => {
     })
 
     const result = await news.save();
-    if(result.ok){
-        console.log('news saved');
-    }
+    console.log(result)
 })
