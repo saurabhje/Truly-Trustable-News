@@ -60,7 +60,7 @@ const MainContent = () => {
                 <div className="heading-p">
                   <hr />
                   <h2>{e.heading}</h2>
-                  <p>bla bla bla bla bla bla bla lb narendra modi bla lbal dlad hmklajmkclamrk</p>
+                  <p>{e.subheading}r                                    tyuiyuytyuiouyt</p>
                 </div>
               </div>
             </Link>
@@ -81,9 +81,22 @@ const MainContent = () => {
             <button id="loadmore" onClick={handleLoadMore}>Load More</button>}
         </div>
       </div>
+
       {!mobileView && (
-        <div className="sidebar">
-          {/* Sidebar content */}
+        <div className="sidebar ">
+          {
+            data.map( (e,index) => {
+              return (
+                // eslint-disable-next-line react/jsx-key
+                <div className='news_card'>
+                  <Link to={`/news/${e._id}`} className="item" key={index} state={{ id: e._id }}>
+                      <img className="w-full" id="side_img" src="./src/assets/images/newsimg.jpg" alt="News Image" />
+                        <h3 >{e.heading}</h3>
+                  </Link>
+                </div>
+              );
+            })
+          }
         </div>
       )}
     </div>
