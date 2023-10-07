@@ -9,6 +9,7 @@ const MainContent = () => {
   const [page, setPage] = useState(1); // Initial page is 1
   const [loading, setLoading] = useState(true)
 
+
   const fetchInfo = () => {
     setLoading(true);
     axios
