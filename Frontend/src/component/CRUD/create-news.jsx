@@ -4,9 +4,11 @@ import "./create-news.css"
 
 function Create_news() {
   const [formData, setFormData] = useState({
-    title: "",
+    heading: "",
     author: "",
-    article: ""
+    article: "",
+    subheading: "",
+    img_url: "",
   });
 
   const handleChange = (event) => {
@@ -37,7 +39,15 @@ function Create_news() {
           <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
             <div className="sm:col-span-2">
               <label htmlFor="title" className="block mb-2 text-sm font-medium text-gray-900 ">Title : </label>
-              <input type="text" name="title" id="title" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" placeholder="Title of the news" required onChange={handleChange} />
+              <input type="text" name="heading" id="title" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" placeholder="Title of the news" required onChange={handleChange} />
+            </div>
+            <div className="sm:col-span-2">
+              <label htmlFor="subhead" className="block mb-2 text-sm font-medium text-gray-900 ">Subheading : </label>
+              <input type="text" name="subheading" id="subhead" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" placeholder="subheading" required onChange={handleChange} />
+            </div>
+            <div className="sm:col-span-2">
+              <label htmlFor="img_url" className="block mb-2 text-sm font-medium text-gray-900 ">Img : </label>
+              <input type="text" name="img_url" id="img_url" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" placeholder="Img Url" required onChange={handleChange} />
             </div>
             <div>
               <label htmlFor="category" className="block mb-2 text-sm font-medium text-gray-900 ">Author : </label>

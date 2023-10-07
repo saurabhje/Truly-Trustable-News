@@ -31,10 +31,18 @@ exports.getNews = asyncHandler ( async(req, res, next ) => {
     res.json(news)
 })
 
-exports.create_News = asyncHandler ( async(req, res, next ) => {
-    const name = req.body
-    console.log(name)
-    res.json({
-        message: "Route is working"
+exports.create_News_post = asyncHandler ( async(req, res, next ) => {
+    const news = News({
+        heading: req.body.heading,
+        subheading: req.body.subheading,
+        article: req.body.article,
+        author: req.body.author,
+        date: new Date(),
+        img : req.body.img_url
     })
+
+    const result = await news.save();
+    if(result.ok){
+        console.log('news saved');
+    }
 })
