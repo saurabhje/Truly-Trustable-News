@@ -44,7 +44,7 @@ app.get('/news/:id', news_operations.getNews);
 app.post('/create-news',news_operations.create_News);
 
 app.post('/login', (req, res, next) => {
-  if(req.body.password == process.env.PASSWORD){
+  if(req.body.password === process.env.PASSWORD){
     res.status(200).json({ message: 'Login successful' });
   } else {
     console.log(req.body.password)

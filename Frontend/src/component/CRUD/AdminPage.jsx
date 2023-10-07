@@ -1,9 +1,30 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 
 const AdminPage = () => {
-  return (
-    <div>AdminPage</div>
-  )
-}
+  const [headings, setHeadings] = useState([]);
 
-export default AdminPage
+  useEffect(() => {
+    axios
+      .get('http://localhost:3000/')
+      .then((response) => setHeadings(response.data))
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
+
+  return (
+    <div>
+        <h1>Admin</h1>
+        {headings.map((e) => (
+            <div key={e.id}>
+            Title: {e.heading}
+            <button>Edit</button>
+            <button>Delete</button>
+            </div>
+        ))}
+    </div>
+  );
+};
+
+export default AdminPage;

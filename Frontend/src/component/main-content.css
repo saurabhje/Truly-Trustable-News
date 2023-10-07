@@ -40,7 +40,19 @@ img{
     height: 50%;
 }
 
-
+.sidebar{
+    display: flex;
+    flex-direction: column ;
+    max-width: 30%;
+    padding: 5px;
+}
+.news_card{
+    background-color: white;
+    margin: 5px;
+}
+.news_card h2{
+    margin: 0;
+}
 hr {
     display: block;
     height: 1px;
