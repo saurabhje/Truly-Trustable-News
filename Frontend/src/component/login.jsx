@@ -44,7 +44,7 @@ const Login = () => {
             onChange={handleChange}
             value={formData.password}
             placeholder="Password"
-            className='mx-5 py-2 px-4'
+            className='mx-5 py-2 px-4 border rounded-none'
           />
           <button
             type="submit"
