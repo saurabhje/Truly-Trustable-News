@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const AdminPage = () => {
   const [headings, setHeadings] = useState([]);
@@ -15,6 +16,7 @@ const AdminPage = () => {
 
   return (
     <div>
+        <Link to={'/create-news'} > Create a New News </Link>
         <h1>Admin</h1>
         {headings.map((e) => (
             <div key={e.id}>
