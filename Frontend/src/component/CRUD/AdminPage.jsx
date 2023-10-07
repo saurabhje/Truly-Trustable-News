@@ -6,7 +6,7 @@ const AdminPage = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:3000/')
+      .get('http://localhost:3000/admin')
       .then((response) => setHeadings(response.data))
       .catch((error) => {
         console.error('Error fetching data:', error);
