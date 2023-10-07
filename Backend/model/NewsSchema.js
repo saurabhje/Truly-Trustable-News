@@ -4,10 +4,14 @@ const Schema = mongoose.Schema;
 
 const NewsSchema = new Schema({
   heading: { type: String, required: true },
+  subheading: {type: String, required: true},
   author: { type: String, required: true },
   article: { type: String, required: true },
-  data : { type: Date, required: true },
+  date : { type: Date, required: true },
+  img: {type:String, required: true },
 });
+
+
 
 
 // Export model
