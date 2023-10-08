@@ -56,7 +56,7 @@ const MainContent = () => {
           return (
             <Link to={`/news/${e._id}`} className="item" key={index} state={{ id: e._id }}>
               <div className={itemWrapClass}>
-                <img id="img" src="./src/assets/images/newsimg.jpg" alt="News Image" />
+                <img id="img" src={e.img} alt="News Image" />
                 <div className="heading-p">
                   <hr />
                   <h2>{e.heading}</h2>
@@ -90,7 +90,7 @@ const MainContent = () => {
                 // eslint-disable-next-line react/jsx-key
                 <div className='news_card'>
                   <Link to={`/news/${e._id}`} className="item" key={index} state={{ id: e._id }}>
-                      <img className="w-full" id="side_img" src="./src/assets/images/newsimg.jpg" alt="News Image" />
+                      <img className="w-full" id="side_img" src={e.img} alt="News Image" />
                         <h3 >{e.heading}</h3>
                   </Link>
                 </div>
