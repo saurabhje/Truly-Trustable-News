@@ -32,7 +32,6 @@
 
 .sidebar{
     width: 20%;
-    background-color: brown;
 }
 
 img{
@@ -46,9 +45,11 @@ img{
     max-width: 30%;
     padding: 5px;
 }
+
 .news_card{
     background-color: white;
     margin: 5px;
+    border: solid black 1px;
 }
 .news_card h2{
     margin: 0;

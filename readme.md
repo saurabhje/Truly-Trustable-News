@@ -20,5 +20,5 @@ Automatic Server Rerunning ->
 - [X] Add sort methods for news (pending)
 - [ ] Add categories and sort by categories (pending)
 - [ ] Improve the hero page to have more than one news on it with a time function
-- [ ] Do the sidebar (pending)
+- [X] Do the sidebar (pending)
 
