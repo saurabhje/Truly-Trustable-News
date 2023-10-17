@@ -21,15 +21,18 @@ function Create_news() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
     axios.post('http://localhost:3000/create-news', formData)
-      .then((response) => {
-        console.log(response.data.message);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }
+    .then((response) => {
+      if (response.status === 200) {
+          console.log("saved");
+      } else if (response.status === 500) {
+        window.location.href = "/";
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}
 
   return (
     <section className="bg-white">

@@ -31,15 +31,24 @@ exports.getNews = asyncHandler ( async(req, res, next ) => {
     res.json(news)
 })
 
-exports.create_News_post = asyncHandler ( async(req, res, next ) => {
-    const news = News({
+exports.create_News_post = asyncHandler(async (req, res, next) => {
+    try {
+      const news = News({
         heading: req.body.heading,
         subheading: req.body.subheading,
         article: req.body.article,
         author: req.body.author,
         date: new Date(),
-        img : req.body.img_url
-    })
-
-    const result = await news.save();
-})
+        img: req.body.img_url,
+      });
+  
+      const result = await news.save();
+      console.log(result)
+      res.status(200).json({
+        message: 'New record is saved',
+        data: result,
+      });
+    } catch (error) {
+      res.status(500).json(error);
+    }
+  });
