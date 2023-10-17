@@ -52,3 +52,7 @@ exports.create_News_post = asyncHandler(async (req, res, next) => {
       res.status(500).json(error);
     }
   });
+
+exports.delete_news = asyncHandler (async (req, res, next) => {
+  const delete_news = await News.findByIdAndDelete(req.params.id)
+})

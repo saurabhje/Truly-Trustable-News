@@ -13,7 +13,18 @@ const AdminPage = () => {
         console.error('Error fetching data:', error);
       });
   }, []);
-
+  const deleteNews = (id) => {
+    axios
+      .post(`http://localhost:3000/delete/${id}`)
+      .then((response) => {
+        console.log(response);
+        setHeadings((prevHeadings) => prevHeadings.filter(e => e._id !== id));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  
   return (
     <div>
         <Link to={'/create-news'} > Create a New News </Link>
@@ -22,7 +33,7 @@ const AdminPage = () => {
             <div key={e.id}>
             Title: {e.heading}
             <button>Edit</button>
-            <button>Delete</button>
+            <button onClick={() => deleteNews(e._id)}>Delete</button>
             </div>
         ))}
     </div>
