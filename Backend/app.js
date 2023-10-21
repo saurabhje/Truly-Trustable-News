@@ -25,16 +25,6 @@ async function main(){
   await mongoose.connect(mongoDB);
 }
 
-const news = new News({
-  heading: "yo",
-  subheading: "news of the day",
-  author: "napolean",
-  article: "nothing here",
-  date: new Date(),
-  img: "nothing here",
-})
-
-// news.save();
 
 app.use(cors());
 
