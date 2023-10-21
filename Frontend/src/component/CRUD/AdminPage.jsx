@@ -34,9 +34,9 @@ const AdminPage = () => {
 
   return (
     <div>
-      <Link to={'/create-news'}> Create a New News </Link>
       <h1>Admin</h1>
-      {deletionError && <p>{deletionError}</p>}
+      <Link to={'/create-news'}> Create a New News </Link>
+      {deletionError && <p className="error-message">{deletionError}</p>}
       {headings.map((e) => (
         <div key={e.id}>
           Title: {e.heading}
