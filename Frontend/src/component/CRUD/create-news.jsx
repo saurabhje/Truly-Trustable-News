@@ -75,7 +75,8 @@ function Create_news() {
 
             <div className="sm:col-span-2">
               <label htmlFor="article" className="block mb-2 text-sm font-medium text-gray-900 ">Article : </label>
-              <ReactQuill id="article" theme="snow" value={articleContent} onChange={setArticleContent} />            </div>
+              <ReactQuill id="article" theme="snow" value={articleContent} onChange={setArticleContent} />
+            </div>
           </div>
           <button type="submit" className="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-black bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-200 hover:bg-primary-800">
             Add Article

@@ -4,38 +4,46 @@ import { Link } from 'react-router-dom';
 
 const AdminPage = () => {
   const [headings, setHeadings] = useState([]);
+  const [deletionError, setDeletionError] = useState(null);
 
   useEffect(() => {
-    axios
-      .get('http://localhost:3000/admin')
-      .then((response) => setHeadings(response.data))
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-      });
+    fetchData();
   }, []);
-  const deleteNews = (id) => {
-    axios
-      .post(`http://localhost:3000/delete/${id}`)
-      .then((response) => {
-        console.log(response);
-        setHeadings((prevHeadings) => prevHeadings.filter(e => e._id !== id));
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('http://localhost:3000/admin');
+      setHeadings(response.data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
   };
-  
+
+  const deleteNews = async (id) => {
+    setHeadings((prevHeadings) => prevHeadings.filter(e => e._id !== id));
+    setDeletionError(null);
+
+    try {
+      const response = await axios.post(`http://localhost:3000/delete/${id}`);
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+      setDeletionError('Error deleting the news item. Please try again.');
+    }
+  };
+
   return (
     <div>
-        <Link to={'/create-news'} > Create a New News </Link>
-        <h1>Admin</h1>
-        {headings.map((e) => (
-            <div key={e.id}>
-            Title: {e.heading}
-            <button>Edit</button>
-            <button onClick={() => deleteNews(e._id)}>Delete</button>
-            </div>
-        ))}
+      <h1>Admin</h1>
+      <Link to={'/create-news'}> Create a New News </Link>
+      {deletionError && <p className="error-message">{deletionError}</p>}
+      {headings.map((e) => (
+        <div key={e.id}>
+          Title: {e.heading}
+          <button>Edit</button>
+          <button onClick={() => deleteNews(e._id)}>Delete</button>
+        </div>
+      ))}
     </div>
   );
 };
