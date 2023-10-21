@@ -18,6 +18,9 @@ const Newspage = () => {
           });
     }, [state.id]);
 
+    const renderHtmlContent = (html) => {
+        return { __html: html };
+      };
     return (
     <>
         <div className='header' style={{ backgroundImage: `url(${NewsImg})` }}>  
@@ -30,9 +33,7 @@ const Newspage = () => {
             </div>
             
             <p>This is going to be a vertical line. Just imagine it!</p>
-            <div className="articles">
-                <article>{data.article}</article>
-            </div>
+            <div className="articles" dangerouslySetInnerHTML={renderHtmlContent(data.article)} />
         </div>
         <Footer />
     </>
