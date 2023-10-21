@@ -1,10 +1,10 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import "./create-news.css"
+import "./CreateNews.css"
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
-function Create_news() {
+function CreateNews() {
   const [formData, setFormData] = useState({
     heading: "",
     author: "",
@@ -87,4 +87,4 @@ function Create_news() {
   );
 }
 
-export default Create_news;
+export default CreateNews;

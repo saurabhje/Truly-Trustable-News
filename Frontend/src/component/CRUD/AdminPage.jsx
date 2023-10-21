@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Create_news from './CreateNews';
 
 const AdminPage = () => {
   const [headings, setHeadings] = useState([]);
@@ -35,7 +36,9 @@ const AdminPage = () => {
   return (
     <div>
       <h1>Admin</h1>
-      <Link to={'/create-news'}> Create a New News </Link>
+      <button onClick={return(
+        < Create/ >
+      )}></button>
       {deletionError && <p className="error-message">{deletionError}</p>}
       {headings.map((e) => (
         <div key={e.id}>
