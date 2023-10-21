@@ -1,11 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import Create_news from './CreateNews';
+import CreateNews from './CreateNews';
 
 const AdminPage = () => {
   const [headings, setHeadings] = useState([]);
   const [deletionError, setDeletionError] = useState(null);
+  const [isCreateNewsVisible, setIsCreateNewsVisible] = useState(false);
 
   useEffect(() => {
     fetchData();
@@ -32,13 +32,19 @@ const AdminPage = () => {
       setDeletionError('Error deleting the news item. Please try again.');
     }
   };
+  const renderCreateNews = () => {
+    setIsCreateNewsVisible(true);
+  };
 
   return (
     <div>
       <h1>Admin</h1>
-      <button onClick={return(
-        < Create/ >
-      )}></button>
+      {isCreateNewsVisible ? (
+        <CreateNews />
+      ) : (
+        <button onClick={renderCreateNews}>Create New News</button>
+      )}
+
       {deletionError && <p className="error-message">{deletionError}</p>}
       {headings.map((e) => (
         <div key={e.id}>
