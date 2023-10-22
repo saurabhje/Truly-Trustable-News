@@ -73,7 +73,7 @@ function CreateNews() {
             </select>
             </div>
 
-            <div className="sm:col-span-2">
+            <div className="sm:col-span-2 h-5/6">
               <label htmlFor="article" className="block mb-2 text-sm font-medium text-gray-900 ">Article : </label>
               <ReactQuill id="article" theme="snow" value={articleContent} onChange={setArticleContent} />
             </div>

@@ -36,22 +36,22 @@ const Login = () => {
   return (
     <>
       {loggedin ?
-        <form onSubmit={handleSubmit} className="text-center flex items-center justify-center h-screen">
-          <input
-            type="password"
-            name="password"
-            id="password"
-            onChange={handleChange}
-            value={formData.password}
-            placeholder="Password"
-            className='mx-5 py-2 px-4 border rounded-none'
-          />
-          <button
-            type="submit"
-            className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white mx-5 py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-            Login
-          </button>
-        </form>:
+          <form onSubmit={handleSubmit} className="text-center flex items-center justify-center h-screen">
+            <input
+              type="password"
+              name="password"
+              id="password"
+              onChange={handleChange}
+              value={formData.password}
+              placeholder="Password"
+              className='mx-5 py-2 px-4 border rounded-none'
+            />
+            <button
+              type="submit"
+              className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white mx-5 py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+              Login
+            </button>
+          </form>:
         <AdminPage />
     }
     </>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './AdminNews.css'
 
 const AdminNews = () => {
     const [headings, setHeadings] = useState([]);
@@ -32,15 +33,18 @@ const AdminNews = () => {
       };
 
   return (
-    <div>AdminNews
+    <div>
+      <h2 className='font-normal text-center text-4xl md:text-xl'>News List</h2>  
       {deletionError && <p className="error-message">{deletionError}</p>}
-      {headings.map((e) => (
-        <div key={e._id}>
-          Title: {e.heading}
-          <button>Edit</button>
-          <button onClick={() => deleteNews(e._id)}>Delete</button>
-        </div>
-      ))}
+      <div className='newsContainer flex flex-col flex-1 gap-1.5 px-10 md: gap-1 px-5'>
+        {headings.map((e) => (
+            <div className='newsbox bg-green-400'  key={e._id}>
+                <h3 className='newsheading'>Title: {e.heading}</h3>
+                <button className='newsedit'>Edit</button>
+                <button className='newsdelete' onClick={() => deleteNews(e._id)}>Delete</button>
+            </div>
+        ))}
+      </div>
     </div>
   )
 }
