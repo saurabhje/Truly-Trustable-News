@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import CreateNews from './CRUD/CreateNews';
 import AdminPage from './CRUD/AdminPage';
-
 const Login = () => {
   const [loggedin, setLoggedin] = useState(true);
   const [formData, setFormData] = useState({ password: '' });
   const navigate = useNavigate();
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -52,7 +53,10 @@ const Login = () => {
               Login
             </button>
           </form>:
-        <AdminPage />
+          <>
+            < AdminPage/>
+            <CreateNews />
+          </>
     }
     </>
   );
