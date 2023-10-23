@@ -60,7 +60,8 @@ const MainContent = () => {
                 <div className="heading-p">
                   <hr />
                   <h2>{e.heading}</h2>
-                  <p>{e.subheading}r                                    tyuiyuytyuiouyt</p>
+                  <p>{e.subheading}This is a subheading and its for fun and checking things</p>
+                  <div>Category: {e.category}</div>
                 </div>
               </div>
             </Link>
