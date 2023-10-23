@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {},
     screens:{
-      'md': {'max': '400px'},
+      'md': '500px',
     }
   },
   plugins: [],
