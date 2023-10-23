@@ -62,10 +62,10 @@ const AdminNews = () => {
         ))}
       </div>
       {showPopUp && (
-        <div className="popup">
-          <div className="popup-content ">
-            <p>Are you sure you want to delete this item?</p>
-            <button onClick={closePopUp}>Cancel</button>
+        <div className="centered-popup bg-slate-800 p-3 rounded text-center md:w-2/6 md:">
+          <div className="popup-content">
+            <p className='text-white'>Are you sure you want to delete this item?</p>
+            <button className='py-2 px-5 m-2 text-indigo-100 transition-colors duration-150 bg-blue-600 border-none rounded focus:shadow-outline hover:bg-green-400' onClick={closePopUp}>Cancel</button>
             <button className="py-2 px-5 m-2 text-red-100 transition-colors duration-150 bg-red-700 border-none rounded focus:shadow-outline hover:bg-red-800" onClick={() => deleteNews(newsItemIdToDelete)}>Delete</button>
           </div>
         </div>
