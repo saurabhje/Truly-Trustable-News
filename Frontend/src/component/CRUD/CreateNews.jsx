@@ -3,11 +3,12 @@ import React, { useState, useEffect } from 'react';
 import "./CreateNews.css"
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import { useParams, useLocation} from 'react-router-dom';
+import { useParams, useLocation, useNavigate} from 'react-router-dom';
 
 function CreateNews() {
   const { id } = useParams();
   const location = useLocation();
+  const navigate = useNavigate();
 
   // Initialize formData with an empty object
   const initialFormData = {
@@ -35,7 +36,7 @@ function CreateNews() {
         author: res.data.author,
         article: res.data.article,
         subheading: res.data.subheading,
-        img_url: res.data.img_url,
+        img_url: res.data.img,
       };
       console.log('Fetched data:', data);
       setEditData(data);
@@ -76,12 +77,15 @@ function CreateNews() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post('http://localhost:3000/create-news', formData) // Correct the URL
+  
+    const url = id ? `http://localhost:3000/edit/${id}` : 'http://localhost:3000/create-news';
+  
+    axios.post(url, formData)
       .then((response) => {
         if (response.status === 200) {
           console.log("Changes saved");
           // You may want to navigate back to the news list or do something else
-          history.push('/admin'); // Redirect to the admin page after saving changes
+          navigate('/') // Redirect to the admin page after saving changes
         } else if (response.status === 500) {
           // Handle server errors
         }
@@ -91,6 +95,7 @@ function CreateNews() {
         // Handle errors
       });
   }
+  
 
   // const categories = ["Cat1", "cat2", "cat3", "cat4", "cat5", "cat6"];
 

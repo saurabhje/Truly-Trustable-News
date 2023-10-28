@@ -49,7 +49,6 @@ exports.create_News_post = [
         author: req.body.author,
         date: new Date(),
         img: req.body.img_url,
-        category: req.body.category
       });
   
       const result = await news.save();
@@ -86,12 +85,11 @@ exports.edit_News_post = [
         author: req.body.author,
         date: new Date(),
         img: req.body.img_url,
-        category: req.body.category,
-        _id : req.params._id
+        _id: req.params.id
       });
   
-      const result = await News.findByIdAndUpdate(req.params.id, news , {}) ;
-      console.log(result)
+      const result = await News.findByIdAndUpdate(req.params.id, news) ;
+      console.log('result')
       res.status(200).json({
         message: 'News is edited',
         data: result,
