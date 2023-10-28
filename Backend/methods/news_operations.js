@@ -49,11 +49,10 @@ exports.create_News_post = [
         author: req.body.author,
         date: new Date(),
         img: req.body.img_url,
-        category: req.body.category
       });
   
       const result = await news.save();
-      console.log(result)
+      console.log(result);
       res.status(200).json({
         message: 'New record is saved',
         data: result,
@@ -63,8 +62,43 @@ exports.create_News_post = [
     }
   }),
 ];
+exports.edit_news_get = asyncHandler( async(req,res,next)=>{
+  const news = await News.findById(req.params.id);
+  res.json(news)
+})
 
+exports.edit_News_post = [
+  (req, res, next) => {
+    if (!(req.body.category instanceof Array)) {
+      if (typeof req.body.category === "undefined") req.body.category = [];
+      else req.body.category = new Array(req.body.category);
+    }
+    next();
+  },
 
+  asyncHandler(async (req, res, next) => {
+    try {
+      const news = News({
+        heading: req.body.heading,
+        subheading: req.body.subheading,
+        article: req.body.article,
+        author: req.body.author,
+        date: new Date(),
+        img: req.body.img_url,
+        _id: req.params.id
+      });
+  
+      const result = await News.findByIdAndUpdate(req.params.id, news) ;
+      console.log('result')
+      res.status(200).json({
+        message: 'News is edited',
+        data: result,
+      });
+    } catch (error) {
+      res.status(500).json(error);
+    }
+  }),
+];
 
 exports.delete_news = asyncHandler (async (req, res, next) => {
   const delete_news = await News.findByIdAndDelete(req.params.id)

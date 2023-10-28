@@ -33,6 +33,8 @@ app.get('/', news_operations.allNewsHome);
 app.get('/news/:id', news_operations.getNews);
 app.post('/create-news',news_operations.create_News_post);
 app.post('/delete/:id',news_operations.delete_news);
+app.get('/edit/:id', news_operations.edit_news_get);
+app.post('/edit/:id', news_operations.edit_News_post);
 
 app.post('/login', (req, res, next) => {
   if(req.body.password === process.env.PASSWORD){
