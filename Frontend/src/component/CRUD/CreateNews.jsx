@@ -42,7 +42,6 @@ function CreateNews() {
       setEditData(data);
     } catch (error) {
       console.error('Error fetching data:', error);
-      // Handle errors (e.g., redirect to an error page)
     }
   }
   useEffect(() => {
