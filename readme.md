@@ -1,9 +1,9 @@
-Go to the root folder, npm install -> `npm run dev`
+- Go to the root folder
+- `npm install`
+- cd Background - `npm run dev`
+- cd Frontend - `npm run dev` 
 
-Automatic Server Rerunning ->
- `npm install`
 
- `npm run dev`
 
 ## To Do List
 
