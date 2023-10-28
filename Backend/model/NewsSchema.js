@@ -9,7 +9,7 @@ const NewsSchema = new Schema({
   article: { type: String, required: true },
   date : { type: Date, required: true },
   img: {type:String, required: true },
-  category: {type:Array, required: true },
+  // category: {type:Array, required: true },
 });
 
 

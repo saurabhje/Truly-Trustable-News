@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import CreateNews from './CRUD/CreateNews';
 import AdminPage from './CRUD/AdminPage';
 const Login = () => {
   const [loggedin, setLoggedin] = useState(true);
@@ -54,8 +53,7 @@ const Login = () => {
             </button>
           </form>:
           <>
-            < AdminPage/>
-            <CreateNews />
+            <AdminPage/>
           </>
     }
     </>
