@@ -1,7 +1,7 @@
 import React from 'react'
-import Navbar from './navbar'
+// import Navbar from './navbar'
 import Footer from './footer'
-import NewsImg from '../assets/images/newsimg.jpg'
+// import NewsImg from '../assets/images/newsimg.jpg'
 import './newspage.css';
 import {useState, useEffect} from "react";
 import { useLocation } from 'react-router-dom';
@@ -23,9 +23,9 @@ const Newspage = () => {
       };
     return (
     <>
-        <div className='header' style={{ backgroundImage: `url(${NewsImg})` }}>  
+        {/* <div className='header' style={{ backgroundImage: `url(${NewsImg})` }}>  
             <Navbar/>
-        </div>
+        </div> */}
         <div className='newsbody'>
             <div className="news-hero-text">
                 <h1>{data.heading}</h1>

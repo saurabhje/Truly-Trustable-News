@@ -3,8 +3,9 @@
     padding-bottom: 100px;
     display: flex;
     justify-content: space-around;
-    padding-left: 15vw;
-    padding-right: 10vw;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 .content{
     display: grid;
@@ -31,7 +32,7 @@
 }
 
 .sidebar{
-    width: 20%;
+    width: 250px;
 }
 
 img{
@@ -83,6 +84,10 @@ hr {
 
 .itemwrap2 > .heading-p{
     text-align: end;
+}
+
+.heading-p{
+    width: 50%;
 }
 
 .itemwrap2{
@@ -143,15 +148,33 @@ hr {
     }
 }
 
+@media (max-width: 1080px){
+    .content{
+        grid-template-columns: 1fr;
+        width: 90%;
+    }
+    .main{
+        width: 90%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
 @media (max-width: 720px){
     .content{
         grid-template-columns: 1fr;
         width: 90%;
+    }
+    .main{
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 
 @media (max-width: 320px){
     .item h2{
         font-size: 14px;
+    }
+    .content{
+        width: 100%;
     }
 }
