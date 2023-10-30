@@ -54,7 +54,7 @@ const MainContent = () => {
         {data.map((e, index) => {
           const itemWrapClass = index % 2 === 0 ? 'itemwrap1' : 'itemwrap2';
           return (
-            <Link to={`/news/${e._id}`} className="item" key={index} state={{ id: e._id }}>
+            <Link to={`/news/${e._id}`} className="item" key={index}>
               <div className={itemWrapClass}>
                 <img id="img" src={e.img} alt="News Image" />
                 <div className="heading-p">
