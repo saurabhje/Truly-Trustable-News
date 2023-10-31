@@ -17,7 +17,7 @@ function CreateNews() {
     article: "",
     subheading: "",
     img_url: "",
-    // categories: [],
+    categories: [],
   };
 
   // Initialize editData as an empty object
@@ -27,6 +27,7 @@ function CreateNews() {
   const [formData, setFormData] = useState(
     location.pathname === '/createnews' ? initialFormData : editData
   );
+  
 
   async function getData(id) {
     try {
@@ -37,6 +38,7 @@ function CreateNews() {
         article: res.data.article,
         subheading: res.data.subheading,
         img_url: res.data.img,
+        categories: res.data.categories
       };
       console.log('Fetched data:', data);
       setEditData(data);
@@ -49,15 +51,10 @@ function CreateNews() {
     if (id != undefined) {  
       // Extract the ID from the route and fetch data
       getData(id);
+      setFormData(editData);
     }
-  }, [id]);
+  }, [id, editData]);
   
-  useEffect(() => {
-    // This effect will run whenever editData changes
-    // Update formData when editData changes
-    setFormData(editData);
-    console.log(editData)
-  }, [editData]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -73,6 +70,13 @@ function CreateNews() {
       article: value,
     });
   };
+
+  // const isChecked = (category) =>{
+  //   return formData.categories.includes(category);
+  // }
+
+
+  
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -96,7 +100,7 @@ function CreateNews() {
   }
   
 
-  // const categories = ["Cat1", "cat2", "cat3", "cat4", "cat5", "cat6"];
+  const categories = ["Cat1", "cat2", "cat3", "cat4", "cat5", "cat6"];
 
   return (
     <section className="bg-slate-200">
@@ -155,21 +159,22 @@ function CreateNews() {
                 <option value="XuNigger">XuNigger</option>
               </select>
             </div>
-            {/* <div>
-              <label className="block mb-2 text-base font-medium text-gray-900">Category:</label>
-              {categories.map((category) => (
-                <label key={category} className="block text-sm font-medium text-gray-900">
-                  <input
-                    type="checkbox"
-                    name="categories"
-                    value={category}
-                    checked={formData.categories.includes(category)}
-                    onChange={handleCategoryChange}
-                  />
-                  {category}
-                </label>
-              ))}
-            </div> */}
+                <div>
+                  <label className="block mb-2 text-base font-medium text-gray-900">Category:</label>
+                  {categories.map((category) => (
+                    <label key={category} className="block text-sm font-medium text-gray-900">
+                      <input
+                        type="checkbox"
+                        name="categories"
+                        value={category}
+                        
+                        // onChange={handleCategoryChange}
+                      />
+                      {category}
+                    </label>
+                  ))}
+                </div>
+  
             <div className="sm:col-span-2 h-5/6">
               <label htmlFor="article" className="block mb-2 text-sm font-medium text-gray-900">Article:</label>
               <ReactQuill
