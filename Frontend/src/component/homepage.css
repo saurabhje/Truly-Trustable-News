@@ -1,0 +1,17 @@
+.header-wrapper{
+    display: flex;
+    overflow: hidden;
+}
+
+.header{
+    min-width: 100vw;
+    transition: translate 300ms ease-in-out;
+}
+
+.navbar-container{
+    color: white;
+    position: fixed;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}

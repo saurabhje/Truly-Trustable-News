@@ -1,14 +1,19 @@
+
 import React, { useState, useEffect } from 'react';
 import Hero from './hero';
 import Navbar from './navbar';
 import Footer from './footer';
 import MainContent from './main-content';
 import axios from 'axios';
+import "./homepage.css"
 
 const Homepage = () => {
   const [header, setHeader] = useState([]);
-  const [currentindex, setCurrentindex] = useState(0);
+  const [imageindex, setImageindex] = useState(0);
 
+  const increaseIndex = () =>{
+    setImageindex((imageindex + 1)%(header.length));
+  }
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -21,22 +26,22 @@ const Homepage = () => {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    let interval;
-    if (header.length > 0) {
-      interval = setInterval(() => {
-        setCurrentindex((prevIndex) => (prevIndex + 1) % header.length);
-      }, 5000);
-    }
-
-    return () => clearInterval(interval);
-  }, [header]);
-
+    useEffect(() => {
+      const imageTransition = setTimeout(increaseIndex, 4000);
+  
+      // Clear the timeout when the component unmounts or when header changes
+      return () => clearTimeout(imageTransition);
+    }, [imageindex, header]);
+  console.log(header)
   return (
     <div>
-      <div className="header" style={{ backgroundImage: header[currentindex] ? `url(${header[currentindex].img})` : '' }}>
-        <Navbar />
-        <Hero />
+      <Navbar />
+      <div className='header-wrapper'> 
+        {header && header.map((index) => (
+          <div className="header" key={index.img} style={{ backgroundImage: index ? `url(${index.img})` : '', translate: `${-100 * imageindex}%`}}>
+            <Hero heading={index.heading} author={index.author}/>
+          </div>
+        ))}
       </div>
       <MainContent />
       <div className="footer">
