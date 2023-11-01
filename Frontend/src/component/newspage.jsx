@@ -1,7 +1,6 @@
 import React from 'react'
 import Navbar from './navbar'
 import Footer from './footer'
-import NewsImg from '../assets/images/newsimg.jpg'
 import './newspage.css';
 import {useState, useEffect} from "react";
 import axios from 'axios';
@@ -25,7 +24,7 @@ const Newspage = () => {
       };
     return (
     <>
-        <div className='header' style={{ backgroundImage: `url(${NewsImg})` }}>  
+        <div className='header' style={{ backgroundImage: `url(${data.img})` }}>  
             <Navbar/>
         </div>
         <div className='newsbody'>

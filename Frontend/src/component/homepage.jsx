@@ -29,7 +29,6 @@ const Homepage = () => {
     useEffect(() => {
       const imageTransition = setTimeout(increaseIndex, 4000);
   
-      // Clear the timeout when the component unmounts or when header changes
       return () => clearTimeout(imageTransition);
     }, [imageindex, header]);
   console.log(header)
