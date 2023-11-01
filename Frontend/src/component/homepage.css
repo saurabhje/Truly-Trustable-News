@@ -1,14 +1,14 @@
-.header-wrapper{
+.header-wrapper {
     display: flex;
     overflow: hidden;
 }
 
-.header{
+.header {
     min-width: 100vw;
     transition: translate 300ms ease-in-out;
 }
 
-.navbar-container{
+.navbar-container {
     color: white;
     position: fixed;
     width: 100%;
