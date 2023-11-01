@@ -32,13 +32,6 @@ exports.getNews = asyncHandler ( async(req, res, next ) => {
 })
 
 exports.create_News_post = [
-  (req, res, next) => {
-    if (!(req.body.category instanceof Array)) {
-      if (typeof req.body.category === "undefined") req.body.category = [];
-      else req.body.category = new Array(req.body.category);
-    }
-    next();
-  },
 
   asyncHandler(async (req, res, next) => {
     try {
@@ -49,6 +42,7 @@ exports.create_News_post = [
         author: req.body.author,
         date: new Date(),
         img: req.body.img_url,
+        category: req.body.category
       });
   
       const result = await news.save();
@@ -85,6 +79,7 @@ exports.edit_News_post = [
         author: req.body.author,
         date: new Date(),
         img: req.body.img_url,
+        category: req.body.category,
         _id: req.params.id
       });
   
