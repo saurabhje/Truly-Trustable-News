@@ -14,23 +14,6 @@
     gap: 50px;
 }
 
-.item{
-    /* background-color: grey; */
-    height: 40vh;
-}
-
-
-.item h2{
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    font-size: clamp(18px, 2vw, 32px);
-    line-height: 1;
-}
-
-.item p{
-    font-size: clamp(14px, 1vw, 16px);
-}
-
 .sidebar{
     width: 250px;
 }
@@ -50,11 +33,14 @@ img{
 .news_card{
     background-color: white;
     margin: 5px;
-    border: solid black 1px;
 }
-.news_card h2{
+
+.news_card h3{
     margin: 0;
 }
+
+
+
 hr {
     display: block;
     height: 1px;
@@ -70,6 +56,7 @@ hr {
 .itemwrap2 hr{
     margin-left: auto;
 }
+
 .item:hover hr{
     width: 40%;
 }

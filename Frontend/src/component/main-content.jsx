@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const MainContent = () => {
   const [data, setData] = useState([]);
   const [mobileView, setMobileView] = useState(false);
-  const [page, setPage] = useState(1); // Initial page is 1
+  const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true)
 
 
@@ -24,7 +24,7 @@ const MainContent = () => {
   };
 
   const handleLoadMore = () => {
-    setPage(page + 1); // Increment the page to fetch the next 6 news items
+    setPage(page + 1);
   };
 
   const handleResize = () => {
@@ -42,7 +42,6 @@ const MainContent = () => {
 
   useEffect(() => {
     window.addEventListener('resize', handleResize);
-    // Cleanup the event listener when the component unmounts
     return () => {
       window.removeEventListener('resize', handleResize);
     };
@@ -89,12 +88,10 @@ const MainContent = () => {
             data.map( (e,index) => {
               return (
                 // eslint-disable-next-line react/jsx-key
-                <div className='news_card'>
-                  <Link to={`/news/${e._id}`} className="item" key={index} state={{ id: e._id }}>
-                      <img className="w-full" id="side_img" src={e.img} alt="News Image" />
-                        <h3 >{e.heading}</h3>
-                  </Link>
-                </div>
+                <Link to={`/news/${e._id}`} className='news_card' key={index} state={{ id: e._id }}>
+                    <img className="w-full" id="side_img" src={e.img} alt="News Image" />
+                    <h3>{e.heading}</h3>
+                </Link>
               );
             })
           }
