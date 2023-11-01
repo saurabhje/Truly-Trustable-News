@@ -1,29 +1,30 @@
 import React from 'react'
 import Navbar from './navbar'
 import Footer from './footer'
-import NewsImg from '../assets/images/newsimg.jpg'
 import './newspage.css';
 import {useState, useEffect} from "react";
-import { useLocation } from 'react-router-dom';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
+
 
 const Newspage = () => {
     const [data, setData] = useState([]);
-    const {state} = useLocation();
+    const { id } = useParams();
     useEffect(() => {
-        axios.get(`http://localhost:3000/news/${state.id}`)
+        console.log(id)
+        axios.get(`http://localhost:3000/news/${id}`)
         .then((response) => setData(response.data))
         .catch((error) => {
             console.error('Error fetching data:', error);
           });
-    }, [state.id]);
+    }, [id]);
 
     const renderHtmlContent = (html) => {
         return { __html: html };
       };
     return (
     <>
-        <div className='header' style={{ backgroundImage: `url(${NewsImg})` }}>  
+        <div className='header' style={{ backgroundImage: `url(${data.img})` }}>  
             <Navbar/>
         </div>
         <div className='newsbody'>
