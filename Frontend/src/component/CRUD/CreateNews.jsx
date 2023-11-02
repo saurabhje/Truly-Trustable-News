@@ -15,6 +15,7 @@ function CreateNews() {
     article: "",
     subheading: "",
     img_url: "",
+    img_pos: "",
     category: [],
   };
 
@@ -111,7 +112,7 @@ function CreateNews() {
         // Handle errors
       });
   };
-
+  console.log(formData.img_pos)
   return (
     <section className="bg-slate-200">
       <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16">
@@ -168,7 +169,8 @@ function CreateNews() {
                 onChange={handleChange}
               />
             </div>
-            <img src={formData.img_url} />
+            <div style={{ "marginLeft": "-28.5vw", "height": "55vh", "width": "100vw", "backgroundImage": `url(${formData.img_url})`, "backgroundSize": "cover", "backgroundPosition": formData.img_pos }}>
+            </div>
             <div className="sm:col-span-2">
               <label htmlFor="img_pos">Position:</label>
               <input
