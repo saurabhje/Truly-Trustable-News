@@ -29,7 +29,8 @@ function CreateNews() {
         author: res.data.author,
         article: res.data.article,
         subheading: res.data.subheading,
-        img_url: res.data.img,
+        img_url: res.data.img.src,
+        img_pos: res.data.img.position,
         category: res.data.category,
       };
       setFormData(data);
@@ -164,6 +165,19 @@ function CreateNews() {
                 placeholder="Image URL"
                 required
                 value={formData.img_url}
+                onChange={handleChange}
+              />
+            </div>
+            <img src={formData.img_url} />
+            <div className="sm:col-span-2">
+              <label htmlFor="img_pos">Position:</label>
+              <input
+                type="text"
+                name="img_pos"
+                id="img_pos"
+                placeholder="Image Position"
+                required
+                value={formData.img_pos}
                 onChange={handleChange}
               />
             </div>

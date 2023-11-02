@@ -8,7 +8,10 @@ const NewsSchema = new Schema({
   author: { type: String, required: true },
   article: { type: String, required: true },
   date : { type: Date, required: true },
-  img: {type:String, required: true },
+  img: {
+    src: {type:String, required: true},
+    position: {type: String, default: "center"} 
+  },
   category: [{ type: Schema.ObjectId, ref: "Category" }],
 });
 
