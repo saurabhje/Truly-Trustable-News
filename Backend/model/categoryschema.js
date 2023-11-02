@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const categorySchema = new Schema({
+const CategorySchema = new Schema({
     title: { type: String, required: true },
 });
 
@@ -10,4 +10,4 @@ const categorySchema = new Schema({
 
 
 // Export model
-module.exports = mongoose.model("categorySchema", categorySchema);
+module.exports = mongoose.model("CategorySchema", CategorySchema);
