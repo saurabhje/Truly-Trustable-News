@@ -37,8 +37,11 @@ const Newspage = () => {
           <p>{data.author}</p>
         </div>
         <div className='categories'>
-            {data.category && data.category.map((cat) => (
-            <p className='inline-block mx-2' key={cat}>{cat}</p>
+          {data.category &&
+            data.category.map((cat) => (
+              <p className='inline-block mx-2 category-link' key={cat}>
+                <a href='#'>{cat}</a>
+              </p>
             ))}
         </div>
         <p>This is going to be a vertical line. Just imagine it!</p>
