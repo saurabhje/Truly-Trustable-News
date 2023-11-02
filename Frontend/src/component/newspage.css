@@ -31,3 +31,13 @@
         font-size: 1em;
     }  
 }
+
+.category-link a {
+    color: blue;
+    text-decoration: none;
+  }
+  
+  .category-link a:hover {
+    text-decoration: underline;
+  }
+  

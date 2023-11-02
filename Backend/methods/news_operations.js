@@ -1,4 +1,5 @@
 const News = require('../model/NewsSchema');
+const Category = require('../model/categoryschema');
 const asyncHandler = require("express-async-handler");
 
 exports.allNews = asyncHandler( async(req, res, next ) => {
@@ -13,6 +14,7 @@ exports.allNewsHome = asyncHandler( async(req, res, next ) => {
     try {
         const news = await News.find()
         .sort({ date: -1 })
+        .populate("category")
         .skip((page - 1) * perPage)
         .limit(perPage);
 
@@ -24,7 +26,7 @@ exports.allNewsHome = asyncHandler( async(req, res, next ) => {
 })
 
 exports.getNews = asyncHandler ( async(req, res, next ) => {
-    const news = await News.findById(req.params.id);
+    const news = await News.findById(req.params.id).populate("category").exec();
     if(!news){
         res.status(400).json({message: 'News not found'})
     }
@@ -32,6 +34,13 @@ exports.getNews = asyncHandler ( async(req, res, next ) => {
 })
 
 exports.create_News_post = [
+  (req, res, next) => {
+    if (!(req.body.category instanceof Array)) {
+      if (typeof req.body.category === "undefined") req.body.category = [];
+      else req.body.category = new Array(req.body.category);
+    }
+    next();
+  },
 
   asyncHandler(async (req, res, next) => {
     try {
