@@ -41,7 +41,7 @@ const Newspage = () => {
           {data.category &&
             data.category.map((cat) => (
               <p className='inline-block mx-2 category-link' key={cat._id}>
-                <a href='#'>{cat.title}</a>
+                <a href={`/category/${cat._id}`}>{cat.title}</a>
               </p>
             ))}
         </div>
