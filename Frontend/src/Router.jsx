@@ -6,7 +6,7 @@ import Aboutus from './component/aboutus'
 import Contactus from './component/contactus';
 import Login from './component/login';
 import CreateNews from "./component/CRUD/CreateNews";
-
+import Category from "./component/category";
 
 
 const Router = () =>{
@@ -38,6 +38,10 @@ const Router = () =>{
     {
       path: '/createnews',
       element: <CreateNews/>
+    },
+    {
+      path: '/category/:id',
+      element: <Category/>
     }
 
   ]);
