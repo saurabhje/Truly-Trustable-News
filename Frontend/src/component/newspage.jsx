@@ -38,7 +38,7 @@ const Newspage = () => {
         </div>
         <div className='categories'>
             {data.category && data.category.map((cat) => (
-            <p key={cat}>{cat}</p>
+            <p className='inline-block mx-2' key={cat}>{cat}</p>
             ))}
         </div>
         <p>This is going to be a vertical line. Just imagine it!</p>
