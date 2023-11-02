@@ -3,10 +3,13 @@ const app = express();
 const port = 3000;
 const cors = require('cors');
 const News = require('./model/NewsSchema');
+const Category = require('./model/categoryschema');
 const mongoose = require('mongoose');
 const news_operations = require('./methods/news_operations');
+const category_Operations = require('./methods/category_Operations');
+
 require('dotenv').config();
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
 
 mongoose.set("strictQuery", false);
 
@@ -27,6 +30,7 @@ async function main(){
 
 
 app.use(cors());
+//news operations routing requests and posts
 
 app.get('/admin', news_operations.allNews);
 app.get('/', news_operations.allNewsHome);
@@ -36,6 +40,9 @@ app.post('/delete/:id',news_operations.delete_news);
 app.get('/edit/:id', news_operations.edit_news_get);
 app.post('/edit/:id', news_operations.edit_News_post);
 
+app.get('/categories',category_Operations.allCategories);
+app.get('/category/:id', category_Operations.category_news_list);
+
 app.post('/login', (req, res, next) => {
   if(req.body.password === process.env.PASSWORD){
     res.status(200).json({ message: 'Login successful' });
@@ -44,6 +51,7 @@ app.post('/login', (req, res, next) => {
     res.status(401).json({ message: 'Login failed: Incorrect password' });
   }
 })
+
 
 
 app.listen(port, () => {

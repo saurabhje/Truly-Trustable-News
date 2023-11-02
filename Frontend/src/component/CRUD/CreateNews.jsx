@@ -19,6 +19,7 @@ function CreateNews() {
   };
 
   const [formData, setFormData] = useState(initialFormData);
+  const [ allcategories, setallCategories ] = useState([]);
 
   async function getData(id) {
     try {
@@ -38,10 +39,21 @@ function CreateNews() {
     }
   }
 
+  async function getCats(){
+    try 
+      { const res = await axios.get('http://localhost:3000/categories')
+        console.log(res)
+        setallCategories(res.data);
+    } catch(error) {
+      console.log('Error fetching categories')
+    }
+  }
   useEffect(() => {
+    getCats();
     if (id !== undefined) {
       getData(id);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]); // Add 'id' as a dependency
 
   const handleChange = (event) => {
@@ -98,8 +110,6 @@ function CreateNews() {
         // Handle errors
       });
   };
-
-  const allcategories = ["Cat-1", "cat-2", "cat-3", "cat-4", "cat-5", "cat-6"];
 
   return (
     <section className="bg-slate-200">
@@ -179,21 +189,23 @@ function CreateNews() {
               <label className="block mb-2 text-base font-medium text-gray-900">
                 Category:
               </label>
-              {allcategories.map((cats) => (
-                <label
-                  key={cats}
-                  className="block text-sm font-medium text-gray-900"
-                >
-                  <input
-                    type="checkbox"
-                    name="category"
-                    value={cats}
-                    checked={formData.category.includes(cats)}
-                    onChange={handleCategoryChange}
-                  />
-                  {cats}
-                </label>
-              ))}
+              <div>
+                  <label className="block mb-2 text-base font-medium text-gray-900">
+                    Category:
+                  </label>
+                  {allcategories.map((category) => (
+                    <label key={category._id} className="block text-sm font-medium text-gray-900">
+                      <input
+                        type="checkbox"
+                        name="category"
+                        value={category._id}
+                        checked={formData.category.includes(category._id)}
+                        onChange={handleCategoryChange}
+                      />
+                      {category.title}
+                    </label>
+                  ))}
+                  </div>
             </div>
 
             <div className="sm:col-span-2 h-5/6">

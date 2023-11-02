@@ -37,10 +37,11 @@ const Newspage = () => {
           <p>{data.author}</p>
         </div>
         <div className='categories'>
+          Categories: 
           {data.category &&
             data.category.map((cat) => (
-              <p className='inline-block mx-2 category-link' key={cat}>
-                <a href='#'>{cat}</a>
+              <p className='inline-block mx-2 category-link' key={cat._id}>
+                <a href='#'>{cat.title}</a>
               </p>
             ))}
         </div>
