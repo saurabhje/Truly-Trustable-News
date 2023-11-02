@@ -9,6 +9,7 @@
 
 ### Je's
 - [x] Designing the news_operations like show, create, update, delete (methods) methods in the backend
+- [ ] Add category schema and category detail page
 
 
 
