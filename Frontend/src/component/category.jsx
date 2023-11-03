@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import {Link, useParams } from 'react-router-dom';
 
 const Category = () => {
   const { id } = useParams();
@@ -15,26 +15,27 @@ const Category = () => {
       console.error('Error fetching data:', error);
     }
   }
-
+  console.log(data.categoryNews);
   useEffect(() => {
     getData(id);
   }, [id]);
 
   return (
-    <div>
-      <h2>Category: {data.category.title}</h2>
-      <h3>Category News:</h3>
-      <ul>
-        {data.categoryNews.map((news) => (
-          <a
-            href={`/news/${news._id}`}
-            key={news._id}
-            className="text-blue-500 hover:underline"
-          >
-            {news.heading}
-          </a>
+    <div className=' p-5'>
+      <h1 className='text-center text-4xl font-normal'>{data.category.title} News</h1>
+      <div className='text-2xl flex justify-center align-center'>
+        {data.categoryNews.map((e) => (
+          <Link to={`/news/${e._id}`} className="item bg-slate-200" key={e._id}>
+            <img id="img" src={e.img} alt="News Image" />
+            <div>
+              <h2>{e.heading}</h2>
+              <p>
+                {e.subheading}
+              </p>
+            </div>
+          </Link>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
