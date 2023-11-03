@@ -178,7 +178,6 @@ function CreateNews() {
                 name="img_pos"
                 id="img_pos"
                 placeholder="Image Position"
-                required
                 value={formData.img_pos}
                 onChange={handleChange}
               />

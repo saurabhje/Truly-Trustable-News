@@ -52,7 +52,7 @@ exports.create_News_post = [
         date: new Date(),
         img: {
           src: req.body.img_url,
-          position: req.body.img_pos
+          position: req.body.img_pos,
         },
         category: req.body.category
       });
@@ -92,7 +92,7 @@ exports.edit_News_post = [
         date: new Date(),
         img: {
           src: req.body.img_url,
-          position: req.body.img_pos
+          position: req.body.img_pos,
         },
         category: req.body.category,
         _id: req.params.id

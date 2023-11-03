@@ -37,7 +37,7 @@ const Homepage = () => {
       <Navbar />
       <div className='header-wrapper'> 
         {header && header.map((index) => (
-          <div className="header" key={index.img} style={{ backgroundImage: index ? `url(${index.img})` : '', translate: `${-100 * imageindex}%`}}>
+          <div className="header" key={index.img.src} style={{ backgroundImage: index ? `url(${index.img.src})` : '', backgroundPosition: index.img.position ? `${index.img.position}` : 'center', translate: `${-100 * imageindex}%`}}>
             <Hero heading={index.heading} author={index.author}/>
           </div>
         ))}

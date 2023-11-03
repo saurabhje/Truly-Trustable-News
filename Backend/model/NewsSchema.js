@@ -10,7 +10,7 @@ const NewsSchema = new Schema({
   date : { type: Date, required: true },
   img: {
     src: {type:String, required: true},
-    position: {type: String} 
+    position: {type: String},
   },
   category: [{ type: Schema.ObjectId, ref: "Category" }],
 });
