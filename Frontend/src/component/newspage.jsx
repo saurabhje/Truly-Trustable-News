@@ -10,7 +10,6 @@ const Newspage = () => {
   const [data, setData] = useState([]);
   const { id } = useParams();
   useEffect(() => {
-    console.log(id);
     axios
       .get(`http://localhost:3000/news/${id}`)
       .then((response) => {
@@ -25,10 +24,11 @@ const Newspage = () => {
   const renderHtmlContent = (html) => {
     return { __html: html };
   };
-
+  console.log(data)
   return (
     <>
-      <div className='header' style={{ backgroundImage: `url(${data.img})` }}>
+      <div className="header" style={{ backgroundImage: data.img ? `url(${data.img.src})` : '', backgroundPosition: data.img ? `${data.img.position}` : 'center', }}>
+
         <Navbar />
       </div>
       <div className='newsbody'>
