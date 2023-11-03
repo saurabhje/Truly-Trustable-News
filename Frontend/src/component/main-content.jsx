@@ -54,7 +54,7 @@ const MainContent = () => {
           return (
             <Link to={`/news/${e._id}`} className="item" key={index}>
               <div className={itemWrapClass}>
-                <img id="img" src={e.img} alt="News Image" />
+                <img id="img" src={e.img.src} alt="News Image" />
                 <div className="heading-p">
                   <hr />
                   <h2>{e.heading}</h2>
@@ -107,7 +107,7 @@ const MainContent = () => {
                 <img
                   className="w-full"
                   id="side_img"
-                  src={e.img}
+                  src={e.img.src}
                   alt="News Image"
                 />
                 <h3>{e.heading}</h3>

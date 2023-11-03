@@ -50,7 +50,10 @@ exports.create_News_post = [
         article: req.body.article,
         author: req.body.author,
         date: new Date(),
-        img: req.body.img_url,
+        img: {
+          src: req.body.img_url,
+          position: req.body.img_pos,
+        },
         category: req.body.category
       });
   
@@ -87,7 +90,10 @@ exports.edit_News_post = [
         article: req.body.article,
         author: req.body.author,
         date: new Date(),
-        img: req.body.img_url,
+        img: {
+          src: req.body.img_url,
+          position: req.body.img_pos,
+        },
         category: req.body.category,
         _id: req.params.id
       });
