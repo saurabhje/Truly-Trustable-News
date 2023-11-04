@@ -5,16 +5,23 @@ import { Link } from "react-router-dom";
 
 const MainContent = () => {
   const [data, setData] = useState([]);
+  const [sidebardata, setSidebardata] = useState([])
   const [mobileView, setMobileView] = useState(false);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
+  const [cat, setCat] = useState();
+  const [catdata, setCatdata] = useState([])
 
   const fetchInfo = () => {
     setLoading(true);
+    const link = cat? `http://localhost:3000/?page=${page}&cat=${cat}`: `http://localhost:3000/?page=${page}`
     axios
-      .get(`http://localhost:3000/?page=${page}`)
+      .get(link)
       .then((response) => {
         setData((prevNews) => [...prevNews, ...response.data]);
+        if(link == `http://localhost:3000/?page=${page}`){
+          setSidebardata((prevNews) => [...prevNews, ...response.data]);
+        }
         setLoading(false);
       })
       .catch((error) => {
@@ -34,21 +41,37 @@ const MainContent = () => {
     }
   };
 
-  useEffect(() => {
-    fetchInfo();
-    console.log("check");
-  }, [page]);
+  const handleCatchange = (e) =>{
+    setCat(e.target.value)
+    setData([])
+    console.log(cat)
+  }
 
   useEffect(() => {
+    fetchInfo();
+  }, [page, cat]);
+
+  useEffect(() => {
+    axios
+    .get(`http://localhost:3000/categories`)
+    .then((response) => {
+      console.log(response.data)
+      setCatdata(response.data)
+    })
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
   return (
     <div className="main">
       <div className="content">
+        <select style={{height: "20px"}} onChange={handleCatchange}>
+          <option value="">All</option>
+          {catdata.map((e, index) => (
+            <option key={index} value={e.title}>{e.title}</option>
+          ))}
+        </select>
         {data.map((e, index) => {
           const itemWrapClass = index % 2 === 0 ? "itemwrap1" : "itemwrap2";
           return (
@@ -92,10 +115,9 @@ const MainContent = () => {
           )}
         </div>
       </div>
-
       {!mobileView && (
         <div className="sidebar ">
-          {data.map((e, index) => {
+          {sidebardata.map((e, index) => {
             return (
               // eslint-disable-next-line react/jsx-key
               <Link
