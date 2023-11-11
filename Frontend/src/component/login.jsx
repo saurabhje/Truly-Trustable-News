@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AdminPage from './CRUD/AdminPage';
 const Login = () => {
-  const [loggedin, setLoggedin] = useState(true);
+  const [loggedin, setLoggedin] = useState(false);
   const [formData, setFormData] = useState({ password: '' });
   const navigate = useNavigate();
 
@@ -19,7 +19,8 @@ const Login = () => {
         });
         document.getElementById("password").value = "";
         if(response.ok){
-            setLoggedin(false)
+            localStorage.setItem("loggedin", "true");
+            setLoggedin(true)
         }
         else{
             navigate('/')
@@ -35,7 +36,7 @@ const Login = () => {
 
   return (
     <>
-      {loggedin ?
+      {!loggedin ?
           <form onSubmit={handleSubmit} className="text-center flex items-center justify-center h-screen">
             <input
               type="password"
