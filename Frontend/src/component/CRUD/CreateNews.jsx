@@ -24,14 +24,27 @@ function CreateNews() {
   const [loggedin, setLoggedin] = useState(false);
 
   useEffect(()=>{
-    authorise();
+    if(localStorage.getItem("password")){
+      authorise();
+    }
   }, [])
 
-  const authorise =() => {
-    const loggedin = localStorage.getItem("loggedin");
-    if(loggedin == "true"){
-      setLoggedin(true);
-    }
+  const authorise = async () => {
+    axios.post('http://localhost:3000/login', {
+      password: localStorage.getItem("password"),
+    }, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+   })
+    .then((response) => {
+      if (response.status === 200) {
+        setLoggedin(true);
+      }
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
   }
   async function getData(id) {
     try {

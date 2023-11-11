@@ -19,7 +19,7 @@ const Login = () => {
         });
         document.getElementById("password").value = "";
         if(response.ok){
-            localStorage.setItem("loggedin", "true");
+            localStorage.setItem("password", `${formData.password}`);
             setLoggedin(true)
         }
         else{
