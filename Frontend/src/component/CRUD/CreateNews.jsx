@@ -21,7 +21,31 @@ function CreateNews() {
 
   const [formData, setFormData] = useState(initialFormData);
   const [ allcategories, setallCategories ] = useState([]);
+  const [loggedin, setLoggedin] = useState(false);
 
+  useEffect(()=>{
+    if(localStorage.getItem("password")){
+      authorise();
+    }
+  }, [])
+
+  const authorise = async () => {
+    axios.post('http://localhost:3000/login', {
+      password: localStorage.getItem("password"),
+    }, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+   })
+    .then((response) => {
+      if (response.status === 200) {
+        setLoggedin(true);
+      }
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+  }
   async function getData(id) {
     try {
       const res = await axios.get(`http://localhost:3000/edit/${id}`);
@@ -114,6 +138,7 @@ function CreateNews() {
   };
   console.log(formData.img_pos)
   return (
+    loggedin?
     <section className="bg-slate-200">
       <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16">
         <h2 className="font-normal text-center text-xl md:text-4xl">
@@ -249,6 +274,7 @@ function CreateNews() {
         </form>
       </div>
     </section>
+    : <div>Not logged in </div>
   );
 }
 

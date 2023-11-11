@@ -45,7 +45,6 @@ exports.create_News_post = [
     }
     next();
   },
-
   asyncHandler(async (req, res, next) => {
     try {
       const news = News({
@@ -60,7 +59,7 @@ exports.create_News_post = [
         },
         category: req.body.category
       });
-  
+      console.log(req.body);
       const result = await news.save();
       console.log(result);
       res.status(200).json({
