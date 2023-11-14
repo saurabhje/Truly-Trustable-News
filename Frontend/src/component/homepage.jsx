@@ -5,11 +5,10 @@ import Footer from './footer';
 import MainContent from './main-content';
 import axios from 'axios';
 import styled from 'styled-components';
-import "./homepage.css"; // Assuming you have some global styles here
+import "./homepage.css";
 
 const AbsoluteNavbar = styled.div`
   position: absolute;
-  top: 0;
   left: 0;
   right: 0;
   z-index: 1;

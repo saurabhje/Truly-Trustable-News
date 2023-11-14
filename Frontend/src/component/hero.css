@@ -17,7 +17,6 @@
 }
 
 .hero-text h1{
-    font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     font-size: clamp(22px, 2.5vw, 50px);
     margin: 0;

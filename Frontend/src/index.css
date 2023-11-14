@@ -19,7 +19,7 @@ body {
   display: flex;
   flex-direction: column;
   min-width: 320px;
-  min-height: 100vh;
+  max-width: 100vw;
 }
 a{
   color: inherit;

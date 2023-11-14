@@ -1,0 +1,19 @@
+.listStyle {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .listItemStyle {
+    margin: 0 0 1rem;
+  }
+  
+  .listItemStyle::before {
+    content: '🚀';
+    color: #adadad;
+  }
+  
+  .listItemStyle a:link {
+    color: blue;
+    text-decoration: none;
+  }
+  

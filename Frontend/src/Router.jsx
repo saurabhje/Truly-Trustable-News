@@ -7,6 +7,7 @@ import Contactus from './component/contactus';
 import Login from './component/login';
 import CreateNews from "./component/CRUD/CreateNews";
 import Category from "./component/category";
+import NotFound from "./component/404";
 
 
 const Router = () =>{
@@ -42,6 +43,10 @@ const Router = () =>{
     {
       path: '/category/:id',
       element: <Category/>
+    },
+    {
+      path: "*",
+      element: <NotFound/>
     }
 
   ]);
