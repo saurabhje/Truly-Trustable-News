@@ -15,3 +15,6 @@
     background-size: cover;
     background-position: center;
 }
+.absolute{
+    position: absolute;
+}

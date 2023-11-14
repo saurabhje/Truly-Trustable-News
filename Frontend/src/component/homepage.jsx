@@ -1,11 +1,19 @@
-
 import React, { useState, useEffect } from 'react';
 import Hero from './hero';
 import Navbar from './navbar';
 import Footer from './footer';
 import MainContent from './main-content';
 import axios from 'axios';
-import "./homepage.css"
+import styled from 'styled-components';
+import "./homepage.css"; // Assuming you have some global styles here
+
+const AbsoluteNavbar = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+`;
 
 const Homepage = () => {
   const [header, setHeader] = useState([]);
@@ -14,6 +22,7 @@ const Homepage = () => {
   const increaseIndex = () =>{
     setImageindex((imageindex + 1)%(header.length));
   }
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -26,15 +35,16 @@ const Homepage = () => {
     fetchData();
   }, []);
 
-    useEffect(() => {
-      const imageTransition = setTimeout(increaseIndex, 4000);
-  
-      return () => clearTimeout(imageTransition);
-    }, [imageindex, header]);
-  console.log(header)
+  useEffect(() => {
+    const imageTransition = setTimeout(increaseIndex, 4000);
+    return () => clearTimeout(imageTransition);
+  }, [imageindex, header]);
+
   return (
     <div>
-      <Navbar />
+      <AbsoluteNavbar>
+        <Navbar />
+      </AbsoluteNavbar>
       <div className='header-wrapper'> 
         {header && header.map((index) => (
           <div className="header" key={index.img.src} style={{ backgroundImage: index ? `url(${index.img.src})` : '', backgroundPosition: index.img.position ? `${index.img.position}` : 'center', translate: `${-100 * imageindex}%`}}>

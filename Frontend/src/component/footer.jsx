@@ -9,6 +9,7 @@ const Footer = () => {
     justify-content: center;
     align-items: center;
     padding: 1vh 2vw;
+    width: 100%;
   `;
 
   const Heading = styled.h1`
