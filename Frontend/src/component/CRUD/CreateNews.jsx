@@ -24,14 +24,14 @@ function CreateNews() {
   const [loggedin, setLoggedin] = useState(false);
 
   useEffect(()=>{
-    if(localStorage.getItem("password")){
+    if(sessionStorage.getItem("password")){
       authorise();
     }
   }, [])
 
   const authorise = async () => {
     axios.post('http://localhost:3000/login', {
-      password: localStorage.getItem("password"),
+      password: sessionStorage.getItem("password"),
     }, {
       headers: {
         'Content-Type': 'application/json',
@@ -40,6 +40,8 @@ function CreateNews() {
     .then((response) => {
       if (response.status === 200) {
         setLoggedin(true);
+      } else{
+        navigate('/login');
       }
     })
     .catch((error) => {
@@ -59,7 +61,6 @@ function CreateNews() {
         category: res.data.category,
       };
       setFormData(data);
-      console.log(data);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -136,7 +137,6 @@ function CreateNews() {
         // Handle errors
       });
   };
-  console.log(formData.img_pos)
   return (
     loggedin?
     <section className="bg-slate-200">
@@ -261,7 +261,7 @@ function CreateNews() {
                 id="article"
                 theme="snow"
                 value={formData.article}
-                onChange={handleChangeQuill} // Use the optimized callback
+                onChange={handleChangeQuill} 
               />
             </div>
           </div>
