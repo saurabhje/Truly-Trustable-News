@@ -81,7 +81,7 @@ function CreateNews() {
       getData(id);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [id]); // Add 'id' as a dependency
+  }, [id]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -127,7 +127,7 @@ function CreateNews() {
       .then((response) => {
         if (response.status === 200) {
           console.log("Changes saved");
-          navigate("/"); // Redirect to the admin page after saving changes
+          navigate("/");
         } else if (response.status === 500) {
           // Handle server errors
         }
@@ -139,8 +139,7 @@ function CreateNews() {
   };
   return (
     loggedin?
-    <section className="bg-slate-200">
-      <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16">
+      <div className="flex flex-col h-screen">
         <h2 className="font-normal text-center text-xl md:text-4xl">
           Edit News
         </h2>
@@ -273,8 +272,11 @@ function CreateNews() {
           </button>
         </form>
       </div>
-    </section>
-    : <div>Not logged in </div>
+    : <div>
+      <p>
+        Not Logged in, Login Rn <button onClick={()=> navigate('/reallybreh12')}>Login</button>
+      </p>
+    </div>
   );
 }
 

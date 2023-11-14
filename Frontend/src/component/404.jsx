@@ -27,10 +27,10 @@ const NotFound = () => {
       <Link to="/" style={linkStyle}>
         Home
       </Link>
-      <Link to="/blog" style={linkStyle}>
-        Blog
+      <Link to="/aboutus" style={linkStyle}>
+        About 
       </Link>
-      <Link to="/contact" style={linkStyle}>
+      <Link to="/contactus" style={linkStyle}>
         Contact
       </Link>
     </div>
