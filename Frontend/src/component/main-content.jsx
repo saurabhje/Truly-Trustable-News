@@ -86,7 +86,7 @@ const MainContent = () => {
                       {e.subheading}This is a subheading and its for fun and
                       checking things
                     </p>
-                    <div>
+                    <div className="catog">
                       Categories:
                       {e.category ? (
                         e.category.map((cat) => (

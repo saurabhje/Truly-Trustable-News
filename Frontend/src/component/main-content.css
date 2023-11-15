@@ -171,10 +171,6 @@ hr {
 @media (max-width: 420px){
     .item h2{
         font-size: 18px;
-        text-shadow: 2px 2px #000000;
-    }
-    .item{
-        text-shadow: 2px 2px #000000;
     }
     .main{
         width: 100%;
@@ -184,22 +180,42 @@ hr {
     }
     .content{
         width: 100%;
+        gap: 0;
     }
     .itemwrap1{
         display: block;
         position: relative;
+        
+    }
+    .itemwrap1::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.85),
+            transparent
+        );
     }
     .itemwrap1 img{
         width: 100%;
+        height: 100%;
+    }
+    .catog{
+        display: none;
     }
     .heading-p{
         width: 90%;
         color: white;
         position: absolute;
-        top: 1vh;
+        bottom: 1vh;
         padding-left: 5%;
         padding-right: 5%;
-        text-align: left;
+        z-index: 1;
+
     }
     .itemwrap2{
         display: block;
@@ -208,10 +224,27 @@ hr {
     .itemwrap2 .heading-p{
         text-align: left;
     }
+    .itemwrap2::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.85),
+            transparent
+        );
+    }
     .itemwrap2 img{
         width: 100%;
+        height: 100%;
     }
     hr{
+        display: none;
+    }
+    p{
         display: none;
     }
 }
