@@ -3,9 +3,8 @@ const app = express();
 const port = 3000;
 const cors = require('cors');
 const mongoose = require('mongoose');
-const news_operations = require('./methods/news_operations');
-const category_Operations = require('./methods/category_Operations');
-
+const news_operations = require('./src/methods/news_operations');
+const category_Operations = require('./src/methods/category_Operations');
 require('dotenv').config();
 const bodyParser = require('body-parser');
 
@@ -17,7 +16,7 @@ app.use( bodyParser.json() );
 app.use(bodyParser.urlencoded({    
   extended: true
 }));
-
+app.use(cors());
 app.use(express.json());   
 app.use(express.urlencoded());
 
@@ -27,8 +26,6 @@ async function main(){
 }
 
 
-app.use(cors());
-//news operations routing requests and posts
 
 app.get('/admin', news_operations.allNews);
 app.get('/', news_operations.allNewsHome);
