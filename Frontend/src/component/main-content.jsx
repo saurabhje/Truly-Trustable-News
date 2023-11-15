@@ -65,54 +65,56 @@ const MainContent = () => {
   }, []);
   return (
     <div className="main">
-      <div className="content">
-        <select style={{height: "20px"}} onChange={handleCatchange}>
-          <option value="">All</option>
-          {catdata.map((e, index) => (
-            <option key={index} value={e.title}>{e.title}</option>
-          ))}
-        </select>
-        {data.map((e, index) => {
-          const itemWrapClass = index % 2 === 0 ? "itemwrap1" : "itemwrap2";
-          return (
-            <Link to={`/news/${e._id}`} className="item" key={index}>
-              <div className={itemWrapClass}>
-                <img id="img" src={e.img.src} alt="News Image" />
-                <div className="heading-p">
-                  <hr />
-                  <h2>{e.heading}</h2>
-                  <p>
-                    {e.subheading}This is a subheading and its for fun and
-                    checking things
-                  </p>
-                  <div>
-                    Categories:
-                    {e.category ? (
-                      e.category.map((cat) => (
-                        <span className='px-2' key={cat._id}>{cat.title}</span>
-                      ))
-                    ) : (
-                      <span>No categories available</span>
-                    )}
+      <div className="content-wrap">
+        <select className="select" onChange={handleCatchange}>
+            <option value="">All</option>
+            {catdata.map((e, index) => (
+              <option key={index} value={e.title}>{e.title}</option>
+            ))}
+          </select>
+        <div className="content">
+          {data.map((e, index) => {
+            const itemWrapClass = index % 2 === 0 ? "itemwrap1" : "itemwrap2";
+            return (
+              <Link to={`/news/${e._id}`} className="item" key={index}>
+                <div className={itemWrapClass}>
+                  <img id="img" src={e.img.src} alt="News Image" />
+                  <div className="heading-p">
+                    <hr />
+                    <h2>{e.heading}</h2>
+                    <p>
+                      {e.subheading}This is a subheading and its for fun and
+                      checking things
+                    </p>
+                    <div>
+                      Categories:
+                      {e.category ? (
+                        e.category.map((cat) => (
+                          <span className='px-2' key={cat._id}>{cat.title}</span>
+                        ))
+                      ) : (
+                        <span>No categories available</span>
+                      )}
+                    </div>
                   </div>
                 </div>
+              </Link>
+            );
+          })}
+          <div className="loading-wrap">
+            {loading ? (
+              <div className="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
               </div>
-            </Link>
-          );
-        })}
-        <div className="loading-wrap">
-          {loading ? (
-            <div className="lds-ring">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-          ) : (
-            <button id="loadmore" onClick={handleLoadMore}>
-              Load More
-            </button>
-          )}
+            ) : (
+              <button id="loadmore" onClick={handleLoadMore}>
+                Load More
+              </button>
+            )}
+          </div>
         </div>
       </div>
       {!mobileView && (

@@ -40,6 +40,7 @@ const Homepage = () => {
   }, [imageindex, header]);
 
   return (
+    // <div style={{overflow: "hidden"}}>
     <div>
       <AbsoluteNavbar>
         <Navbar />
