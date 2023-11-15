@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-const http = require('http');
 const cors = require('cors');
 const mongoose = require('mongoose');
 require('dotenv').config();
@@ -25,10 +24,9 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use("/",routes);
 
-const server = http.createServer(app);
 
-server.listen(port, () => {
-  console.log(`Server is listening on port ${port}`);
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
 });
 
 module.exports = app;
