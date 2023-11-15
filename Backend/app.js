@@ -2,8 +2,6 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const cors = require('cors');
-const News = require('./model/NewsSchema');
-const Category = require('./model/categoryschema');
 const mongoose = require('mongoose');
 const news_operations = require('./methods/news_operations');
 const category_Operations = require('./methods/category_Operations');
@@ -55,3 +53,5 @@ app.post('/login', (req, res, next) => {
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
+
+module.exports = app;
