@@ -18,7 +18,7 @@ const AdminNews = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/admin');
+      const response = await axios.get('https://truly-trustable-news-s52o.vercel.app/admin');
       setHeadings(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -31,7 +31,7 @@ const AdminNews = () => {
     setShowPopUp(false);
 
     try {
-      const response = await axios.post(`http://localhost:3000/delete/${id}`);
+      const response = await axios.post(`https://truly-trustable-news-s52o.vercel.app/delete/${id}`);
       console.log(response);
     } catch (error) {
       console.log(error);

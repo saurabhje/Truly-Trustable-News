@@ -11,7 +11,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3000/login",
+        "https://truly-trustable-news-s52o.vercel.app/login",
         formData,
       );
       document.getElementById("password").value = "";
@@ -35,7 +35,7 @@ const Login = () => {
   const authorise = async () => {
     axios
       .post(
-        "http://localhost:3000/login",
+        "https://truly-trustable-news-s52o.vercel.app/login",
         {
           password: sessionStorage.getItem("password"),
         },
