@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import Hero from './hero';
 import Navbar from './navbar';
@@ -40,7 +41,6 @@ const Homepage = () => {
   }, [imageindex, header]);
 
   return (
-    // <div style={{overflow: "hidden"}}>
     <div>
       <AbsoluteNavbar>
         <Navbar />

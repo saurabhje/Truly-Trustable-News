@@ -6,6 +6,7 @@
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+    padding-left: 30px;
 }
 .content{
     display: grid;
@@ -15,9 +16,13 @@
 }
 
 .select{
-    height: 20px;
-    width: 120px;
+    width: auto;
     margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+.select h2 {
+    font-weight: 300;
+    margin: 0;
 }
 
 .content-wrap{
@@ -71,7 +76,11 @@ hr {
     width: 40%;
 }
 
-
+.item h2{
+    font-weight: 600;
+    line-height: 1.2;
+    font-size: 1.7rem;
+}
 .itemwrap1{
     display: flex;
     justify-content: space-around;
@@ -166,11 +175,13 @@ hr {
         padding-left: 0;
         padding-right: 0;
     }
+
 }
 
 @media (max-width: 420px){
     .item h2{
         font-size: 18px;
+        font-weight: 700;
     }
     .main{
         width: 100%;
@@ -247,4 +258,9 @@ hr {
     p{
         display: none;
     }
+    .select{
+        margin-left: 20px;
+        font-size: 0.6rem;
+    }
+
 }
