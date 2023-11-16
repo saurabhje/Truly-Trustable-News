@@ -8,13 +8,16 @@ const Footer = () => {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1vh 2vw;
-    width: 100%;
+    padding: 1% 2.5%;
+    width: 95%;
   `;
 
   const Heading = styled.h1`
     font-size: 2em;
     margin: 0;
+    @media (max-width: 600px){
+      font-size: 1em; 
+    }
   `;
 
   const Socials = styled.div`
@@ -30,6 +33,9 @@ const Footer = () => {
   const RightsReserved = styled.p`
     font-size: 1em;
     margin: 10px 0 0 0;
+    @media (max-width: 600px){
+      font-size: 0.7em; 
+    }
   `;
 
   return (
