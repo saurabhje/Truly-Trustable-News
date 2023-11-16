@@ -11,7 +11,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://truly-trustable-news-s52o.vercel.app/login",
+        "https://truly-trustable-news.vercel.app/login",
         formData,
       );
       document.getElementById("password").value = "";
