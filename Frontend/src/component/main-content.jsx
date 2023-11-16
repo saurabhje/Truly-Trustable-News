@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./main-content.css";
@@ -66,12 +67,15 @@ const MainContent = () => {
   return (
     <div className="main">
       <div className="content-wrap">
-        <select className="select" onChange={handleCatchange}>
-            <option value="">All</option>
-            {catdata.map((e, index) => (
-              <option key={index} value={e.title}>{e.title}</option>
-            ))}
-          </select>
+        <div className="select">
+          <h2>Sort News By categories</h2>
+          <select  onChange={handleCatchange}> 
+              <option value="">All</option>
+              {catdata.map((e, index) => (
+                <option key={index} value={e.title}>{e.title}</option>
+              ))}
+            </select>
+        </div>
         <div className="content">
           {data.map((e, index) => {
             const itemWrapClass = index % 2 === 0 ? "itemwrap1" : "itemwrap2";

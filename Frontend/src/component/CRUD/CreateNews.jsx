@@ -27,7 +27,7 @@ function CreateNews() {
     if (sessionStorage.getItem("password")) {
       authorise();
     }
-  }, []);
+  });
 
   const authorise = async () => {
     axios
