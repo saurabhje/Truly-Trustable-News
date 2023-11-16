@@ -32,7 +32,7 @@ function CreateNews() {
   const authorise = async () => {
     axios
       .post(
-        "http://localhost:3000/login",
+        "https://truly-trustable-news-s52o.vercel.app/login",
         {
           password: sessionStorage.getItem("password"),
         },
@@ -55,7 +55,7 @@ function CreateNews() {
   };
   async function getData(id) {
     try {
-      const res = await axios.get(`http://localhost:3000/edit/${id}`);
+      const res = await axios.get(`https://truly-trustable-news-s52o.vercel.app/edit/${id}`);
       const data = {
         heading: res.data.heading,
         author: res.data.author,
@@ -73,7 +73,7 @@ function CreateNews() {
 
   async function getCats() {
     try {
-      const res = await axios.get("http://localhost:3000/categories");
+      const res = await axios.get("https://truly-trustable-news-s52o.vercel.app/categories");
       console.log(res);
       setallCategories(res.data);
     } catch (error) {
@@ -124,8 +124,8 @@ function CreateNews() {
     event.preventDefault();
 
     const url = id
-      ? `http://localhost:3000/edit/${id}`
-      : "http://localhost:3000/create-news";
+      ? `https://truly-trustable-news-s52o.vercel.app/edit/${id}`
+      : "https://truly-trustable-news-s52o.vercel.app/create-news";
 
     axios
       .post(url, formData)

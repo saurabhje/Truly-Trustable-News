@@ -25,7 +25,7 @@ const Homepage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/');
+        const response = await axios.get('https://truly-trustable-news-s52o.vercel.app/');
         setHeader(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -40,6 +40,7 @@ const Homepage = () => {
   }, [imageindex, header]);
 
   return (
+    // <div style={{overflow: "hidden"}}>
     <div>
       <AbsoluteNavbar>
         <Navbar />

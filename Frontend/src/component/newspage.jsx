@@ -11,7 +11,7 @@ const Newspage = () => {
   const { id } = useParams();
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/news/${id}`)
+      .get(`https://truly-trustable-news-s52o.vercel.app/news/${id}`)
       .then((response) => {
         console.log(response.data);
         setData(response.data);
@@ -28,7 +28,6 @@ const Newspage = () => {
   return (
     <>
       <div className="header" style={{ backgroundImage: data.img ? `url(${data.img.src})` : '', backgroundPosition: data.img ? `${data.img.position}` : 'center', }}>
-
         <Navbar />
       </div>
       <div className='newsbody'>
