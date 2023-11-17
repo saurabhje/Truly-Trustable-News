@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const MainContent = () => {
   const [data, setData] = useState([]);
   const [sidebardata, setSidebardata] = useState([])
-  const [mobileView, setMobileView] = useState(false);
+  const [mobileView, setMobileView] = useState();
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
   const [cat, setCat] = useState();
@@ -59,11 +59,13 @@ const MainContent = () => {
       console.log(response.data)
       setCatdata(response.data)
     })
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+  
   return (
     <div className="main">
       <div className="content-wrap">
