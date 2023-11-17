@@ -196,32 +196,18 @@ hr {
         gap: 0;
     }
     .itemwrap1, .itemwrap2{
-        display: block;
-        position: relative;
-        height: 80vh;
-    }
-    .itemwrap1::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-            to top,
-            rgba(0, 0, 0, 0.85),
-            transparent
-        );
+        flex-direction: column;        
+        
     }
     .itemwrap1 img{
         object-fit: cover;
-        height: 100%;
+        height: 50%;
         width: 100%;
     }
 
     .itemwrap2 img{
         object-fit: cover;
-        height: 100%;
+        height: 50%;
         width: 100%;
     }
     .catog{
@@ -229,28 +215,17 @@ hr {
     }
     .heading-p{
         width: 90%;
+        height: 50%;
         color: white;
-        position: absolute;
         bottom: 1vh;
         padding-left: 5%;
         padding-right: 5%;
         z-index: 1;
+        background-color: black;
+        padding-bottom: 5vh;
     }
     .itemwrap2 .heading-p{
         text-align: left;
-    }
-    .itemwrap2::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-            to top,
-            rgba(0, 0, 0, 0.85),
-            transparent
-        );
     }
     hr{
         display: none;
