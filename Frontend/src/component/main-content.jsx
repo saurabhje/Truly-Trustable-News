@@ -87,8 +87,7 @@ const MainContent = () => {
                     <hr />
                     <h2>{e.heading}</h2>
                     <p>
-                      {e.subheading}This is a subheading and its for fun and
-                      checking things
+                      {e.subheading}
                     </p>
                     <div className="catog">
                       Categories:
