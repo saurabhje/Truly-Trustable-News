@@ -1,35 +1,43 @@
 .hero-sec{
-    height: 45vh;
     display: flex;
     align-items: flex-end; 
 }
 .header{
-    height: 55vh;
+    height: 65vh;
     color: white;
     background-size: cover;
     
 }
 .hero-text{
-    line-height: 1.1;
-    width: 70%;
+    position: absolute;
+    bottom: 0;
+    width: 55%;
     padding-left: 4vw;
     padding-bottom: 20px;
+    border-inline-color: red;
+    writing-mode: horizontal-tb;
 }
 
 .hero-text h1{
     text-transform: uppercase;
-    font-size: clamp(22px, 2.5vw, 50px);
-    margin: 0;
+    font-family: 'Anton', sans-serif;
+    font-size: 2.7rem;
+    margin-bottom: 0;
+    line-height: 1.1;
 }
 
 .hero-text h2{
    font-size: clamp(14px, 1.5vw, 32px);
    font-weight: 400;
+   margin-top: 0;
 }
 
 
-@media (max-width: 320px){
+@media (max-width: 420px){
     .hero-text h1{
-        font-size: 15px;
+        font-size: 1.8rem;
     } 
+    .hero-text{
+        width: 90%;
+    }
 }
