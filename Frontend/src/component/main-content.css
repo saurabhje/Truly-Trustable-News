@@ -14,9 +14,9 @@
     grid-template-columns: 1fr;
     gap: 50px;
 }
-.heading-p:hover{
+/* .heading-p:hover{
     color: rgb(245, 5, 29);
-}
+} */
 .heading-p{
     width: 50%;
 }
