@@ -1,13 +1,12 @@
 import { RouterProvider, createBrowserRouter} from "react-router-dom";
-import './Router.css';
-import Homepage from './component/homepage';
-import Newspage from './component/newspage';
-import Aboutus from './component/aboutus'
-import Contactus from './component/contactus';
-import Login from './component/login';
-import CreateNews from "./component/CRUD/CreateNews";
-import Category from "./component/category";
-import NotFound from "./component/404";
+import Homepage from './homepage';
+import Newspage from './newspage';
+import Aboutus from './aboutus'
+import Contactus from './contactus';
+import Login from './login';
+import CreateNews from "./CRUD/CreateNews";
+import Category from "./category";
+import NotFound from "./404";
 
 
 const Router = () =>{
