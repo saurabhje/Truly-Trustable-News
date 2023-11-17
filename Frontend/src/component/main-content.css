@@ -198,7 +198,7 @@ hr {
     .itemwrap1, .itemwrap2{
         display: block;
         position: relative;
-        height: 60vh;
+        height: 80vh;
     }
     .itemwrap1::before {
         content: "";
@@ -214,10 +214,16 @@ hr {
         );
     }
     .itemwrap1 img{
-        width: 100%;
+        object-fit: cover;
         height: 100%;
+        width: 100%;
     }
 
+    .itemwrap2 img{
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
     .catog{
         display: none;
     }
@@ -246,16 +252,16 @@ hr {
             transparent
         );
     }
-    .itemwrap2 img{
-        width: 100%;
-        height: 100%;
-    }
     hr{
         display: none;
     }
-    p{
-       
+    .heading-p h2{
+       font-size: 1.5rem;
+       margin-bottom: 0;
     }
+    .heading-p p{
+        font-size: 1rem;
+     }
     .select{
         margin-left: 20px;
         font-size: 0.6rem;
