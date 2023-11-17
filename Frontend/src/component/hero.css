@@ -5,8 +5,7 @@
 .header{
     height: 65vh;
     color: white;
-    background-size: cover;
-    
+    background-size: cover;  
 }
 .hero-text{
     position: absolute;
@@ -28,14 +27,23 @@
    font-size: clamp(14px, 1.5vw, 32px);
    font-weight: 400;
    margin-top: 0;
+   font-size: 1.4rem;
 }
 
 
 @media (max-width: 420px){
     .hero-text h1{
-        font-size: 1.8rem;
+        font-size: 2rem;
     } 
+    .hero-text h2{
+        font-size: 1rem;
+    }
     .hero-text{
         width: 90%;
+    }
+    .header{
+        height: 50vh;
+        color: white;
+        background-size: cover;  
     }
 }
