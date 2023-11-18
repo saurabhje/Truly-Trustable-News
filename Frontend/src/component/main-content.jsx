@@ -84,8 +84,10 @@ const MainContent = () => {
             return (
               <Link to={`/news/${e._id}`} className="item" key={index}>
                 <div className={itemWrapClass}>
-                  <img id="img" src={e.img.src} alt="News Image" />
-                  <div className="heading-p">
+                    <div className="gradient">
+                    <img id="img" src={e.img.src} alt="News Image" />
+                    </div>
+                    <div className="heading-p">
                     <hr />
                     <h2>{e.heading}</h2>
                     <p>

@@ -46,7 +46,7 @@ function CreateNews() {
         if (response.status === 200) {
           setLoggedin(true);
         } else {
-          navigate("/login");
+          navigate("/reallybreh12");
         }
       })
       .catch((error) => {
@@ -132,7 +132,7 @@ function CreateNews() {
       .then((response) => {
         if (response.status === 200) {
           console.log("Changes saved");
-          navigate("/");
+          navigate("/reallybreh12");
         } else if (response.status === 500) {
           // Handle server errors
         }
