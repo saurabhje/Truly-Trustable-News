@@ -44,8 +44,7 @@ const MainContent = () => {
 
   const handleCatchange = (e) =>{
     setCat(e.target.value)
-    setData([])
-    console.log(cat)
+    setData([]);
   }
 
   useEffect(() => {

@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       textColor: {
-        'sky': 'rgb(0, 136, 255)', // or your desired color code
+        'sky': 'rgb(0, 136, 255)',
       },
     },
     screens: {
