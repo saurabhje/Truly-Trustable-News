@@ -35,7 +35,7 @@ const MainContent = () => {
   };
 
   const handleResize = () => {
-    if (window.innerWidth < 720) {
+    if (window.innerWidth < 1080) {
       setMobileView(true);
     } else {
       setMobileView(false);
