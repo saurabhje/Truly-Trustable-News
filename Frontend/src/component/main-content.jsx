@@ -97,7 +97,7 @@ const MainContent = () => {
                       Categories:
                       {e.category ? (
                         e.category.map((cat) => (
-                          <span className='px-2' key={cat._id}>{cat.title}</span>
+                          <span className='px-1 text-sky' key={cat._id}>{cat.title}</span>
                         ))
                       ) : (
                         <span>No categories available</span>
@@ -129,19 +129,19 @@ const MainContent = () => {
           {sidebardata.map((e, index) => {
             return (
               // eslint-disable-next-line react/jsx-key
-              <Link
+              <Link 
                 to={`/news/${e._id}`}
                 className="news_card"
                 key={index}
                 state={{ id: e._id }}
               >
                 <img
-                  className="w-full"
+                  className="w-full h-auto"
                   id="side_img"
                   src={e.img.src}
                   alt="News Image"
                 />
-                <h3>{e.heading}</h3>
+                <h3 className="text-xl leading-6 h-full">{e.heading}</h3>
               </Link>
             );
           })}

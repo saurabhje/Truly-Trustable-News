@@ -28,6 +28,10 @@
     font-weight: 300;
     margin: 0;
 }
+.select select{
+    padding: 2px 0.5rem;
+    background-color: rgb(0, 136, 255);
+}
 
 .content-wrap{
     width: max(60%, 700px);
@@ -56,14 +60,12 @@
 
 .news_card{
     background-color: white;
-    margin: 5px;
+    margin-bottom: 3rem;
 }
 
 .news_card h3{
     margin: 0;
 }
-
-
 
 hr {
     display: block;
