@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      textColor: {
+        'sky': 'rgb(0, 136, 255)',
+      },
+    },
     screens: {
       sm: '480px',
       md: '768px',

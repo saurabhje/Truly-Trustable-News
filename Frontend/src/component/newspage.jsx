@@ -24,7 +24,7 @@ const Newspage = () => {
   const renderHtmlContent = (html) => {
     return { __html: html };
   };
-  console.log(data)
+
   return (
     <>
       <div className="header" style={{ backgroundImage: data.img ? `url(${data.img.src})` : '', backgroundPosition: data.img ? `${data.img.position}` : 'center', }}>
@@ -33,18 +33,18 @@ const Newspage = () => {
       <div className='newsbody'>
         <div className="news-hero-text">
           <h1>{data.heading}</h1>
+          <p>{data.subheading}</p>
           <p>{data.author}</p>
         </div>
-        <div className='categories'>
-          Categories: 
+        <div className='categories justify-start'>
+          Category: 
           {data.category &&
             data.category.map((cat) => (
-              <p className='inline-block mx-2 category-link' key={cat._id}>
-                <a href={`/category/${cat._id}`}>{cat.title}</a>
+              <p className='inline-block m-2 flex-start text-sky category-link' key={cat._id}>
+                {cat.title}
               </p>
             ))}
         </div>
-        <p>This is going to be a vertical line. Just imagine it!</p>
         <div className="articles" dangerouslySetInnerHTML={renderHtmlContent(data.article)} />
       </div>
       <Footer />

@@ -11,6 +11,8 @@
 }
 .nav-logo{
     font-size: 2em;
+    font-family: Inter;
+    font-weight: 900;
 }
 .nav-link{
     display: flex;
