@@ -6,7 +6,10 @@ import Footer from './footer';
 import MainContent from './main-content';
 import axios from 'axios';
 import styled from 'styled-components';
+import { Helmet } from 'react-helmet';
+
 import "./homepage.css";
+
 
 const AbsoluteNavbar = styled.div`
   position: absolute;
@@ -42,6 +45,10 @@ const Homepage = () => {
 
   return (
     <div>
+      <Helmet>
+      <title>The Third Front</title>
+        <meta name="description" content="Homepage of a satirical news blog" />
+      </Helmet>
       <AbsoluteNavbar>
         <Navbar />
       </AbsoluteNavbar>

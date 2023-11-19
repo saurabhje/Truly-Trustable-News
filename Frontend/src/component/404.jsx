@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { Helmet } from "react-helmet";
 const NotFound = () => {
   const containerStyle = {
     textAlign: "center",
@@ -21,19 +21,24 @@ const NotFound = () => {
   };
 
   return (
+    <>
+    <Helmet>
+      <title>Page Not Found</title>
+      <meta name="description" content="Undefined page request" />
+    </Helmet>
     <div style={containerStyle}>
-      <h1 style={headingStyle}>Oops! You seem to be lost.</h1>
-      <p>Here are some helpful links:</p>
-      <Link to="/" style={linkStyle}>
-        Home
-      </Link>
-      <Link to="/aboutus" style={linkStyle}>
-        About 
-      </Link>
-      <Link to="/contactus" style={linkStyle}>
-        Contact
-      </Link>
-    </div>
+        <h1 style={headingStyle}>Oops! You seem to be lost.</h1>
+        <p>Here are some helpful links:</p>
+        <Link to="/" style={linkStyle}>
+          Home
+        </Link>
+        <Link to="/aboutus" style={linkStyle}>
+          About
+        </Link>
+        <Link to="/contactus" style={linkStyle}>
+          Contact
+        </Link>
+      </div></>
   );
 };
 

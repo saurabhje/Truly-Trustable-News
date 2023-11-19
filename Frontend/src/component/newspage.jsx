@@ -5,7 +5,7 @@ import './newspage.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-
+import { Helmet } from 'react-helmet';
 const Newspage = () => {
   const [data, setData] = useState([]);
   const { slug } = useParams();
@@ -26,6 +26,10 @@ const Newspage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>{data.heading}</title>
+        <meta name="description" content="News page" />
+      </Helmet>
       <div className="header" style={{ backgroundImage: data.img ? `url(${data.img.src})` : '', backgroundPosition: data.img ? `${data.img.position}` : 'center', }}>
         <Navbar />
       </div>

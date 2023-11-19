@@ -4,6 +4,7 @@ import "./CreateNews.css";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { useParams, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 function CreateNews() {
   const { id } = useParams();
@@ -158,6 +159,10 @@ function CreateNews() {
   };
   return loggedin ? (
     <div>
+      <Helmet>
+        <title>{id === undefined ? "Create News" : "Edit News"}</title>
+        <meta name="description" content="Editing news" />
+      </Helmet>
       <h2 className="font-normal text-center text-xl md:text-4xl">Edit News</h2>
       <form className="newsform" onSubmit={handleSubmit}>
         <div className="formData">
