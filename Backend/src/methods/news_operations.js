@@ -50,6 +50,7 @@ exports.create_News_post = [
       const news = News({
         heading: req.body.heading,
         subheading: req.body.subheading,
+        slug: req.body.slug,
         article: req.body.article,
         author: req.body.author,
         date: new Date(),
@@ -91,6 +92,7 @@ exports.edit_News_post = [
         heading: req.body.heading,
         subheading: req.body.subheading,
         article: req.body.article,
+        slug: req.body.slug,
         author: req.body.author,
         date: new Date(),
         img: {
