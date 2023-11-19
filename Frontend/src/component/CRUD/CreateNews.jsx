@@ -183,10 +183,21 @@ function CreateNews() {
               onChange={handleChange}
             />
           </div>
+          <h2>Preview</h2>
           <div
             style={{
-              height: "55vh",
+              height: "65vh",
               width: "100vw",
+              backgroundImage: `url(${formData.img_url})`,
+              backgroundSize: "cover",
+              backgroundPosition: formData.img_pos,
+            }}
+          ></div>
+          <h2>Mobile Preview</h2>
+          <div
+            style={{
+              height: "50vh",
+              width: "432px",
               backgroundImage: `url(${formData.img_url})`,
               backgroundSize: "cover",
               backgroundPosition: formData.img_pos,

@@ -140,7 +140,7 @@ const MainContent = () => {
                   src={e.img.src}
                   alt="News Image"
                 />
-                <h3 className="text-xl leading-6 h-full">{e.heading}</h3>
+                <p>{e.heading}</p>
               </Link>
             );
           })}
