@@ -11,9 +11,8 @@ const Newspage = () => {
   const { id } = useParams();
   useEffect(() => {
     axios
-      .get(`https://truly-trustable-news-s52o.vercel.app/news/${id}`)
+      .get(`http://localhost:3000/news/${id}`)
       .then((response) => {
-        console.log(response.data);
         setData(response.data);
       })
       .catch((error) => {
@@ -35,7 +34,6 @@ const Newspage = () => {
           <h1>{data.heading}</h1>
           <p>{data.subheading}</p>
           <p>{data.author}</p>
-          <p>{data.slug}</p>
         </div>
         <div className='categories justify-start'>
           Category: 

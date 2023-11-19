@@ -15,12 +15,12 @@ const MainContent = () => {
 
   const fetchInfo = () => {
     setLoading(true);
-    const link = cat? `https://truly-trustable-news-s52o.vercel.app/?page=${page}&cat=${cat}`: `https://truly-trustable-news-s52o.vercel.app/?page=${page}`
+    const link = cat? `http://localhost:3000/`: `http://localhost:3000/`
     axios
       .get(link)
       .then((response) => {
         setData((prevNews) => [...prevNews, ...response.data]);
-        if(link == `https://truly-trustable-news-s52o.vercel.app/?page=${page}`){
+        if(link == `http://localhost:3000/page=${page}`){
           setSidebardata((prevNews) => [...prevNews, ...response.data]);
         }
         setLoading(false);
@@ -53,7 +53,7 @@ const MainContent = () => {
 
   useEffect(() => {
     axios
-    .get(`https://truly-trustable-news-s52o.vercel.app/categories`)
+    .get(`http://localhost:3000/categories`)
     .then((response) => {
       console.log(response.data)
       setCatdata(response.data)
