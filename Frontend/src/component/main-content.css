@@ -179,19 +179,7 @@ hr {
     }
 }
 
-/* @media (max-width: 720px){
-    .content{
-        grid-template-columns: 1fr;
-        width: 90%;
-    }
-    .main{
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-} */
-
-@media (max-width: 420px){
+@media (max-width: 432px){
     .item h2{
         font-size: 18px;
         font-weight: 700;
