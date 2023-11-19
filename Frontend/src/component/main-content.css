@@ -1,13 +1,12 @@
 
 .main{
-    padding-top: 60px;
+    padding-top: 4vh;
     padding-bottom: 100px;
     display: flex;
     justify-content: space-around;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 30px;
 }
 .content{
     display: grid;
@@ -54,13 +53,13 @@
 .sidebar{
     display: flex;
     flex-direction: column ;
-    max-width: 15%;
+    max-width: min(250px, 18%);
     padding: 5px;
 }
 
 .news_card{
     background-color: white;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .news_card h3{
