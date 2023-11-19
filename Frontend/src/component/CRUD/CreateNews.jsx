@@ -56,7 +56,9 @@ function CreateNews() {
   };
   async function getData(id) {
     try {
-      const res = await axios.get(`https://truly-trustable-news-s52o.vercel.app/edit/${id}`);
+      const res = await axios.get(
+        `https://truly-trustable-news-s52o.vercel.app/edit/${id}`,
+      );
       const data = {
         heading: res.data.heading,
         author: res.data.author,
@@ -75,7 +77,9 @@ function CreateNews() {
 
   async function getCats() {
     try {
-      const res = await axios.get("https://truly-trustable-news-s52o.vercel.app/categories");
+      const res = await axios.get(
+        "https://truly-trustable-news-s52o.vercel.app/categories",
+      );
       console.log(res);
       setallCategories(res.data);
     } catch (error) {
@@ -97,12 +101,12 @@ function CreateNews() {
       [name]: value,
     });
   };
-  const slugGenerator = (title) =>{
+  const slugGenerator = (title) => {
     let slug = title.toLowerCase();
-    slug = slug.replace(/\s+/g, '-').replace(/[^\w-]/g, '');
-    let word = slug.split('-').slice(0,7);
-    return word.join('-')
-  }
+    slug = slug.replace(/\s+/g, "-").replace(/[^\w-]/g, "");
+    let word = slug.split("-").slice(0, 7);
+    return word.join("-");
+  };
 
   const handleChangeQuill = useCallback((value) => {
     setFormData((prevData) => ({
@@ -267,18 +271,24 @@ function CreateNews() {
             />
           </div>
         </div>
-        <button className='py-2 px-5 m-2 text-indigo-100 transition-colors duration-150 bg-indigo-700 border-none rounded focus:shadow-outline hover:bg-indigo-800' type="submit">
-  {id === undefined ?"Post" : "Save Changes"}
-</button>
-
+        <button
+          className="py-2 px-5 m-2 text-indigo-100 transition-colors duration-150 bg-indigo-700 border-none rounded focus:shadow-outline hover:bg-indigo-800"
+          type="submit"
+        >
+          {id === undefined ? "Post" : "Save Changes"}
+        </button>
       </form>
     </div>
   ) : (
     <div>
       <p>
         Not Logged in, Login Rn{" "}
-        <button className='py-2 px-5 m-2 text-indigo-100 transition-colors duration-150 bg-indigo-700 border-none rounded focus:shadow-outline hover:bg-indigo-800'
-          onClick={() => navigate("/reallybreh12")}>Login</button>
+        <button
+          className="py-2 px-5 m-2 text-indigo-100 transition-colors duration-150 bg-indigo-700 border-none rounded focus:shadow-outline hover:bg-indigo-800"
+          onClick={() => navigate("/reallybreh12")}
+        >
+          Login
+        </button>
       </p>
     </div>
   );
