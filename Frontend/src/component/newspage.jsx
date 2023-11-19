@@ -8,17 +8,17 @@ import { useParams } from 'react-router-dom';
 
 const Newspage = () => {
   const [data, setData] = useState([]);
-  const { id } = useParams();
+  const { slug } = useParams();
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/news/${id}`)
+      .get(`http://localhost:3000/news/${slug}`)
       .then((response) => {
         setData(response.data);
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
       });
-  }, [id]);
+  }, [slug]);
 
   const renderHtmlContent = (html) => {
     return { __html: html };

@@ -15,7 +15,7 @@ const MainContent = () => {
 
   const fetchInfo = () => {
     setLoading(true);
-    const link = cat? `http://localhost:3000/`: `http://localhost:3000/`
+    const link = cat? `http://localhost:3000/page=${page}&cat=${cat}`: `http://localhost:3000=${page}`
     axios
       .get(link)
       .then((response) => {
@@ -81,7 +81,7 @@ const MainContent = () => {
           {data.map((e, index) => {
             const itemWrapClass = index % 2 === 0 ? "itemwrap1" : "itemwrap2";
             return (
-              <Link to={`/news/${e._id}`} className="item" key={index}>
+              <Link to={`/news/${e.slug}`} className="item" key={index}>
                 <div className={itemWrapClass}>
                     <div className="gradient">
                     <img id="img" src={e.img.src} alt="News Image" />
@@ -129,7 +129,7 @@ const MainContent = () => {
             return (
               // eslint-disable-next-line react/jsx-key
               <Link 
-                to={`/news/${e._id}`}
+                to={`/news/${e.slug}`}
                 className="news_card"
                 key={index}
                 state={{ id: e._id }}
