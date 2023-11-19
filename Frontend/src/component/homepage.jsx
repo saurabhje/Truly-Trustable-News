@@ -6,7 +6,10 @@ import Footer from './footer';
 import MainContent from './main-content';
 import axios from 'axios';
 import styled from 'styled-components';
+import { Helmet } from 'react-helmet';
+
 import "./homepage.css";
+
 
 const AbsoluteNavbar = styled.div`
   position: absolute;
@@ -26,7 +29,7 @@ const Homepage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://truly-trustable-news-s52o.vercel.app/');
+        const response = await axios.get('http://localhost:3000/');
         setHeader(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -42,6 +45,10 @@ const Homepage = () => {
 
   return (
     <div>
+      <Helmet>
+      <title>The Third Front</title>
+        <meta name="description" content="Homepage of a satirical news blog" />
+      </Helmet>
       <AbsoluteNavbar>
         <Navbar />
       </AbsoluteNavbar>

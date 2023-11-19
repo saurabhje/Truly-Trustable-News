@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AdminPage from "./CRUD/AdminPage";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 const Login = () => {
   const [loggedin, setLoggedin] = useState(false);
   const [formData, setFormData] = useState({ password: "" });
@@ -11,7 +12,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://truly-trustable-news-s52o.vercel.app/login",
+        "http://localhost:3000/login",
         formData,
       );
       document.getElementById("password").value = "";
@@ -35,7 +36,7 @@ const Login = () => {
   const authorise = async () => {
     axios
       .post(
-        "https://truly-trustable-news-s52o.vercel.app/login",
+        "http://localhost:3000/login",
         {
           password: sessionStorage.getItem("password"),
         },
@@ -61,6 +62,10 @@ const Login = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Login</title>
+        <meta name="description" content="login to perform admin operations" />
+      </Helmet>
       {!loggedin ? (
         <form
           onSubmit={handleSubmit}

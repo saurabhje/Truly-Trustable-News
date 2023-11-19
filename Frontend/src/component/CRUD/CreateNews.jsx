@@ -4,6 +4,7 @@ import "./CreateNews.css";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { useParams, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 function CreateNews() {
   const { id } = useParams();
@@ -23,6 +24,7 @@ function CreateNews() {
   const [formData, setFormData] = useState(initialFormData);
   const [allcategories, setallCategories] = useState([]);
   const [loggedin, setLoggedin] = useState(false);
+  const [autoslug, setAutoslug] = useState(false);
 
   useEffect(() => {
     if (sessionStorage.getItem("password")) {
@@ -30,10 +32,21 @@ function CreateNews() {
     }
   });
 
+  const slugAutoGenerator = (title) => {
+    if (autoslug) {
+      let slug = title.toLowerCase();
+      slug = slug.replace(/\s+/g, "-").replace(/[^\w-]/g, "");
+      let word = slug.split("-").slice(0, 7);
+      return word.join("-");
+    } else {
+      return "";
+    }
+  };
+
   const authorise = async () => {
     axios
       .post(
-        "https://truly-trustable-news-s52o.vercel.app/login",
+        "http://localhost:3000/login",
         {
           password: sessionStorage.getItem("password"),
         },
@@ -56,9 +69,7 @@ function CreateNews() {
   };
   async function getData(id) {
     try {
-      const res = await axios.get(
-        `https://truly-trustable-news-s52o.vercel.app/edit/${id}`,
-      );
+      const res = await axios.get(`http://localhost:3000/edit/${id}`);
       const data = {
         heading: res.data.heading,
         author: res.data.author,
@@ -77,9 +88,7 @@ function CreateNews() {
 
   async function getCats() {
     try {
-      const res = await axios.get(
-        "https://truly-trustable-news-s52o.vercel.app/categories",
-      );
+      const res = await axios.get("http://localhost:3000/categories");
       console.log(res);
       setallCategories(res.data);
     } catch (error) {
@@ -100,12 +109,6 @@ function CreateNews() {
       ...formData,
       [name]: value,
     });
-  };
-  const slugGenerator = (title) => {
-    let slug = title.toLowerCase();
-    slug = slug.replace(/\s+/g, "-").replace(/[^\w-]/g, "");
-    let word = slug.split("-").slice(0, 7);
-    return word.join("-");
   };
 
   const handleChangeQuill = useCallback((value) => {
@@ -136,8 +139,8 @@ function CreateNews() {
     event.preventDefault();
 
     const url = id
-      ? `https://truly-trustable-news-s52o.vercel.app/edit/${id}`
-      : "https://truly-trustable-news-s52o.vercel.app/create-news";
+      ? `http://localhost:3000/edit/${id}`
+      : "http://localhost:3000/create-news";
 
     axios
       .post(url, formData)
@@ -156,6 +159,10 @@ function CreateNews() {
   };
   return loggedin ? (
     <div>
+      <Helmet>
+        <title>{id === undefined ? "Create News" : "Edit News"}</title>
+        <meta name="description" content="Editing news" />
+      </Helmet>
       <h2 className="font-normal text-center text-xl md:text-4xl">Edit News</h2>
       <form className="newsform" onSubmit={handleSubmit}>
         <div className="formData">
@@ -183,15 +190,29 @@ function CreateNews() {
               onChange={handleChange}
             />
           </div>
+          <button
+            type="button"
+            className="py-2 px-5 m-2 text-indigo-100 transition-colors duration-150 bg-indigo-700 border-none rounded focus:shadow-outline hover:bg-indigo-800"
+            onClick={() => {
+              setAutoslug(true);
+              setFormData((prevData) => ({
+                ...prevData,
+                slug: slugAutoGenerator(formData.heading),
+              }));
+            }}
+          >
+            Slug Generate
+          </button>
           <div>
             <label htmlFor="slug">Slug:</label>
             <input
               type="text"
               name="slug"
               id="slug"
-              placeholder="header"
+              placeholder="slug"
               required
-              value={slugGenerator(formData.heading)}
+              value={formData.slug}
+              onChange={handleChange}
             />
           </div>
           <div>

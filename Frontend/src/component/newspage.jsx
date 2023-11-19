@@ -5,21 +5,20 @@ import './newspage.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-
+import { Helmet } from 'react-helmet';
 const Newspage = () => {
   const [data, setData] = useState([]);
-  const { id } = useParams();
+  const { slug } = useParams();
   useEffect(() => {
     axios
-      .get(`https://truly-trustable-news-s52o.vercel.app/news/${id}`)
+      .get(`http://localhost:3000/news/${slug}`)
       .then((response) => {
-        console.log(response.data);
         setData(response.data);
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
       });
-  }, [id]);
+  }, [slug]);
 
   const renderHtmlContent = (html) => {
     return { __html: html };
@@ -27,6 +26,10 @@ const Newspage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>{data.heading}</title>
+        <meta name="description" content="News page" />
+      </Helmet>
       <div className="header" style={{ backgroundImage: data.img ? `url(${data.img.src})` : '', backgroundPosition: data.img ? `${data.img.position}` : 'center', }}>
         <Navbar />
       </div>
@@ -35,7 +38,6 @@ const Newspage = () => {
           <h1>{data.heading}</h1>
           <p>{data.subheading}</p>
           <p>{data.author}</p>
-          <p>{data.slug}</p>
         </div>
         <div className='categories justify-start'>
           Category: 
