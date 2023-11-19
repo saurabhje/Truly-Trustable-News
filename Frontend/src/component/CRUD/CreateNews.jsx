@@ -13,6 +13,7 @@ function CreateNews() {
     heading: "",
     author: "",
     article: "",
+    slug: "",
     subheading: "",
     img_url: "",
     img_pos: "",
@@ -59,6 +60,7 @@ function CreateNews() {
       const data = {
         heading: res.data.heading,
         author: res.data.author,
+        slug: res.data.slug,
         article: res.data.article,
         subheading: res.data.subheading,
         img_url: res.data.img.src,
@@ -95,6 +97,12 @@ function CreateNews() {
       [name]: value,
     });
   };
+  const slugGenerator = (title) =>{
+    let slug = title.toLowerCase();
+    slug = slug.replace(/\s+/g, '-').replace(/[^\w-]/g, '');
+    let word = slug.split('-').slice(0,7);
+    return word.join('-')
+  }
 
   const handleChangeQuill = useCallback((value) => {
     setFormData((prevData) => ({
@@ -169,6 +177,17 @@ function CreateNews() {
               required
               value={formData.subheading}
               onChange={handleChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="slug">Slug:</label>
+            <input
+              type="text"
+              name="slug"
+              id="slug"
+              placeholder="header"
+              required
+              value={slugGenerator(formData.heading)}
             />
           </div>
           <div>
@@ -248,14 +267,18 @@ function CreateNews() {
             />
           </div>
         </div>
-        <button type="submit">Save Changes</button>
+        <button className='py-2 px-5 m-2 text-indigo-100 transition-colors duration-150 bg-indigo-700 border-none rounded focus:shadow-outline hover:bg-indigo-800' type="submit">
+  {id === undefined ?"Post" : "Save Changes"}
+</button>
+
       </form>
     </div>
   ) : (
     <div>
       <p>
         Not Logged in, Login Rn{" "}
-        <button onClick={() => navigate("/reallybreh12")}>Login</button>
+        <button className='py-2 px-5 m-2 text-indigo-100 transition-colors duration-150 bg-indigo-700 border-none rounded focus:shadow-outline hover:bg-indigo-800'
+          onClick={() => navigate("/reallybreh12")}>Login</button>
       </p>
     </div>
   );
