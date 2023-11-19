@@ -5,6 +5,7 @@ const Schema = mongoose.Schema;
 const NewsSchema = new Schema({
   heading: { type: String, required: true },
   subheading: {type: String, required: true},
+  slug:{type: String, required: true},
   author: { type: String, required: true },
   article: { type: String, required: true },
   date : { type: Date, required: true },

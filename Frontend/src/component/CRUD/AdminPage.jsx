@@ -11,6 +11,9 @@ const AdminPage = () => {
         <button 
             className='py-2 px-5 m-2 text-indigo-100 transition-colors duration-150 bg-indigo-700 border-none rounded focus:shadow-outline hover:bg-indigo-800'
             onClick={()=>navigate('/createnews')}>Create News</button>
+                <button 
+            className='py-2 px-5 m-2 text-indigo-100 transition-colors duration-150 bg-indigo-700 border-none rounded focus:shadow-outline hover:bg-indigo-800'
+            onClick={()=>navigate('/')}>Head Home</button>
           <AdminNews/>
         </div>
     </div>

@@ -8,6 +8,7 @@ export default {
     extend: {
       textColor: {
         'sky': 'rgb(0, 136, 255)',
+        'black': 'rgb(0,0,0)'
       },
     },
     screens: {

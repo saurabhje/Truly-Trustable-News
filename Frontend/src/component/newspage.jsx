@@ -35,6 +35,7 @@ const Newspage = () => {
           <h1>{data.heading}</h1>
           <p>{data.subheading}</p>
           <p>{data.author}</p>
+          <p>{data.slug}</p>
         </div>
         <div className='categories justify-start'>
           Category: 

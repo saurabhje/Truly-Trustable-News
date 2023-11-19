@@ -73,7 +73,8 @@ const Login = () => {
             onChange={handleChange}
             value={formData.password}
             placeholder="Password"
-            className="mx-5 py-2 px-4 border rounded-none"
+            style={{ borderColor: 'black' }}
+            className="mx-5 py-2 rounded-none"
           />
           <button
             type="submit"
