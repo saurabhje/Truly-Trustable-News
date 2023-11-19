@@ -41,7 +41,6 @@ function CreateNews() {
       return "";
     }
   };
-  
 
   const authorise = async () => {
     axios
@@ -69,9 +68,7 @@ function CreateNews() {
   };
   async function getData(id) {
     try {
-      const res = await axios.get(
-        `http://localhost:3000/edit/${id}`,
-      );
+      const res = await axios.get(`http://localhost:3000/edit/${id}`);
       const data = {
         heading: res.data.heading,
         author: res.data.author,
@@ -90,9 +87,7 @@ function CreateNews() {
 
   async function getCats() {
     try {
-      const res = await axios.get(
-        "http://localhost:3000/categories",
-      );
+      const res = await axios.get("http://localhost:3000/categories");
       console.log(res);
       setallCategories(res.data);
     } catch (error) {
@@ -114,7 +109,6 @@ function CreateNews() {
       [name]: value,
     });
   };
-
 
   const handleChangeQuill = useCallback((value) => {
     setFormData((prevData) => ({
@@ -192,17 +186,17 @@ function CreateNews() {
             />
           </div>
           <button
-              type="button"
-              className="py-2 px-5 m-2 text-indigo-100 transition-colors duration-150 bg-indigo-700 border-none rounded focus:shadow-outline hover:bg-indigo-800"
-              onClick={() => {
-                setAutoslug(true);
-                setFormData((prevData) => ({
-                  ...prevData,
-                  slug: slugAutoGenerator(formData.heading),
-                }));
-              }}
-            >
-           Slug Generate
+            type="button"
+            className="py-2 px-5 m-2 text-indigo-100 transition-colors duration-150 bg-indigo-700 border-none rounded focus:shadow-outline hover:bg-indigo-800"
+            onClick={() => {
+              setAutoslug(true);
+              setFormData((prevData) => ({
+                ...prevData,
+                slug: slugAutoGenerator(formData.heading),
+              }));
+            }}
+          >
+            Slug Generate
           </button>
           <div>
             <label htmlFor="slug">Slug:</label>
@@ -210,7 +204,7 @@ function CreateNews() {
               type="text"
               name="slug"
               id="slug"
-              placeholder="header"
+              placeholder="slug"
               required
               value={formData.slug}
               onChange={handleChange}
