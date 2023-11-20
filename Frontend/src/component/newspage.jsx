@@ -13,17 +13,21 @@ const Newspage = () => {
     axios
       .get(`http://localhost:3000/news/${slug}`)
       .then((response) => {
-        setData(response.data);
+        setData(response.data[0]);
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
+        setData(null);
       });
-  }, [slug]);
+  }, []);
 
   const renderHtmlContent = (html) => {
     return { __html: html };
   };
-
+  
+  if (!data) {
+    throw new Error('Data not found');
+  }
   return (
     <>
       <Helmet>
