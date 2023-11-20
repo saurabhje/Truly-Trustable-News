@@ -20,7 +20,7 @@ const MainContent = () => {
       .get(link)
       .then((response) => {
         setData((prevNews) => [...prevNews, ...response.data]);
-        if(link == `http://localhost:3000/page=${page}`){
+        if(link == `http://localhost:3000/?page=${page}`){
           setSidebardata((prevNews) => [...prevNews, ...response.data]);
         }
         setLoading(false);
