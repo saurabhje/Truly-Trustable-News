@@ -15,7 +15,7 @@ const MainContent = () => {
 
   const fetchInfo = () => {
     setLoading(true);
-    const link = cat? `http://localhost:3000/page=${page}&cat=${cat}`: `http://localhost:3000=${page}`
+    const link = cat? `http://localhost:3000/?page=${page}&cat=${cat}`: `http://localhost:3000/?page=${page}`
     axios
       .get(link)
       .then((response) => {
