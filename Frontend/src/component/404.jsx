@@ -9,13 +9,13 @@ const NotFound = () => {
 
   const headingStyle = {
     fontSize: "2em",
-    color: "#FF6347", // Tomato color
+    color: "#FF6347",
   };
 
   const linkStyle = {
     display: "block",
     margin: "10px",
-    color: "#4169E1", // Royal Blue color
+    color: "#4169E1",
     textDecoration: "none",
     fontSize: "1.2em",
   };

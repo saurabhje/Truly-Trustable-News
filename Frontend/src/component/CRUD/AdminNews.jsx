@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import axios from 'axios';
 import './AdminNews.css';
-
+const baseurl = import.meta.env.VITE_BASE_URL;
 
 const AdminNews = () => {
   const [headings, setHeadings] = useState([]);
@@ -18,7 +17,7 @@ const AdminNews = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/admin');
+      const response = await axios.get(`${baseurl}/admin`);
       setHeadings(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -31,7 +30,7 @@ const AdminNews = () => {
     setShowPopUp(false);
 
     try {
-      const response = await axios.post(`http://localhost:3000/delete/${id}`);
+      const response = await axios.post(`${baseurl}/delete/${id}`);
       console.log(response);
     } catch (error) {
       console.log(error);

@@ -6,12 +6,14 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+const baseurl = import.meta.env.VITE_BASE_URL;
+
 const Newspage = () => {
   const [data, setData] = useState([]);
   const { slug } = useParams();
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/news/${slug}`)
+      .get(`${baseurl}/news/${slug}`)
       .then((response) => {
         setData(response.data[0]);
       })

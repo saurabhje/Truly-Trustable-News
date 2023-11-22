@@ -5,6 +5,7 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { useParams, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
+const baseurl = import.meta.env.VITE_BASE_URL;
 
 function CreateNews() {
   const { id } = useParams();
@@ -46,7 +47,7 @@ function CreateNews() {
   const authorise = async () => {
     axios
       .post(
-        "http://localhost:3000/login",
+        `${baseurl}/login`,
         {
           password: sessionStorage.getItem("password"),
         },
@@ -69,7 +70,7 @@ function CreateNews() {
   };
   async function getData(id) {
     try {
-      const res = await axios.get(`http://localhost:3000/edit/${id}`);
+      const res = await axios.get(`${baseurl}/edit/${id}`);
       const data = {
         heading: res.data.heading,
         author: res.data.author,
@@ -88,7 +89,7 @@ function CreateNews() {
 
   async function getCats() {
     try {
-      const res = await axios.get("http://localhost:3000/categories");
+      const res = await axios.get(`${baseurl}/categories`);
       console.log(res);
       setallCategories(res.data);
     } catch (error) {
@@ -139,8 +140,8 @@ function CreateNews() {
     event.preventDefault();
 
     const url = id
-      ? `http://localhost:3000/edit/${id}`
-      : "http://localhost:3000/create-news";
+      ? `${baseurl}/edit/${id}`
+      : `${baseurl}/create-news`;
 
     axios
       .post(url, formData)

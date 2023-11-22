@@ -25,7 +25,8 @@ const ContentWrapper = styled.div`
   }
 `;
 const RedHead = styled.h2`
-color: red;
+font-family: Inter;
+font-weight: 700:
 text-transform: Uppercase;
 text-align: center;
 `
