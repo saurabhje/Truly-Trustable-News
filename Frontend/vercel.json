@@ -1,14 +1,6 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "./main.js"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/"
-      }
+    "rewrites":  [
+      {"source": "/(.*)", "destination": "/"}
     ]
   }
+  
