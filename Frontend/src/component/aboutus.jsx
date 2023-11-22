@@ -25,10 +25,10 @@ const ContentWrapper = styled.div`
   }
 `;
 const RedHead = styled.h2`
+text-align: center;
 text-transform: uppercase;
 font-family: 'Anton', sans-serif;
 font-weight: 700:
-text-align: center;
 `
 
 const Homepage = () => {
