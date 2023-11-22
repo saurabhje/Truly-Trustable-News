@@ -50,7 +50,7 @@ const Footer = () => {
           <Icon className='fab fa-twitter'></Icon>
         </a>
       </Socials>
-      <RightsReserved>All rights reserved to JeX</RightsReserved>
+      <RightsReserved>All rights reserved to JeXun</RightsReserved>
     </FooterWrapper>
   );
 };
