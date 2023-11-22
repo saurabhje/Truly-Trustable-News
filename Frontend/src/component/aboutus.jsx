@@ -36,7 +36,8 @@ const Homepage = () => {
     <Helmet>
       <title>Who we are</title>
       <meta name="description" content="information about the third front" />
-    </Helmet><PageContainer>
+    </Helmet>
+    <PageContainer>
         <Navbar />
         <ContentWrapper>
           <RedHead>

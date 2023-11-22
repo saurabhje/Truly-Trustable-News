@@ -30,7 +30,7 @@ exports.allNewsHome = asyncHandler( async(req, res, next ) => {
 })
 
 exports.getNews = asyncHandler ( async(req, res, next ) => {
-    const news = await News.findById(req.params.id).populate("category").exec();
+    const news = await News.find({slug: req.params.id}).populate("category").exec();
     if(!news){
         res.status(400).json({message: 'News not found'})
     }
@@ -94,7 +94,7 @@ exports.edit_News_post = [
         article: req.body.article,
         slug: req.body.slug,
         author: req.body.author,
-        date: new Date(),
+        date: req.params.date,
         img: {
           src: req.body.img_url,
           position: req.body.img_pos,

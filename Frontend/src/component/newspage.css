@@ -21,10 +21,14 @@
     font-size: 1.2rem;
 } 
 
-
+.subheading{
+    opacity: 0.6;
+    font-style: italic;
+}
 @media (max-width: 420px){
     .newsbody {
         padding: 0 3%;
+        overflow: scroll;
     }
     .news-hero-text h1 {
         font-size: 2.2rem;

@@ -13,6 +13,7 @@ const Footer = () => {
   `;
 
   const Heading = styled.h1`
+    font-family: Inter;
     font-size: 2em;
     margin: 0;
     @media (max-width: 600px){
@@ -40,7 +41,7 @@ const Footer = () => {
 
   return (
     <FooterWrapper>
-      <Heading>The Humanist</Heading>
+      <Heading>The Third Front</Heading>
       <Socials>
         <a href='#'>
           <Icon className='fab fa-instagram'></Icon>
