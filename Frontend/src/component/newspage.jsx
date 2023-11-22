@@ -21,7 +21,7 @@ const Newspage = () => {
         console.error('Error fetching data:', error);
         setData(null);
       });
-  }, []);
+  });
 
   const renderHtmlContent = (html) => {
     return { __html: html };

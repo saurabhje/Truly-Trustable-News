@@ -25,9 +25,9 @@ const ContentWrapper = styled.div`
   }
 `;
 const RedHead = styled.h2`
-font-family: Inter;
+text-transform: uppercase;
+font-family: 'Anton', sans-serif;
 font-weight: 700:
-text-transform: Uppercase;
 text-align: center;
 `
 
