@@ -43,21 +43,26 @@
     border-color: #ffffff;
     color: black;
 }
+.hamburger{
+    display: none;
+    background-color: #ffffff00;
+    color: #ffffff;
+    font-size: 1.6rem
+}
 
-@media (max-width:600px){
+@media (max-width:430px){
     .nav-bar{
         padding: 0 2vw;
     }
-    .nav-link{
-        gap: 3vw;
-        font-size: x-small;
-    }
     .nav-logo{
-        font-size: 1.3em;
+        font-size: 1.6rem;
     }
-    .support-btn{
-        font-size: 0.7em;
-        padding: 0 1px;
-        height: 20px;
+}
+@media (max-width:1080px){
+    .hamburger{
+        display: block;
+    }
+    .nav-link{
+        display: none;
     }
 }
