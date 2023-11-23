@@ -1,7 +1,7 @@
 .hero-text{
     position: absolute;
     bottom: 0;
-    width: 90%;
+    width: 55%;
     padding-left: 4vw;
     padding-bottom: 20px;
 }
@@ -21,7 +21,11 @@
    font-size: 1.4rem;
 }
 
-
+@media (max-width: 1080px){
+    .hero-text{
+        width: 70%;
+    }
+}
 @media (max-width: 432px){
     .hero-text h1{
         font-size: 2rem;
@@ -30,7 +34,7 @@
         font-size: 1rem;
     }
     .hero-text{
-        width: 90%;
+        width: 55%;
     }
     .header{
         min-height: 50vh;
