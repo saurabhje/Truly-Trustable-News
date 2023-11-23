@@ -7,6 +7,7 @@
     display: flex;
     overflow: hidden;
     width: 100%;
+    min-height: 65vh;
 }
 
 .header {
@@ -23,4 +24,10 @@
 }
 .absolute{
     position: absolute;
+}
+
+@media (max-width: 432px){
+    .header-wrapper{
+        min-height: 50vh;
+    }
 }

@@ -45,6 +45,7 @@ const MainContent = () => {
 
   const handleCatchange = (e) =>{
     setCat(e.target.value)
+    setPage(1);
     setData([]);
   }
 

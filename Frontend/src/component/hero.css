@@ -3,7 +3,7 @@
     align-items: flex-end; 
 }
 .header{
-    height: 65vh;
+    min-height: 65vh;
     color: white;
     background-size: cover;  
 }
@@ -42,7 +42,7 @@
         width: 90%;
     }
     .header{
-        height: 50vh;
+        min-height: 50vh;
         color: white;
         background-size: cover;  
     }
