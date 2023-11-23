@@ -11,6 +11,9 @@
 }
 
 .header {
+    min-height: 65vh;
+    color: white;
+    background-size: cover; 
     min-width: 100%;
     transition: translate 300ms ease-in-out;
     position: relative;

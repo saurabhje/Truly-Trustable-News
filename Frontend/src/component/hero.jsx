@@ -4,14 +4,12 @@ import "./hero.css";
 
 const Hero = (props) => {
   return (
-    // <div className='hero-sec'>
       <div className="hero-text">
         <h1>
           {props.heading}
         </h1>
         <h2>{props.author}</h2>
       </div>
-    // </div>
   );
 };
 

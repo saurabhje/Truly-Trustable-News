@@ -57,7 +57,6 @@ const MainContent = () => {
     axios
     .get(`${baseurl}/categories`)
     .then((response) => {
-      console.log(response.data)
       setCatdata(response.data)
     })
     handleResize();
