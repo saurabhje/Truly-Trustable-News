@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import AdminPage from "./CRUD/AdminPage";
 import axios from "axios";
 import { Helmet } from "react-helmet";
+const baseurl = import.meta.env.VITE_BASE_URL;
+
 const Login = () => {
   const [loggedin, setLoggedin] = useState(false);
   const [formData, setFormData] = useState({ password: "" });
@@ -12,7 +14,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3000/login",
+        `${baseurl}/login`,
         formData,
       );
       document.getElementById("password").value = "";
@@ -36,7 +38,7 @@ const Login = () => {
   const authorise = async () => {
     axios
       .post(
-        "http://localhost:3000/login",
+        `${baseurl}`,
         {
           password: sessionStorage.getItem("password"),
         },

@@ -16,7 +16,8 @@ const Footer = () => {
     font-family: Inter;
     font-size: 2em;
     margin: 0;
-    @media (max-width: 600px){
+    @media (max-width: 400px){
+      font-family: Inter;
       font-size: 1em; 
     }
   `;
@@ -50,7 +51,7 @@ const Footer = () => {
           <Icon className='fab fa-twitter'></Icon>
         </a>
       </Socials>
-      <RightsReserved>All rights reserved to JeX</RightsReserved>
+      <RightsReserved>All rights reserved to JeXun</RightsReserved>
     </FooterWrapper>
   );
 };
