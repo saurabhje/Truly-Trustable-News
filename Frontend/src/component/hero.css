@@ -1,12 +1,3 @@
-.hero-sec{
-    display: flex;
-    align-items: flex-end; 
-}
-.header{
-    min-height: 65vh;
-    color: white;
-    background-size: cover;  
-}
 .hero-text{
     position: absolute;
     bottom: 0;
