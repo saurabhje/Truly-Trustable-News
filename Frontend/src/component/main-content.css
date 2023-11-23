@@ -19,7 +19,6 @@
     width: 50%;
 }
 .select{
-    width: auto;
     margin-bottom: 20px;
     font-size: 0.9rem;
 }
@@ -29,6 +28,7 @@
 }
 .select select{
     padding: 2px 0.5rem;
+    min-width: 8%;
     background-color: rgb(0, 136, 255);
 }
 

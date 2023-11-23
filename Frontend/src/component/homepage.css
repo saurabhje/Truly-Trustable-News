@@ -13,6 +13,7 @@
 .header {
     min-width: 100%;
     transition: translate 300ms ease-in-out;
+    position: relative;
 }
 
 .navbar-container {
