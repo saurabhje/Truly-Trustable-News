@@ -17,6 +17,7 @@ const Footer = () => {
     font-size: 2em;
     margin: 0;
     @media (max-width: 600px){
+      font-family: Inter;
       font-size: 1em; 
     }
   `;
