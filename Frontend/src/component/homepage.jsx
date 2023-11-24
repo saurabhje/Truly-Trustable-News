@@ -7,6 +7,7 @@ import MainContent from './main-content';
 import axios from 'axios';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
+const baseurl = import.meta.env.VITE_BASE_URL;
 
 import "./homepage.css";
 
@@ -29,7 +30,7 @@ const Homepage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/');
+        const response = await axios.get(`${baseurl}`);
         setHeader(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);

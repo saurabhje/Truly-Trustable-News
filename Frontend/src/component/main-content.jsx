@@ -12,15 +12,16 @@ const MainContent = (props) => {
   const [loading, setLoading] = useState(true);
   const [cat, setCat] = useState();
   const [catdata, setCatdata] = useState([])
+  const baseurl = import.meta.env.VITE_BASE_URL;
 
   const fetchInfo = () => {
     setLoading(true);
-    const link = cat? `http://localhost:3000/?page=${page}&cat=${cat}`: `http://localhost:3000/?page=${page}`
+    const link = cat? `${baseurl}/?page=${page}&cat=${cat}`: `${baseurl}/?page=${page}`
     axios
       .get(link)
       .then((response) => {
         setData((prevNews) => [...prevNews, ...response.data]);
-        if(link == `http://localhost:3000/?page=${page}`){
+        if(link == `${baseurl}/?page=${page}`){
           setSidebardata((prevNews) => [...prevNews, ...response.data]);
         }
         setLoading(false);
@@ -44,6 +45,7 @@ const MainContent = (props) => {
 
   const handleCatchange = (e) =>{
     setCat(e.target.value)
+    setPage(1);
     setData([]);
   }
 
@@ -56,9 +58,8 @@ const MainContent = (props) => {
       setData[props.data]
     }
     axios
-    .get(`http://localhost:3000/categories`)
+    .get(`${baseurl}/categories`)
     .then((response) => {
-      console.log(response.data)
       setCatdata(response.data)
     })
     handleResize();

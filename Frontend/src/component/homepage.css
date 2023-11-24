@@ -7,11 +7,16 @@
     display: flex;
     overflow: hidden;
     width: 100%;
+    min-height: 65vh;
 }
 
 .header {
+    min-height: 65vh;
+    color: white;
+    background-size: cover; 
     min-width: 100%;
     transition: translate 300ms ease-in-out;
+    position: relative;
 }
 
 .navbar-container {
@@ -23,4 +28,10 @@
 }
 .absolute{
     position: absolute;
+}
+
+@media (max-width: 432px){
+    .header-wrapper{
+        min-height: 50vh;
+    }
 }
