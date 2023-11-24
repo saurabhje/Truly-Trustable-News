@@ -13,7 +13,6 @@ exports.allNewsHome = asyncHandler( async(req, res, next ) => {
     const cat = req.query.cat
     const findcat = cat ? {title: cat}: {}
     const category = cat? await Category.find(findcat).exec(): undefined
-    
     const find = cat ? {category: category[0]._id}: {}
     try {
         const news = await News.find(find)
@@ -22,7 +21,6 @@ exports.allNewsHome = asyncHandler( async(req, res, next ) => {
         .skip((page - 1) * perPage)
         .limit(perPage);
         res.json(news);
-
     } catch (error) {
         console.error('Error fetching news:', error);
         res.status(500).json({ error: 'Internal Server Error' });
