@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable react/prop-types */
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./main-content.css";
 import { Link } from "react-router-dom";
-
-const MainContent = () => {
+const MainContent = (props) => {
   const [data, setData] = useState([]);
   const [sidebardata, setSidebardata] = useState([])
   const [mobileView, setMobileView] = useState();
@@ -52,6 +52,9 @@ const MainContent = () => {
   }, [page, cat]);
 
   useEffect(() => {
+    if (props.data){
+      setData[props.data]
+    }
     axios
     .get(`http://localhost:3000/categories`)
     .then((response) => {

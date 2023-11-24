@@ -8,7 +8,6 @@ import CreateNews from "./CRUD/CreateNews";
 import Category from "./category";
 import NotFound from "./404";
 
-
 const Router = () =>{
   const router = createBrowserRouter([
     {
