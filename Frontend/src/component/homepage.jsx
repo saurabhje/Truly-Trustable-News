@@ -11,7 +11,6 @@ const baseurl = import.meta.env.VITE_BASE_URL;
 
 import "./homepage.css";
 
-
 const AbsoluteNavbar = styled.div`
   position: absolute;
   left: 0;
@@ -60,7 +59,7 @@ const Homepage = () => {
           </div>
         ))}
       </div>
-      <MainContent />
+      <MainContent/>
       <div className="footer">
         <Footer />
       </div>
