@@ -50,7 +50,7 @@
     font-size: 1.6rem
 }
 
-@media (max-width:430px){
+@media (max-width:600px){
     .nav-bar{
         padding: 0 2vw;
     }
