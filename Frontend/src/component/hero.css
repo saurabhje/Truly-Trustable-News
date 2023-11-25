@@ -21,7 +21,11 @@
    font-size: 1.4rem;
 }
 
-
+@media (max-width: 1080px){
+    .hero-text{
+        width: 70%;
+    }
+}
 @media (max-width: 432px){
     .hero-text h1{
         font-size: 2rem;
