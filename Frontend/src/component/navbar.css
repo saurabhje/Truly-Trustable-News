@@ -55,11 +55,12 @@
 .hamburger:hover{
     cursor:pointer ;
 }
-.navtitles{
+.navtitles {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-}
+    justify-content: space-between;
+    width: 100%;
+  }  
 .menu-buttons{
     display: none;
     background-color: transparent;

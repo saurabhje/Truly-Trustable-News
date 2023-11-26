@@ -18,22 +18,22 @@ const Navbar = () => {
   return (
     <div ref={colorRef} className="navbar">
       <div className="navtitles">
-      <div className="nav-logo">
-        <Link to="/">The Third Front</Link>
-      </div>
+        <div className="nav-logo">
+          <Link to="/">The Third Front</Link>
+        </div>
 
-      <div className="menu-buttons">
-      <button
-        className="hamburger fa-solid fa-bars"
-        onClick={showNavBar}
-        style={{color: "white", display: isNavOpen ? "none" : "block" }}
-      ></button>
-      <button
-        className="hamburger cross fa-regular fa-x"
-        onClick={showNavBar}
-        style={{ display: isNavOpen ? "block" : "none" }}
-      ></button>
-      </div>
+        <div className="menu-buttons">
+          <button
+            className="hamburger fa-solid fa-bars"
+            onClick={showNavBar}
+            style={{ color: "white", display: isNavOpen ? "none" : "block" }}
+          ></button>
+          <button
+            className="hamburger cross fa-regular fa-x"
+            onClick={showNavBar}
+            style={{ display: isNavOpen ? "block" : "none" }}
+          ></button>
+        </div>
       </div>
       <div ref={navRef} className="nav-link">
         <ul>
