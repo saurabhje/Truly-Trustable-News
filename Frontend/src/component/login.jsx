@@ -72,15 +72,13 @@ const Login = () => {
         <form
           onSubmit={handleSubmit}
           className="text-center flex items-center justify-center h-screen"
-        >
-          <input
+        > <input
             type="password"
             name="password"
             id="password"
             onChange={handleChange}
             value={formData.password}
             placeholder="Password"
-            style={{ borderColor: 'black' }}
             className="mx-5 py-2 rounded-none"
           />
           <button
@@ -89,6 +87,8 @@ const Login = () => {
           >
             Login
           </button>
+          <button className='py-2 px-5 m-2 text-indigo-100 transition-colors duration-150 bg-indigo-700 border-none rounded focus:shadow-outline hover:bg-indigo-800'
+           onClick={() => navigate('/')}>Head Home</button>
         </form>
       ) : (
         <>

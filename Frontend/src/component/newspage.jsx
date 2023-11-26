@@ -43,7 +43,7 @@ const Newspage = () => {
         <div className="news-hero-text">
           <h1>{data.heading}</h1>
           <p className='subheading'>{data.subheading}</p>
-          <p>{data.author}</p>
+          <p><em>{data.author}</em></p>
         </div>
         <div className='categories justify-start'>
           Category: 
