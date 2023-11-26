@@ -55,16 +55,9 @@
 .hamburger:hover{
     cursor:pointer ;
 }
-.navtitles {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-  }  
+
 .menu-buttons{
     display: none;
-    background-color: transparent;
-    font-size: 1.5rem
 }
 @media (max-width:600px){
     .nav-bar{
@@ -86,6 +79,7 @@
         flex-direction: column;
     }
     .navbar.opened-tab{
+        animation: slide-in 0.5s;
         background-color: white;
         color: black;
     }
@@ -102,7 +96,23 @@
         display: flex;
         align-items: flex-start;
     }
+    .navtitles {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+      }  
     .menu-buttons{
         display: block;
+        background-color: transparent;
+        font-size: 1.5rem
     }
 }
+@keyframes slide-in {
+    0% {
+      -webkit-transform: translateY(-100%);
+    }
+    100% {
+      -webkit-transform: translateY(0%);
+    }
+  }

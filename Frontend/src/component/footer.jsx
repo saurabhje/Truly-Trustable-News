@@ -13,7 +13,7 @@ const Footer = () => {
   `;
 
   const Heading = styled.h1`
-    font-family: Inter;
+    font-family: 'Inter';
     font-size: 2em;
     margin: 0;
     @media (max-width: 400px){
