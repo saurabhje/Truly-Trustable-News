@@ -1,32 +1,41 @@
-import React, { useRef } from "react";
-import "./navbar.css";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import "./navbar.css";
 
 const Navbar = () => {
   const navRef = useRef();
-  function showNavBar() {
+  const colorRef = useRef();
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const showNavBar = () => {
     if (navRef.current) {
       navRef.current.classList.toggle("responsive-nav");
     }
-  }
-  
+    colorRef.current.classList.toggle("opened-tab");
+    setIsNavOpen(!isNavOpen);
+  };
 
   return (
-    <div className="navbar">
+    <div ref={colorRef} className="navbar">
+      <div className="navtitles">
       <div className="nav-logo">
         <Link to="/">The Third Front</Link>
       </div>
+
+      <div className="menu-buttons">
       <button
         className="hamburger fa-solid fa-bars"
-        style={{ color: "#ffffff", backgroundColor: "transparent" }}
         onClick={showNavBar}
+        style={{color: "white", display: isNavOpen ? "none" : "block" }}
       ></button>
       <button
-        className="hamburger fa-regular fa-x"
-        style={{ color: "#000000", backgroundColor: "transparent" }}
+        className="hamburger cross fa-regular fa-x"
         onClick={showNavBar}
+        style={{ display: isNavOpen ? "block" : "none" }}
       ></button>
-      <div  ref={navRef} className="nav-link">
+      </div>
+      </div>
+      <div ref={navRef} className="nav-link">
         <ul>
           <li>
             <Link to="/aboutus">ABOUT</Link>

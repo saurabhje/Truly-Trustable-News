@@ -269,7 +269,7 @@ function CreateNews() {
             >
               <option value="">Select an author</option>
               <option value="Je">Je</option>
-              <option value="XuNigger">XuNigger</option>
+              <option value="Xun">Xun</option>
             </select>
           </div>
           <div>

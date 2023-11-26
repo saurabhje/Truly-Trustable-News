@@ -38,8 +38,8 @@ const Homepage = () => {
       <title>Who we are</title>
       <meta name="description" content="information about the third front" />
     </Helmet>
+    <Navbar />
     <PageContainer>
-        <Navbar />
         <ContentWrapper>
           <RedHead>
             Presenting the Truth under the veil of satire.
