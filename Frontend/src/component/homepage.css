@@ -37,7 +37,7 @@
     right: 0;
     bottom: 0;
     background-size: cover;
-    filter: brightness(75%);
+    filter: brightness(80%);
   }
 
 @media (max-width: 432px){
