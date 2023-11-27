@@ -33,6 +33,7 @@ const Footer = () => {
   `;
 
   const RightsReserved = styled.p`
+    font-family: Inter;
     font-size: 1em;
     margin: 10px 0 0 0;
     @media (max-width: 600px){
