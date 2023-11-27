@@ -55,7 +55,7 @@ const Homepage = () => {
       <div className="header-wrapper">
         {header &&
           header.map((index) => (
-            <div className="header" key={index.img.src}>
+            <div className="header" key={index.img.src} style={{translate: `${-100 * imageindex}%`}}>
               <div
                 className="background-layer"
                 style={{
