@@ -17,8 +17,6 @@ const ContentWrapper = styled.div`
   flex: 1;
   padding: 20px;
   font-size: 1.3rem;
-  max-width: 60rem;
-  text-align: justify;
 
   @media (max-width: 768px) {
     font-size: 1.1rem;
@@ -38,8 +36,8 @@ const Homepage = () => {
       <title>Who we are</title>
       <meta name="description" content="information about the third front" />
     </Helmet>
-    <Navbar />
     <PageContainer>
+    <Navbar />
         <ContentWrapper>
           <RedHead>
             Presenting the Truth under the veil of satire.
