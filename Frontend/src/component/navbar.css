@@ -107,6 +107,13 @@
         background-color: transparent;
         font-size: 1.5rem
     }
+    .support-btn{
+        padding: 0;
+        height: auto;
+        border: none;
+        background-color: white;
+        color: black;
+    }
 }
 @keyframes slide-in {
     0% {
