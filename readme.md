@@ -69,17 +69,17 @@ Unit testing is performed for data fetching and authorization using the built-in
 ## API Documentation
 ### Endpoints
 - All the get requests
-get('/admin', news_operations.allNews);
-get('/', news_operations.allNewsHome);
-get('/news/:id', news_operations.getNews);
-get('/categories',category_Operations.allCategories);
-get('/category/:id', category_Operations.category_news_list);
-get('/edit/:id', news_operations.edit_news_get);
+1. get('/admin', news_operations.allNews);
+2. get('/', news_operations.allNewsHome);
+3. get('/news/:id', news_operations.getNews);
+4. get('/categories',category_Operations.allCategories);
+5. get('/category/:id', category_Operations.category_news_list);
+6. get('/edit/:id', news_operations.edit_news_get);
 
 - All the POST requests
-post('/create-news',news_operations.create_News_post);
-post('/delete/:id',news_operations.delete_news);
-post('/edit/:id', news_operations.edit_News_post);
+1. post('/create-news',news_operations.create_News_post);
+2. post('/delete/:id',news_operations.delete_news);
+3. post('/edit/:id', news_operations.edit_News_post);
 
 ### Authentication
 The app uses a simple sessionStorage-based authentication since there is only one user performing admin operations.
@@ -105,9 +105,9 @@ The full-stack web app is deployed on Vercel.
 
 ## Additional Resources
 ### Links to Documentation
-[Why Vite.js][1]
-[React.js][2]
-[Deploying on Vercel][3]
+- [Why Vite.js][1]
+- [React.js][2]
+- [Deploying on Vercel][3]
 
 [1]: https://vitejs.dev/guide/why
 [2]: https://react.dev/learn
