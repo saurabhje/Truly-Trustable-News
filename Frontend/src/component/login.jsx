@@ -38,7 +38,7 @@ const Login = () => {
   const authorise = async () => {
     axios
       .post(
-        `${baseurl}`,
+        `${baseurl}/login`,
         {
           password: sessionStorage.getItem("password"),
         },
