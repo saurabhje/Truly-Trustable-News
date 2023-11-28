@@ -49,8 +49,6 @@ Our goal is to provide the community with a dose of humorous jokes, making news 
   /README.md
 
 
-
-
 ## Configuration
 ### Environment Variables
 Set up environment variables:
@@ -70,7 +68,18 @@ Unit testing is performed for data fetching and authorization using the built-in
 
 ## API Documentation
 ### Endpoints
-List API endpoints, their methods, and descriptions.
+- All the get requests
+get('/admin', news_operations.allNews);
+get('/', news_operations.allNewsHome);
+get('/news/:id', news_operations.getNews);
+get('/categories',category_Operations.allCategories);
+get('/category/:id', category_Operations.category_news_list);
+get('/edit/:id', news_operations.edit_news_get);
+
+- All the POST requests
+post('/create-news',news_operations.create_News_post);
+post('/delete/:id',news_operations.delete_news);
+post('/edit/:id', news_operations.edit_News_post);
 
 ### Authentication
 The app uses a simple sessionStorage-based authentication since there is only one user performing admin operations.
@@ -80,9 +89,6 @@ The app uses a simple sessionStorage-based authentication since there is only on
 Two main schemas are used:
 1. NewsSchema
 2. CategorySchema
-
-### Data Seeding
-Information on how to seed the database.
 
 ## Deployment
 ### Deployment Process
@@ -99,10 +105,17 @@ The full-stack web app is deployed on Vercel.
 
 ## Additional Resources
 ### Links to Documentation
-Provide links to Vite.js, React.js docs, Vite test, and Vercel docs.
+[Why Vite.js][1]
+[React.js][2]
+[Deploying on Vercel][3]
+
+[1]: https://vitejs.dev/guide/why
+[2]: https://react.dev/learn
+[3]: https://vercel.com/docs/frameworks/vite
+
 
 ### Contact Information
-How to contact the development team.
+[Mail us][jeiolsatszs@gmail.com]
 
 ## Conclusion
 ### Acknowledgments
