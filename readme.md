@@ -87,7 +87,7 @@ Unit testing is performed for data fetching and authorization using the built-in
 ### Authentication
 The app uses a simple sessionStorage-based authentication since there is only one user performing admin operations.
 Login Page looks like this
-- ![Alt text](image.png)
+ ![Loginpage](image.png)
 
 ## Database
 ### Database Schema
