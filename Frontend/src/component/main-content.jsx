@@ -3,6 +3,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./main-content.css";
 import { Link } from "react-router-dom";
+const baseurl = import.meta.env.VITE_BASE_URL;
+
+
 const MainContent = () => {
   const [data, setData] = useState([]);
   const [sidebardata, setSidebardata] = useState([])
@@ -11,9 +14,8 @@ const MainContent = () => {
   const [loading, setLoading] = useState(true);
   const [cat, setCat] = useState();
   const [catdata, setCatdata] = useState([])
-  const baseurl = import.meta.env.VITE_BASE_URL;
 
-  const fetchInfo = () => {
+  const fetchInfo = async() => {
     setLoading(true);
     const link = cat? `${baseurl}/?page=${page}&cat=${cat}`: `${baseurl}/?page=${page}`
     axios
