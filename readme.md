@@ -23,30 +23,30 @@ Our goal is to provide the community with a dose of humorous jokes, making news 
 - MongoDB
 
 ### Folder Structure
-/Truly-Trustable-News
-  /Backend
-    /src
-      /model
-        /Categories
-        /News
-      /methods
-        - /News_Operation
-        - /Category Operation
-      index.js
-      .env
-
-  /Frontend
-    /images
-      - (Store images used in documentation)
-    - CONTRIBUTING.md
-    - API_DOCUMENTATION.md
-    - USAGE_GUIDE.md
-  /scripts
-    - (Scripts for automation or other purposes)
-  /data
-    - (Data files, if any)
-  /.gitignore
-  /README.md
+/Truly-Trustable-News/
+├── /Backend/
+│   ├── /src/
+│   │   ├── /model/
+│   │   │   ├── /Categories
+│   │   │   └── /News
+│   │   └── /methods/
+│   │       ├── /News_Operation
+│   │       └── /Category_Operation
+│   ├── index.js
+│   ├── vercel.json
+│   └── .env
+├── /Frontend/
+│   ├── /src/
+│   │   ├── /__test__
+│   │   ├── /assets/images
+│   │   ├── /component/
+│   │   │   └── /CRUD
+│   │   └── main.jsx
+│   ├── /index.html
+│   ├── .env
+│   └── vercel.json
+├── gitignore
+└── Readme.md
 
 
 ## Configuration
