@@ -23,6 +23,7 @@ Our goal is to provide the community with a dose of humorous jokes, making news 
 - MongoDB
 
 ### Folder Structure
+
 /Truly-Trustable-News/
 ├── /Backend/
 │   ├── /src/
@@ -68,18 +69,22 @@ Unit testing is performed for data fetching and authorization using the built-in
 
 ## API Documentation
 ### Endpoints
-- All the get requests
-1. get('/admin', news_operations.allNews);
-2. get('/', news_operations.allNewsHome);
-3. get('/news/:id', news_operations.getNews);
-4. get('/categories',category_Operations.allCategories);
-5. get('/category/:id', category_Operations.category_news_list);
-6. get('/edit/:id', news_operations.edit_news_get);
-
-- All the POST requests
+**Admin only**
 1. post('/create-news',news_operations.create_News_post);
 2. post('/delete/:id',news_operations.delete_news);
 3. post('/edit/:id', news_operations.edit_News_post);
+4. get('/admin', news_operations.allNews);
+4. get('/edit/:id', news_operations.edit_news_get);
+
+**client**
+1. get('/', news_operations.allNewsHome);
+2. get('/news/:id', news_operations.getNews);
+3. get('/categories',category_Operations.allCategories);
+4. get('/category/:id', category_Operations.category_news_list);
+
+
+- All the POST requests
+
 
 ### Authentication
 The app uses a simple sessionStorage-based authentication since there is only one user performing admin operations.
@@ -118,6 +123,4 @@ The full-stack web app is deployed on Vercel.
 [Mail us][jeiolsatszs@gmail.com]
 
 ## Conclusion
-### Acknowledgments
-Used ReactQuill for rich text and Vitest for unit testing.
-
+It was an interesting project, nothing too fancy. My friend and I started working on it as soon as we finished The Odin Project's React module and then completed it once we finished the Node.js module. This project was important as it taught us how to manage the different aspects of developing a web app, including writing test cases, modularization, and most importantly, managing timing and expectations for the project. We are still working on it and changing things we think we can improve as we continue learning new things along the way.
