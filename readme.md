@@ -4,7 +4,7 @@
 The Third Front is a simple web app to present the audience with harmless humorous 
 satire news posts.
 Mainstream media is too concerned with fear mongering, not caring enough about the key issues
-so we decided to 'present the truth under the veil of satire'.
+so we decided to  **present the truth under the veil of satire**.
 Our Goal-
 Presenting the community with dose of humurous jokes and making news less scary and less morbid for 
 the average John Doe.
@@ -57,60 +57,68 @@ the average John Doe.
 ## Configuration
 ### Environment Variables
 Set up environment variables
-- env for /Frontend -> VITE_base_url = your backend api url
-- env for /Backend -> MONGODB_URI = mongodb cluster uri
-                   -> PASSWORD = login password to perform crud operations
+- env for /Frontend
+    1. VITE_base_url = your backend api url eg. 'http://localhost:port'
+- env for /Backend 
+    1. MONGODB_URI = mongodb cluster uri
+    2. PASSWORD = login password to perform crud operations(setting up the password)
 
 
 ## Development
 ### Running the App Locally
-To run the Frontend locally `npm run dev`
-To run the backend locally `npm run dev`
+1. To run the Frontend locally `npm run dev`
+2. To run the backend locally `npm run dev`
 
 ### Code Style
-Document coding conventions or style guides.
+
 
 ### Testing
-Provide information on how to run tests if applicable.
+Unit testing done for Data fetching and the authorization using the inbuilt **vitest** 
+feature of vite.js which is similar to jest testing library.
+
 
 ## API Documentation
 ### Endpoints
 List API endpoints, their methods, and descriptions.
 
 ### Authentication
-Document the authentication mechanism.
+Simple environment variable sessionStorage based authentication, since there is only one user who can perform the admin operations hence it seemed most plausible option at the time being.
 
 ## Database
 ### Database Schema
-Describe the structure of the MongoDB database.
+There are mainly two schemas used in this application
+1. NewsSchema 
+2. CategorySchema 
 
 ### Data Seeding
 Provide information on how to seed the database.
 
 ## Deployment
 ### Deployment Process
-Step-by-step instructions for deploying to a production environment.
+Right Now, this entire Full stack web app is deployed on vercel
 
-### CI/CD
-Details on CI/CD setup if applicable.
+- Deploying the **Backend**
+1. There is already an vercel.json file configured in the root folder of Backend,
+if not present then visit vercel official docs to create one.
+2. Go to vercel.com and make an account 
+go to dashboard and crete a new project from your github repo and choose Backend directory as the source.
+3. set up the environment variable for the Backend that are monogDB uri and passsword and click on deploy, note down the deployed url.
 
-## Troubleshooting
-### Common Issues
-List common problems and their solutions.
+- Deploying the **Frontend** 
+1. This time choose the gitub repo, and choose Frontend as the source directory.
+2. The env variable for the frontend part is the base url 
+VITE_base_url = url that you copied after deploying the backend part
 
-### Logging
-Explain how logging is implemented.
+
 
 ## Additional Resources
 ### Links to Documentation
-Provide links to relevant documentation for technologies used.
+Provide link to vite js, react js docs, vite test, vercel js node js
 
 ### Contact Information
 How to contact the development team.
 
 ## Conclusion
 ### Acknowledgments
-Acknowledge third-party libraries, tools, or contributors.
+Used reactquill for rich text, vitest for unit testing
 
-### License
-Specify the project's license.
