@@ -26,26 +26,26 @@ Our goal is to provide the community with a dose of humorous jokes, making news 
 
 /Truly-Trustable-News/
 ├── /Backend/
-│   ├── /src/
-│   │   ├── /model/
-│   │   │   ├── /Categories
-│   │   │   └── /News
-│   │   └── /methods/
-│   │       ├── /News_Operation
-│   │       └── /Category_Operation
-│   ├── index.js
-│   ├── vercel.json
-│   └── .env
+│ ├── /src/
+│ │ ├── /model/
+│ │ │ ├── /Categories
+│ │ │ └── /News
+│ │ └── /methods/
+│ │ ├── /News_Operation
+│ │ └── /Category_Operation
+│ ├── index.js
+│ ├── vercel.json
+│ └── .env
 ├── /Frontend/
-│   ├── /src/
-│   │   ├── /__test__
-│   │   ├── /assets/images
-│   │   ├── /component/
-│   │   │   └── /CRUD
-│   │   └── main.jsx
-│   ├── /index.html
-│   ├── .env
-│   └── vercel.json
+│ ├── /src/
+│ │ ├── /test
+│ │ ├── /assets/images
+│ │ ├── /component/
+│ │ │ └── /CRUD
+│ │ └── main.jsx
+│ ├── /index.html
+│ ├── .env
+│ └── vercel.json
 ├── gitignore
 └── Readme.md
 
