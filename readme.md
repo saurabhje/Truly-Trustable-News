@@ -81,7 +81,7 @@ Unit testing is performed for data fetching and authorization using the built-in
 
 - CreateNews/EditNews Page
  ![Edit](Frontend/src/assets/images/image3.png)
-**Hero Image Previewing(720p>) before saving the image position**
+**Hero Image Previewing(>720p) before saving the image position**
  ![Edit](Frontend/src/assets/images/image4.png)
  **Hero Image Previewing(720p<) before saving the image position**
  ![Edit](Frontend/src/assets/images/image5.png)
