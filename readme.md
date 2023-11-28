@@ -9,7 +9,6 @@ Our Goal-
 Presenting the community with dose of humurous jokes and making news less scary and less morbid for 
 the average John Doe.
 
-Brief description of your web app, its purpose, and goals.
 
 ## Getting Started
 ### Prerequisites
@@ -29,16 +28,38 @@ Brief description of your web app, its purpose, and goals.
 
 ### Folder Structure
 /Truly-Trustable-News
--Backend ->
-         ->
--Frontend
+  /Backend
+    /src
+      /model
+        /Categories
+        /News
+      /methods
+        - /News_Operation
+        - /Category Operation
+      index.js
+      .env
+
+  /Frontend
+    /images
+      - (Store images used in documentation)
+    - CONTRIBUTING.md
+    - API_DOCUMENTATION.md
+    - USAGE_GUIDE.md
+  /scripts
+    - (Scripts for automation or other purposes)
+  /data
+    - (Data files, if any)
+  /.gitignore
+  /README.md
+
+
 
 ## Configuration
 ### Environment Variables
 Set up environment variables
-     env for /Frontend -> VITE_base_url = your backend api url
-     env for /Backend -> MONGODB_URI = mongodb cluster uri
-                      -> PASSWORD = login password to perform crud operations
+- env for /Frontend -> VITE_base_url = your backend api url
+- env for /Backend -> MONGODB_URI = mongodb cluster uri
+                   -> PASSWORD = login password to perform crud operations
 
 
 ## Development
