@@ -78,10 +78,9 @@ Unit testing is performed for data fetching and authorization using the built-in
 4. get('/edit/:id', news_operations.edit_news_get);
 - AdminPage looks like this
  ![Admin Page](Frontend/src/assets/images/image2.png)
-
 - CreateNews/EditNews Page
  ![Edit](Frontend/src/assets/images/image3.png)
- 
+
 **Hero Image Previewing(>720p) before saving the image position**
  ![Edit](Frontend/src/assets/images/image4.png)
 
