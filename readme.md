@@ -23,7 +23,8 @@ Our goal is to provide the community with a dose of humorous jokes, making news 
 - MongoDB
 
 ### Folder Structure
-```/Truly-Trustable-News/
+```
+/Truly-Trustable-News/
 ├── /Backend/
 │   ├── /src/
 │   │   ├── /model/
@@ -46,7 +47,8 @@ Our goal is to provide the community with a dose of humorous jokes, making news 
 │   ├── .env
 │   └── vercel.json
 ├── gitignore
-└── Readme.md```
+└── Readme.md
+```
 
 
 ## Configuration
