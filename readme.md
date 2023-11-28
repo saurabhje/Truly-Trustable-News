@@ -76,6 +76,7 @@ Unit testing is performed for data fetching and authorization using the built-in
 3. post('/edit/:id', news_operations.edit_News_post);
 4. get('/admin', news_operations.allNews);
 4. get('/edit/:id', news_operations.edit_news_get);
+
 AdminPage looks like this
  ![Admin Page](Frontend/src/assets/images/image2.png)
 CreateNews/EditNews Page
