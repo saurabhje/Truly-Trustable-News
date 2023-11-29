@@ -21,6 +21,7 @@ const AbsoluteNavbar = styled.div`
 const Homepage = () => {
   const [header, setHeader] = useState([]);
   const [imageindex, setImageindex] = useState(0);
+  const [error, setError] = useState("");
 
   const increaseIndex = () => {
     setImageindex((imageindex + 1) % header.length);
@@ -32,7 +33,7 @@ const Homepage = () => {
         const response = await axios.get(`${baseurl}`);
         setHeader(response.data);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        setError("Error fetching data:", error);
       }
     };
     fetchData();
@@ -53,6 +54,7 @@ const Homepage = () => {
         <Navbar />
       </AbsoluteNavbar>
       <div className="header-wrapper">
+        {error && <p>{error}</p>}
         {header &&
           header.map((index) => (
             <div className="header" key={index.img.src} style={{translate: `${-100 * imageindex}%`}}>
@@ -74,9 +76,7 @@ const Homepage = () => {
           ))}
       </div>
       <MainContent />
-      <div className="footer">
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 };

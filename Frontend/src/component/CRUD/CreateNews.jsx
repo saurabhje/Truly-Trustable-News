@@ -25,7 +25,7 @@ function CreateNews() {
   const [formData, setFormData] = useState(initialFormData);
   const [allcategories, setallCategories] = useState([]);
   const [loggedin, setLoggedin] = useState(false);
-  const [autoslug, setAutoslug] = useState(false);
+  const [autoslug, setAutoslug] = useState(true);
 
   useEffect(() => {
     if (sessionStorage.getItem("password")) {

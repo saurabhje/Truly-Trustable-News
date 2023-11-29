@@ -14,6 +14,7 @@ const MainContent = () => {
   const [loading, setLoading] = useState(true);
   const [cat, setCat] = useState();
   const [catdata, setCatdata] = useState([])
+  const [error, setError] = useState('');
 
   const fetchInfo = async() => {
     setLoading(true);
@@ -28,7 +29,7 @@ const MainContent = () => {
         setLoading(false);
       })
       .catch((error) => {
-        console.error("Error fetching data:", error);
+        setError("Error fetching data:", error);
       });
   };
 
@@ -69,6 +70,7 @@ const MainContent = () => {
   
   return (
     <div className="main">
+    {error && <p>{error}</p>}
       <div className="content-wrap">
         <div className="select">
           <h2>Sort News By categories</h2>
