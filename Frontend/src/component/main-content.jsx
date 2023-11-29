@@ -22,10 +22,7 @@ const MainContent = () => {
     axios
       .get(link)
       .then((response) => {
-        setData((prevNews) => [...prevNews, ...response.data.slice(0,5)]);
-        if(link == `${baseurl}/?page=${page}`){
-          setSidebardata((prevNews) => [...prevNews, ...response.data.slice(5)]);
-        }
+        setData((prevNews) => [...prevNews, ...response.data]);
         setLoading(false);
       })
       .catch((error) => {
@@ -56,6 +53,15 @@ const MainContent = () => {
   }, [page, cat]);
 
   useEffect(() => {
+    const sidebarlink = `${baseurl}/sidebar`;
+    axios
+      .get(sidebarlink)
+      .then((response) => {
+        setSidebardata((prevNews) => [...prevNews, ...response.data]);
+      })
+      .catch((error) => {
+        setError("Error fetching sidebar data:", error);
+      });
     axios
     .get(`${baseurl}/categories`)
     .then((response) => {

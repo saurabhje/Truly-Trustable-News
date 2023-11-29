@@ -6,6 +6,7 @@ const router = express.Router({ mergeParams: true });
 
 router.get('/admin', news_operations.allNews);
 router.get('/', news_operations.allNewsHome);
+router.get('/sidebar', news_operations.getSidebarNews);
 router.get('/news/:id', news_operations.getNews);
 router.post('/create-news',news_operations.create_News_post);
 router.post('/delete/:id',news_operations.delete_news);
