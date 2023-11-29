@@ -10,6 +10,7 @@ import { Helmet } from "react-helmet";
 const baseurl = import.meta.env.VITE_BASE_URL;
 
 import "./homepage.css";
+import { Link } from "react-router-dom";
 
 const AbsoluteNavbar = styled.div`
   position: absolute;
@@ -58,7 +59,7 @@ const Homepage = () => {
         {header &&
           header.map((index) => (
             <div className="header" key={index.img.src} style={{translate: `${-100 * imageindex}%`}}>
-              <div
+                <Link to={`/news/${index.slug}`}
                 className="background-layer"
                 style={{
                   backgroundImage: index
@@ -68,7 +69,7 @@ const Homepage = () => {
                     ? `${index.img.position}`
                     : "center",
                 }}
-              ></div>
+              ></Link>
               <div className="text-layer">
                 <Hero heading={index.heading} author={index.author} />
               </div>

@@ -22,9 +22,9 @@ const MainContent = () => {
     axios
       .get(link)
       .then((response) => {
-        setData((prevNews) => [...prevNews, ...response.data]);
+        setData((prevNews) => [...prevNews, ...response.data.slice(0,5)]);
         if(link == `${baseurl}/?page=${page}`){
-          setSidebardata((prevNews) => [...prevNews, ...response.data]);
+          setSidebardata((prevNews) => [...prevNews, ...response.data.slice(5)]);
         }
         setLoading(false);
       })

@@ -8,7 +8,7 @@ exports.allNews = asyncHandler( async(req, res, next ) => {
 })
 
 exports.allNewsHome = asyncHandler( async(req, res, next ) => {
-    const perPage = 6;
+    const perPage = 10;
     const page = parseInt(req.query.page) || 1; // Get the page from the query parameters or default to 1
     const cat = req.query.cat
     const findcat = cat ? {title: cat}: {}
