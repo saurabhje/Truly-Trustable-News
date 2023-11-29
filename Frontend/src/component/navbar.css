@@ -23,6 +23,8 @@
 }
 .nav-link li{
     list-style: none;
+    display: flex;
+    align-items: center;
 }
 
 .support-btn{

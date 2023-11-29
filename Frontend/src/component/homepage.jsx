@@ -51,7 +51,7 @@ const Homepage = () => {
         <title>The Third Front</title>
         <meta name="description" content="Homepage of a satirical news blog" />
       </Helmet>
-      <AbsoluteNavbar>
+      <AbsoluteNavbar className="absnav">
         <Navbar />
       </AbsoluteNavbar>
       <div className="header-wrapper">
