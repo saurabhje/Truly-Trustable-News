@@ -13,11 +13,11 @@ const Footer = () => {
   `;
 
   const Heading = styled.h1`
-    font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+    font-family: "Times New Roman", Times, Baskerville, Georgia, serif;
     font-size: 2em;
     margin: 0;
     @media (max-width: 400px){
-      font-family: Inter;
+      font-family: 'Times New Roman';
       font-size: 1em; 
     }
   `;
