@@ -54,8 +54,8 @@ const Homepage = () => {
       <AbsoluteNavbar>
         <Navbar />
       </AbsoluteNavbar>
+      {error && <p style={{ color: 'red' }}>{error}</p>}
       <div className="header-wrapper">
-        {error && <p>{error}</p>}
         {header &&
           header.map((index) => (
             <Link to={`/news/${index.slug}`} className="header" key={index.img.src} style={{translate: `${-100 * imageindex}%`}}>
