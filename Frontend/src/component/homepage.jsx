@@ -58,8 +58,8 @@ const Homepage = () => {
         {error && <p>{error}</p>}
         {header &&
           header.map((index) => (
-            <div className="header" key={index.img.src} style={{translate: `${-100 * imageindex}%`}}>
-                <Link to={`/news/${index.slug}`}
+            <Link to={`/news/${index.slug}`} className="header" key={index.img.src} style={{translate: `${-100 * imageindex}%`}}>
+                <div
                 className="background-layer"
                 style={{
                   backgroundImage: index
@@ -69,11 +69,11 @@ const Homepage = () => {
                     ? `${index.img.position}`
                     : "center",
                 }}
-              ></Link>
+              ></div>
               <div className="text-layer">
                 <Hero heading={index.heading} author={index.author} />
               </div>
-            </div>
+            </Link>
           ))}
       </div>
       <MainContent />
