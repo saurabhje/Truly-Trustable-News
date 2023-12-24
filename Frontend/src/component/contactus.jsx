@@ -47,13 +47,13 @@ const ContactUs = () => {
             </li>
             <li className="listItemStyle">
               <strong>Twitter</strong>:{" "}
-              <a href="https://twitter.com/YourTwitterHandle">
+              <a href="https://twitter.com/">
                 Follow us on Twitter
               </a>
             </li>
             <li className="listItemStyle">
               <strong>Instagram</strong>:{" "}
-              <a href="https://www.instagram.com/YourInstagramHandle">
+              <a href="https://www.instagram.com/">
                 Follow us on Instagram
               </a>
             </li>

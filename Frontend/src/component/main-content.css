@@ -3,6 +3,7 @@
     padding-top: 4vh;
     padding-bottom: 4vh;
     display: flex;
+    overflow: hidden;
     justify-content: space-around;
     width: 80%;
     margin-left: auto;

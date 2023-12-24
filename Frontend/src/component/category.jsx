@@ -21,7 +21,7 @@ const Category = () => {
   }, [id]);
 
   return (
-    <div className=' p-5'>
+    <div className=' p-5 overflow-hidden'>
       <h1 className='text-center text-4xl font-normal'>{data.category.title} News</h1>
       <div className='text-2xl flex justify-center align-center'>
         {data.categoryNews.map((e) => (

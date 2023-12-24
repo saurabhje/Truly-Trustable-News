@@ -13,6 +13,7 @@
 .header {
     min-height: 65vh;
     color: white;
+    overflow: hidden;
     background-size: cover; 
     min-width: 100%;
     transition: translate 300ms ease-in-out;
@@ -20,6 +21,7 @@
 }
 
 .navbar-container {
+    overflow: hidden;
     color: white;
     position: fixed;
     width: 100%;

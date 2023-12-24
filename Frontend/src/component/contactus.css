@@ -7,13 +7,13 @@
     margin: 0 0 1rem;
   }
   
-  .listItemStyle::before {
-    content: '🚀';
-    color: #adadad;
-  }
   
   .listItemStyle a:link {
     color: blue;
     text-decoration: none;
   }
   
+  .listItemStyle::before {
+    content: '🚀';
+    color: #adadad;
+  }
