@@ -1,5 +1,5 @@
 .newsbody{
-    padding: 0 15%;
+    padding: 0 6rem;
 }
 .news-hero-text {
     line-height: 1;
@@ -24,13 +24,13 @@
 .subheading{
     opacity: 0.6;
 }
-@media (max-width: 420px){
+@media (max-width: 1080px){
     .newsbody {
-        padding: 0 3%;
+        padding: 0 2rem;
         overflow: scroll;
     }
     .news-hero-text h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 }
 
