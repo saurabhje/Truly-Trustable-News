@@ -54,12 +54,17 @@ const Homepage = () => {
       <AbsoluteNavbar className="absnav">
         <Navbar />
       </AbsoluteNavbar>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {error && <p style={{ color: "red" }}>{error}</p>}
       <div className="header-wrapper">
         {header &&
           header.map((index) => (
-            <Link to={`/news/${index.slug}`} className="header" key={index.img.src} style={{translate: `${-100 * imageindex}%`}}>
-                <div
+            <Link
+              to={`/news/${index.slug}`}
+              className="header"
+              key={index.img.src}
+              style={{ translate: `${-100 * imageindex}%` }}
+            >
+              <div
                 className="background-layer"
                 style={{
                   backgroundImage: index
