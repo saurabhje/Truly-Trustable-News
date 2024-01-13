@@ -1,6 +1,6 @@
 import React from "react";
-import Navbar from "./navbar";
-import Footer from "./footer";
+import Navbar from "../navbar/navbar";
+import Footer from "../footer";
 import "./newspage.css";
 import { useState, useEffect } from "react";
 import axios from "axios";

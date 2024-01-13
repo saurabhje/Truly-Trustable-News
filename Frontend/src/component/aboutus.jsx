@@ -1,9 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react'
-import Navbar from './navbar'
+import Navbar from './navbar/navbar'
 import styled from 'styled-components';
 import Footer from './footer'
-import './aboutus.css'
 import { Helmet } from 'react-helmet';
 const PageContainer = styled.div`
   display: flex;

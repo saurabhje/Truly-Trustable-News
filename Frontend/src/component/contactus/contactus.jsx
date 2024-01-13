@@ -1,8 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import styled from "styled-components";
-import Footer from "./footer";
-import Navbar from "./navbar";
+import Footer from "../footer";
+import Navbar from "../navbar/navbar";
 import { Helmet } from "react-helmet";
 import "./contactus.css";
 
