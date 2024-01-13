@@ -1,11 +1,10 @@
 import { RouterProvider, createBrowserRouter} from "react-router-dom";
-import Homepage from './homepage';
-import Newspage from './newspage';
+import Homepage from './homepage/homepage';
+import Newspage from './newspage/newspage';
 import Aboutus from './aboutus'
-import Contactus from './contactus';
+import Contactus from './contactus/contactus';
 import Login from './login';
 import CreateNews from "./CRUD/CreateNews";
-import Category from "./category";
 import NotFound from "./404";
 
 const Router = () =>{
@@ -38,10 +37,6 @@ const Router = () =>{
     {
       path: '/createnews',
       element: <CreateNews/>
-    },
-    {
-      path: '/category/:id',
-      element: <Category/>
     },
     {
       path: "*",

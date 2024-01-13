@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
-import Hero from "./hero";
-import Navbar from "./navbar";
-import Footer from "./footer";
-import MainContent from "./main-content";
+import Hero from "../hero/hero";
+import Navbar from "../navbar/navbar";
+import Footer from "../footer";
+import MainContent from "../main-content/main-content";
 import axios from "axios";
 import styled from "styled-components";
 import { Helmet } from "react-helmet";
