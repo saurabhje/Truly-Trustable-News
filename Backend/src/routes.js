@@ -13,7 +13,6 @@ router.post('/delete/:id',news_operations.delete_news);
 router.get('/edit/:id', news_operations.edit_news_get);
 router.post('/edit/:id', news_operations.edit_News_post);
 
-router.get('/categories',category_Operations.allCategories);
 router.get('/category/:id', category_Operations.category_news_list);
 
 router.post('/login', (req, res, next) => {
