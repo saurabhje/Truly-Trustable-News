@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Hero from "../hero/hero";
 import Navbar from "../navbar/navbar";
 import Footer from "../footer";
-const MainContent = React.lazy(() => import('../main-content/main-content'));
+import MainContent from "../main-content/main-content";
 import axios from "axios";
 import styled from "styled-components";
 import { Helmet } from "react-helmet";
