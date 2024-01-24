@@ -13,8 +13,8 @@ const MainContent = () => {
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
   const [cat, setCat] = useState();
-  const [catdata, setCatdata] = useState([])
   const [error, setError] = useState('');
+  const catData = ['Science', 'Sports', 'Lifestyle', 'Politics', 'Education', 'Opinion and Editorials', 'Business and Finance', 'Education']
 
   const fetchInfo = async() => {
     setLoading(true);
@@ -62,11 +62,6 @@ const MainContent = () => {
       .catch((error) => {
         setError("Error fetching sidebar data:", error);
       });
-    axios
-    .get(`${baseurl}/categories`)
-    .then((response) => {
-      setCatdata(response.data)
-    })
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => {
@@ -82,8 +77,8 @@ const MainContent = () => {
           <h2>Sort News By categories</h2>
           <select  onChange={handleCatchange}> 
               <option value="">All</option>
-              {catdata.map((e, index) => (
-                <option key={index} value={e.title}>{e.title}</option>
+              {catData.map((e, index) => (
+                <option key={index} value={e}>{e}</option>
               ))}
             </select>
         </div>
