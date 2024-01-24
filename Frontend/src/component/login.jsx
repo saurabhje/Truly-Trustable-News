@@ -7,7 +7,7 @@ const baseurl = import.meta.env.VITE_BASE_URL;
 
 const Login = () => {
   const [loggedin, setLoggedin] = useState(false);
-  const [formData, setFormData] = useState({ password: "" });
+  const [password, setPassword] = useState("")
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -15,11 +15,11 @@ const Login = () => {
     try {
       const response = await axios.post(
         `${baseurl}/login`,
-        formData,
+        password
       );
       document.getElementById("password").value = "";
       if (response.status === 200) {
-        sessionStorage.setItem("password", `${formData.password}`);
+        sessionStorage.setItem("password", `${password}`);
         setLoggedin(true);
       } else {
         navigate("/");
@@ -59,9 +59,9 @@ const Login = () => {
   };
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setPassword(e.target.value);
   };
-
+  
   return (
     <>
       <Helmet>
@@ -77,7 +77,7 @@ const Login = () => {
             name="password"
             id="password"
             onChange={handleChange}
-            value={formData.password}
+            value={password}
             placeholder="Password"
             className="mx-5 py-2 rounded-none"
           />
