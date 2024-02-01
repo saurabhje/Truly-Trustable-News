@@ -1,13 +1,20 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
+<<<<<<< Updated upstream:Frontend/src/component/homepage.jsx
 import Hero from "./hero";
 import Navbar from "./navbar";
 import Footer from "./footer";
 import MainContent from "./main-content";
 import axios from "axios";
+=======
+import { useLoaderData }from "react-router-dom"
+import Hero from "../hero/hero";
+import Navbar from "../navbar/navbar";
+import Footer from "../footer";
+import MainContent from "../main-content/main-content";
+>>>>>>> Stashed changes:Frontend/src/component/homepage/homepage.jsx
 import styled from "styled-components";
 import { Helmet } from "react-helmet";
-const baseurl = import.meta.env.VITE_BASE_URL;
 
 import "./homepage.css";
 import { Link } from "react-router-dom";
@@ -20,25 +27,27 @@ const AbsoluteNavbar = styled.div`
 `;
 
 const Homepage = () => {
-  const [header, setHeader] = useState([]);
+  const data = useLoaderData();
+  const header = data[0];
   const [imageindex, setImageindex] = useState(0);
-  const [error, setError] = useState("");
 
   const increaseIndex = () => {
     setImageindex((imageindex + 1) % header.length);
   };
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(`${baseurl}`);
-        setHeader(response.data);
-      } catch (error) {
-        setError("Error fetching data:", error);
-      }
-    };
-    fetchData();
-  }, []);
+  setTimeout(()=>{
+    console.log(header)
+  }, 5000)
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.get(`${baseurl}`);
+  //       setHeader(response.data);
+  //     } catch (error) {
+  //       setError("Error fetching data:", error);
+  //     }
+  //   };
+  //   fetchData();
+  // }, []);
 
   useEffect(() => {
     const imageTransition = setTimeout(increaseIndex, 4000);
@@ -54,7 +63,11 @@ const Homepage = () => {
       <AbsoluteNavbar className="absnav">
         <Navbar />
       </AbsoluteNavbar>
+<<<<<<< Updated upstream:Frontend/src/component/homepage.jsx
       {error && <p style={{ color: 'red' }}>{error}</p>}
+=======
+      {/* {error && <p style={{ color: "red" }}>{error}</p>} */}
+>>>>>>> Stashed changes:Frontend/src/component/homepage/homepage.jsx
       <div className="header-wrapper">
         {header &&
           header.map((index) => (
@@ -76,7 +89,7 @@ const Homepage = () => {
             </Link>
           ))}
       </div>
-      <MainContent />
+      <MainContent content={data[1]} sidebar_content={data[2]} cat_content={data[3]}/>
       <Footer />
     </div>
   );

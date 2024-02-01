@@ -1,33 +1,37 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+/* eslint react/prop-types: 0 */
+
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+// import axios from "axios";
 import "./main-content.css";
 import { Link } from "react-router-dom";
-const baseurl = import.meta.env.VITE_BASE_URL;
+// const baseurl = import.meta.env.VITE_BASE_URL;
 
 
-const MainContent = () => {
-  const [data, setData] = useState([]);
-  const [sidebardata, setSidebardata] = useState([])
+const MainContent = ({content, sidebar_content, cat_content}) => {
+  // const [data, setData] = useState([]);
+  // const [sidebardata, setSidebardata] = useState([])
   const [mobileView, setMobileView] = useState();
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
   const [cat, setCat] = useState();
-  const [catdata, setCatdata] = useState([])
-  const [error, setError] = useState('');
-
+  // const [catdata, setCatdata] = useState([])
+  // const [error, setError] = useState('');
+  setTimeout(()=>{
+    console.log(content)
+  }, 5000)
   const fetchInfo = async() => {
     setLoading(true);
-    const link = cat? `${baseurl}/?page=${page}&cat=${cat}`: `${baseurl}/?page=${page}`
-    axios
-      .get(link)
-      .then((response) => {
-        setData((prevNews) => [...prevNews, ...response.data]);
-        setLoading(false);
-      })
-      .catch((error) => {
-        setError("Error fetching data:", error);
-      });
+    // const link = cat? `${baseurl}/?page=${page}&cat=${cat}`: `${baseurl}/?page=${page}`
+    // axios
+    //   .get(link)
+    //   .then((response) => {
+    //     setData((prevNews) => [...prevNews, ...response.data]);
+    //     setLoading(false);
+    //   })
+    //   .catch((error) => {
+    //     setError("Error fetching data:", error);
+    //   });
   };
 
   const handleLoadMore = () => {
@@ -45,7 +49,7 @@ const MainContent = () => {
   const handleCatchange = (e) =>{
     setCat(e.target.value)
     setPage(1);
-    setData([]);
+    // setData([]);
   }
 
   useEffect(() => {
@@ -53,20 +57,20 @@ const MainContent = () => {
   }, [page, cat]);
 
   useEffect(() => {
-    const sidebarlink = `${baseurl}/sidebar`;
-    axios
-      .get(sidebarlink)
-      .then((response) => {
-        setSidebardata((prevNews) => [...prevNews, ...response.data]);
-      })
-      .catch((error) => {
-        setError("Error fetching sidebar data:", error);
-      });
-    axios
-    .get(`${baseurl}/categories`)
-    .then((response) => {
-      setCatdata(response.data)
-    })
+    // const sidebarlink = `${baseurl}/sidebar`;
+    // axios
+    //   .get(sidebarlink)
+    //   .then((response) => {
+    //     setSidebardata((prevNews) => [...prevNews, ...response.data]);
+    //   })
+    //   .catch((error) => {
+    //     setError("Error fetching sidebar data:", error);
+    //   });
+    // axios
+    // .get(`${baseurl}/categories`)
+    // .then((response) => {
+    //   setCatdata(response.data)
+    // })
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => {
@@ -76,19 +80,19 @@ const MainContent = () => {
   
   return (
     <div className="main">
-    {error && <p>{error}</p>}
+    {/* {error && <p>{error}</p>} */}
       <div className="content-wrap">
         <div className="select">
           <h2>Sort News By categories</h2>
-          <select  onChange={handleCatchange}> 
+          <select onChange={handleCatchange}> 
               <option value="">All</option>
-              {catdata.map((e, index) => (
+              {cat_content && cat_content.map((e, index) => (
                 <option key={index} value={e.title}>{e.title}</option>
               ))}
             </select>
         </div>
         <div className="content">
-          {data.map((e, index) => {
+          {content && content.map((e, index) => {
             const itemWrapClass = index % 2 === 0 ? "itemwrap1" : "itemwrap2";
             return (
               <Link to={`/news/${e.slug}`} className="item" key={index}>
@@ -104,13 +108,13 @@ const MainContent = () => {
                     </p>
                     <div className="catog">
                       Categories:
-                      {e.category ? (
+                      {/* {e.category ? (
                         e.category.map((cat) => (
                           <span className='px-1 text-sky' key={cat._id}>{cat.title}</span>
                         ))
                       ) : (
                         <span>No categories available</span>
-                      )}
+                      )} */}
                     </div>
                   </div>
                 </div>
@@ -135,7 +139,7 @@ const MainContent = () => {
       </div>
       {!mobileView && (
         <div className="sidebar ">
-          {sidebardata.map((e, index) => {
+          {sidebar_content && sidebar_content.map((e, index) => {
             return (
               // eslint-disable-next-line react/jsx-key
               <Link 

@@ -7,12 +7,14 @@ import Login from './login';
 import CreateNews from "./CRUD/CreateNews";
 import Category from "./category";
 import NotFound from "./404";
+import homeLoader from "./homepage/homeLoader";
 
 const Router = () =>{
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Homepage/>
+      element: <Homepage/>,
+      loader: homeLoader
     },
     {
       path: "/news/:slug",
