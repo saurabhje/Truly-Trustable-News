@@ -13,7 +13,7 @@ const Router = () =>{
     {
       path: '/',
       element: <Homepage />,
-      loader: homeLoader,
+      loader: ()=> homeLoader(),
     },
     {
       path: "/news/:slug",
