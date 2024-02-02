@@ -11,9 +11,9 @@ import homeLoader from "./homepage/homeloader"
 const Router = () =>{
   const router = createBrowserRouter([
     {
-      path: "/",
-      element: <Homepage/>,
-      loader: homeLoader
+      path: '/',
+      element: <Homepage />,
+      loader: homeLoader,
     },
     {
       path: "/news/:slug",
