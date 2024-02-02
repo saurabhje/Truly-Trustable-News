@@ -11,9 +11,3 @@ exports.category_news_list = asyncHandler(async (req, res, next) => {
   
     res.json({ category, categoryNews });
   });
-  
-
-exports.allCategories = asyncHandler( async(req, res, next ) => {
-    const allCategories = await Category.find().sort({ date: -1 });
-    res.json(allCategories);
-})

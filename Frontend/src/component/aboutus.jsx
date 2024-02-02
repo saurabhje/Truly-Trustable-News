@@ -1,9 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react'
-import Navbar from './navbar'
+import Navbar from './navbar/navbar'
 import styled from 'styled-components';
 import Footer from './footer'
-import './aboutus.css'
 import { Helmet } from 'react-helmet';
 const PageContainer = styled.div`
   display: flex;
@@ -15,9 +14,10 @@ const PageContainer = styled.div`
 
 const ContentWrapper = styled.div`
   flex: 1;
-  padding: 20px;
+  padding: 1rem 6rem;
   font-size: 1.3rem;
   @media (max-width: 768px) {
+    padding: 1.5rem;
     font-size: 1.1rem;
   }
 `
