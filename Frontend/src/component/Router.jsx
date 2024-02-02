@@ -6,12 +6,14 @@ import Contactus from './contactus/contactus';
 import Login from './login';
 import CreateNews from "./CRUD/CreateNews";
 import NotFound from "./404";
+import homeLoader from "./homepage/homeloader"
 
 const Router = () =>{
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Homepage/>
+      element: <Homepage/>,
+      loader: homeLoader
     },
     {
       path: "/news/:slug",

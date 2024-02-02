@@ -1,16 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+/* eslint react/prop-types: 0 */
 import React, { useState, useEffect } from "react";
 import Hero from "../hero/hero";
 import Navbar from "../navbar/navbar";
 import Footer from "../footer";
 import MainContent from "../main-content/main-content";
-import axios from "axios";
 import styled from "styled-components";
 import { Helmet } from "react-helmet";
-const baseurl = import.meta.env.VITE_BASE_URL;
-
 import "./homepage.css";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const AbsoluteNavbar = styled.div`
   position: absolute;
@@ -20,25 +18,25 @@ const AbsoluteNavbar = styled.div`
 `;
 
 const Homepage = () => {
-  const [header, setHeader] = useState([]);
+  const data = useLoaderData();
+  const header = data[0]
   const [imageindex, setImageindex] = useState(0);
-  const [error, setError] = useState("");
 
   const increaseIndex = () => {
     setImageindex((imageindex + 1) % header.length);
   };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(`${baseurl}`);
-        setHeader(response.data);
-      } catch (error) {
-        setError("Error fetching data:", error);
-      }
-    };
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.get(`${baseurl}`);
+  //       setHeader(response.data);
+  //     } catch (error) {
+  //       setError("Error fetching data:", error);
+  //     }
+  //   };
+  //   fetchData();
+  // }, []);
 
   useEffect(() => {
     const imageTransition = setTimeout(increaseIndex, 4000);
@@ -54,7 +52,7 @@ const Homepage = () => {
       <AbsoluteNavbar className="absnav">
         <Navbar />
       </AbsoluteNavbar>
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {/* {error && <p style={{ color: "red" }}>{error}</p>} */}
       <div className="header-wrapper">
         {header &&
           header.map((index) => (
@@ -81,7 +79,7 @@ const Homepage = () => {
             </Link>
           ))}
       </div>
-      <MainContent />
+      <MainContent content={data[0]} sidebar_content={data[1]}/>
       <Footer />
     </div>
   );

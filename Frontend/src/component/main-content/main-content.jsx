@@ -1,37 +1,32 @@
+/* eslint react/prop-types: 0 */
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState, useEffect, useRef} from "react";
 import "./main-content.css";
 import { Link } from "react-router-dom";
+import axios from "axios";
 const baseurl = import.meta.env.VITE_BASE_URL;
 
-
-const MainContent = () => {
-  const [data, setData] = useState([]);
-  const [sidebardata, setSidebardata] = useState([])
+const MainContent = ({content, sidebar_content}) => {
+  const [data, setData] = useState(content);
+  const [sidebardata] = useState(sidebar_content)
   const [mobileView, setMobileView] = useState();
-  const [page, setPage] = useState(1);
-  const [loading, setLoading] = useState(true);
-  const [cat, setCat] = useState();
-  const [error, setError] = useState('');
+  let page = useRef(1);
+  const cat = useRef()
+  const loading = useRef(false)
   const catData = ['Science', 'Sports', 'Lifestyle', 'Politics', 'Education', 'Opinion and Editorials', 'Business and Finance', 'Education']
 
-  const fetchInfo = async() => {
-    setLoading(true);
-    const link = cat? `${baseurl}/?page=${page}&cat=${cat}`: `${baseurl}/?page=${page}`
+  const handleLoadMore = () => {
+    loading.current = true
+    page.current++;
+    console.log(page.current)
+    const link = cat.current?`${baseurl}/?page=${page.current}&cat=${cat.current}`: `${baseurl}/?page=${page.current}`;
     axios
       .get(link)
       .then((response) => {
         setData((prevNews) => [...prevNews, ...response.data]);
-        setLoading(false);
+        loading.current = false
+        console.log(link)
       })
-      .catch((error) => {
-        setError("Error fetching data:", error);
-      });
-  };
-
-  const handleLoadMore = () => {
-    setPage(page + 1);
   };
 
   const handleResize = () => {
@@ -43,25 +38,20 @@ const MainContent = () => {
   };
 
   const handleCatchange = (e) =>{
-    setCat(e.target.value)
-    setPage(1);
-    setData([]);
+    loading.current = true
+    setData([])
+    page.current = 1;
+    cat.current = (e.target.value);
+    const link = `${baseurl}/?page=${page.current}&cat=${cat.current}`
+    axios
+      .get(link)
+      .then((response) => {
+        loading.current = false
+        setData((prevNews) => [...prevNews, ...response.data]);
+      })
   }
 
   useEffect(() => {
-    fetchInfo();
-  }, [page, cat]);
-
-  useEffect(() => {
-    const sidebarlink = `${baseurl}/sidebar`;
-    axios
-      .get(sidebarlink)
-      .then((response) => {
-        setSidebardata((prevNews) => [...prevNews, ...response.data]);
-      })
-      .catch((error) => {
-        setError("Error fetching sidebar data:", error);
-      });
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => {
@@ -71,7 +61,6 @@ const MainContent = () => {
   
   return (
     <div className="main">
-    {error && <p>{error}</p>}
       <div className="content-wrap">
         <div className="select">
           <h2>Sort News By categories</h2>
@@ -113,7 +102,7 @@ const MainContent = () => {
             );
           })}
           <div className="loading-wrap">
-            {loading ? (
+            {loading.current ? (
               <div className="lds-ring">
                 <div></div>
                 <div></div>
@@ -124,7 +113,7 @@ const MainContent = () => {
               <button id="loadmore" onClick={handleLoadMore}>
                 Load More
               </button>
-            )}
+            )} 
           </div>
         </div>
       </div>
