@@ -19,8 +19,10 @@ const AbsoluteNavbar = styled.div`
   z-index: 1;
 `;
 
+let isloaded = false;
+let head = [];
 const Homepage = () => {
-  const [header, setHeader] = useState([]);
+  const [header, setHeader] = useState(head);
   const [imageindex, setImageindex] = useState(0);
   const [error, setError] = useState("");
 
@@ -33,11 +35,15 @@ const Homepage = () => {
       try {
         const response = await axios.get(`${baseurl}`);
         setHeader(response.data);
+        isloaded = true
+        head = response.data
       } catch (error) {
         setError("Error fetching data:", error);
       }
     };
-    fetchData();
+    if(!isloaded){
+      fetchData();
+    }
   }, []);
 
   useEffect(() => {

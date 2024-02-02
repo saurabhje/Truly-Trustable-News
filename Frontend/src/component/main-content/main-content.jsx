@@ -5,18 +5,30 @@ import "./main-content.css";
 import { Link } from "react-router-dom";
 const baseurl = import.meta.env.VITE_BASE_URL;
 
+let isloaded = false
+let head = []
+let sidebar = []
+let cachepage = 1
+let catcache = ''
 
 const MainContent = () => {
-  const [data, setData] = useState([]);
-  const [sidebardata, setSidebardata] = useState([])
+  const [data, setData] = useState(head);
+  const [sidebardata, setSidebardata] = useState(sidebar)
   const [mobileView, setMobileView] = useState();
-  const [page, setPage] = useState(1);
-  const [loading, setLoading] = useState(true);
-  const [cat, setCat] = useState();
-  const [error, setError] = useState('');
+  const [page, setPage] = useState(cachepage);
+  const [loading, setLoading] = useState(() => {
+    if(data)
+      return false
+    else
+      return true
+  });
+  const [cat, setCat] = useState(catcache);
+  const [error, setError] = useState("");
   const catData = ['Science', 'Sports', 'Lifestyle', 'Politics', 'Education', 'Opinion and Editorials', 'Business and Finance', 'Education']
 
   const fetchInfo = async() => {
+    console.log(catcache)
+    console.log(head)
     setLoading(true);
     const link = cat? `${baseurl}/?page=${page}&cat=${cat}`: `${baseurl}/?page=${page}`
     axios
@@ -24,6 +36,8 @@ const MainContent = () => {
       .then((response) => {
         setData((prevNews) => [...prevNews, ...response.data]);
         setLoading(false);
+        isloaded = true
+        head = [...head, ...response.data]
       })
       .catch((error) => {
         setError("Error fetching data:", error);
@@ -31,7 +45,9 @@ const MainContent = () => {
   };
 
   const handleLoadMore = () => {
+    isloaded = false
     setPage(page + 1);
+    cachepage++;
   };
 
   const handleResize = () => {
@@ -43,25 +59,35 @@ const MainContent = () => {
   };
 
   const handleCatchange = (e) =>{
+    isloaded = false
+    setData([]);
+    head = []
+    catcache = e.target.value
     setCat(e.target.value)
     setPage(1);
-    setData([]);
+    cachepage = 1
   }
 
   useEffect(() => {
-    fetchInfo();
+    if(!isloaded){
+      fetchInfo();
+    }
   }, [page, cat]);
 
   useEffect(() => {
-    const sidebarlink = `${baseurl}/sidebar`;
-    axios
-      .get(sidebarlink)
-      .then((response) => {
-        setSidebardata((prevNews) => [...prevNews, ...response.data]);
-      })
-      .catch((error) => {
-        setError("Error fetching sidebar data:", error);
-      });
+    if(!isloaded){
+      const sidebarlink = `${baseurl}/sidebar`;
+      axios
+        .get(sidebarlink)
+        .then((response) => {
+          setSidebardata((prevNews) => [...prevNews, ...response.data]);
+          isloaded = true
+          sidebar = [...sidebar, ...response.data]
+        })
+        .catch((error) => {
+          setError("Error fetching sidebar data:", error);
+        });
+    }
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => {
@@ -75,7 +101,7 @@ const MainContent = () => {
       <div className="content-wrap">
         <div className="select">
           <h2>Sort News By categories</h2>
-          <select  onChange={handleCatchange}> 
+          <select defaultValue={catcache} onChange={handleCatchange}> 
               <option value="">All</option>
               {catData.map((e, index) => (
                 <option key={index} value={e}>{e}</option>
