@@ -7,7 +7,7 @@
     display: flex;
     overflow: hidden;
     width: 100%;
-    min-height: 65vh;
+    height: 65vh;
 }
 
 .header {

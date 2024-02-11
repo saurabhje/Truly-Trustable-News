@@ -1,16 +1,16 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
-import Hero from "../hero/hero";
+
 import Navbar from "../navbar/navbar";
 import Footer from "../footer";
 import MainContent from "../main-content/main-content";
 import axios from "axios";
 import styled from "styled-components";
 import { Helmet } from "react-helmet";
+import SlidingHeader from "./slidingHeader";
 const baseurl = import.meta.env.VITE_BASE_URL;
 
 import "./homepage.css";
-import { Link } from "react-router-dom";
 
 const AbsoluteNavbar = styled.div`
   position: absolute;
@@ -62,30 +62,7 @@ const Homepage = () => {
       </AbsoluteNavbar>
       {error && <p style={{ color: "red" }}>{error}</p>}
       <div className="header-wrapper">
-        {header &&
-          header.map((index) => (
-            <Link
-              to={`/news/${index.slug}`}
-              className="header"
-              key={index.img.src}
-              style={{ translate: `${-100 * imageindex}%` }}
-            >
-              <div
-                className="background-layer"
-                style={{
-                  backgroundImage: index
-                    ? `linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 1)), url(${index.img.src})`
-                    : "",
-                  backgroundPosition: index.img.position
-                    ? `${index.img.position}`
-                    : "center",
-                }}
-              ></div>
-              <div className="text-layer">
-                <Hero heading={index.heading} author={index.author} />
-              </div>
-            </Link>
-          ))}
+        {isloaded ? <SlidingHeader header ={header} imageindex= {imageindex}/> : null }
       </div>
       <MainContent />
       <Footer />
