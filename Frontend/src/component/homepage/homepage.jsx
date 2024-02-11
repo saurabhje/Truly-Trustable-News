@@ -41,7 +41,7 @@ const Homepage = () => {
         setError("Error fetching data:", error);
       }
     };
-    if(!isloaded){
+    if (!isloaded) {
       fetchData();
     }
   }, []);
@@ -62,7 +62,7 @@ const Homepage = () => {
       </AbsoluteNavbar>
       {error && <p style={{ color: "red" }}>{error}</p>}
       <div className="header-wrapper">
-        {isloaded ? <SlidingHeader header ={header} imageindex= {imageindex}/> : null }
+        {isloaded ? <SlidingHeader header={header} imageindex={imageindex} /> : null}
       </div>
       <MainContent />
       <Footer />
