@@ -9,6 +9,9 @@ Our goal is to provide the community with a dose of humorous jokes, making news 
 ## Getting Started
 ### Prerequisites
 - List of required software and tools with download/installation links.
+1. Text Editor 
+2. Build-essentials {Node Js}
+3. Git 
 
 ### Installation
 1. Clone the repository.
