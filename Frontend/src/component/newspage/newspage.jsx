@@ -34,7 +34,7 @@ const Newspage = () => {
     <>
       <Helmet>
         <title>{data.heading}</title>
-        <meta name="description" content="News page" />
+        <meta name="description" content={data.heading} />
       </Helmet>
       <div
         className="header"
