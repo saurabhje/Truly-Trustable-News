@@ -8,6 +8,7 @@ import axios from "axios";
 import styled from "styled-components";
 import { Helmet } from "react-helmet";
 import SlidingHeader from "./slidingHeader";
+import Loader from "./pulseloader";
 const baseurl = import.meta.env.VITE_BASE_URL;
 
 import "./homepage.css";
@@ -35,8 +36,8 @@ const Homepage = () => {
       try {
         const response = await axios.get(`${baseurl}`);
         setHeader(response.data);
-        isloaded = true
         head = response.data
+        isloaded = true
       } catch (error) {
         setError("Error fetching data:", error);
       }
@@ -62,7 +63,7 @@ const Homepage = () => {
       </AbsoluteNavbar>
       {error && <p style={{ color: "red" }}>{error}</p>}
       <div className="header-wrapper">
-        {isloaded ? <SlidingHeader header={header} imageindex={imageindex} /> : null}
+        {isloaded ? <SlidingHeader header={header} imageindex={imageindex} /> : <Loader/>}
       </div>
       <MainContent />
       <Footer />
