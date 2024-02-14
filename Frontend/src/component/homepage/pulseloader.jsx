@@ -1,9 +1,7 @@
 const Loader = () =>{
     return(
-        <div>
-          <div>
-              
-          </div>
+        <div className="header animate-pulse bg-gray-800">
         </div>
     )
 }
+export default Loader 
