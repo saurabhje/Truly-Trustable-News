@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./main-content.css";
 import { Link } from "react-router-dom";
+import SideBar from "./sideBar";
 const baseurl = import.meta.env.VITE_BASE_URL;
 
 let isloaded = false
@@ -154,29 +155,7 @@ const MainContent = () => {
           </div>
         </div>
       </div>
-      {!mobileView && (
-        <div className="sidebar ">
-          {sidebardata.map((e, index) => {
-            return (
-              // eslint-disable-next-line react/jsx-key
-              <Link 
-                to={`/news/${e.slug}`}
-                className="news_card"
-                key={index}
-                state={{ id: e._id }}
-              >
-                <img
-                  className="w-full h-auto"
-                  id="side_img"
-                  src={e.img.src}
-                  alt="News Image"
-                />
-                <p>{e.heading}</p>
-              </Link>
-            );
-          })}
-        </div>
-      )}
+      {!mobileView ? <SideBar sidebardata={sidebardata} /> : null}
     </div>
   );
 };
