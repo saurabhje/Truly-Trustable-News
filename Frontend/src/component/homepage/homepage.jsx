@@ -37,13 +37,15 @@ const Homepage = () => {
         const response = await axios.get(`${baseurl}`);
         setHeader(response.data);
         head = response.data
-        isloaded = true
       } catch (error) {
         setError("Error fetching data:", error);
       }
     };
     if (!isloaded) {
       fetchData();
+      setTimeout(() => {
+        isloaded = true
+      }, 1000)
     }
   }, []);
 
